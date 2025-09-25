@@ -1,0 +1,20 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore logs
+*.log
+
+# Dependency directories
+.pnpm/
+.yarn/
+dist/
+build/
+out/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore env files
+.env
+.env.*
