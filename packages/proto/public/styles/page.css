@@ -1,9 +1,3 @@
-:root {
-  --color-main-background: #4c2e2e;
-  --color-sub-background: #6f3132;
-  --color-main-support: #ffffff;
-}
-
 /* APPLIED TO ALL PAGES */
 html {
   scroll-behavior: smooth;
@@ -14,42 +8,13 @@ body {
   padding: 0;
 }
 
-/* #movie-logo {
-    width: 160px;
-    max-width: 100%;
-    height: auto;
-    display: block;
-} */
-
-.header {
-  display: flex;
+.main-nav-bar {
   overflow: hidden;
   background-color: var(--color-main-background);
 }
 
-.search-bar {
-  float: left;
-}
-
-input[type=text] {
-  margin-top: 8px;
-  padding: 6px;
-  font-size: 17px;
-  border: none;
-}
-
-.search-bar button {
-  float: left;
-  margin-top: 8px;
-  margin-right: 16px;
-  padding: 6px 10px;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
 .main-nav-bar a {
-  float: right;
+  float: left;
   display: block;
   color: var(--color-main-support);
   text-align: center;
@@ -63,11 +28,31 @@ input[type=text] {
   color: var(--color-main-support);
 }
 
-.main-nav-bar a.active {
-  background-color: var(--color-main-support);
-  color: var(--color-main-background);
+.main-nav-bar .search-bar {
+  float: right;
 }
 
+.main-nav-bar input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.main-nav-bar .search-bar button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: var(--color-sub-background);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.main-nav-bar .search-bar button:hover {
+  background: var(--color-main-support);
+}
 
 
 /* HOME PAGE */
