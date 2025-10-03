@@ -2,33 +2,30 @@
 <html>
   <head>
     <title>Movie Night</title>
-    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/page.css">
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
     <!--HEADER-->
-    <header>
-      <img id="movie-logo" src="images/movie-night-logo.png" alt="Movie Night Logo">
+    <div class="main-nav-bar">
+      <a href="index.html">Home</a>
+      <a href="movies-out-now.html">Movies Out Now</a>
+      <a href="movie-library.html">Movie Library</a>
+      <a href="theaters.html">Theaters</a>
+      <a href="soundtrack-library.html">Music Library</a>
+      <a href="artifacts.html">Artifacts Library</a>
+      <a href="film-locations.html">Famous Film Locations</a>
 
-      <!-- SEARCH BAR -->
       <div class="search-bar">
-        <input type="search" id="search-input" placeholder="Search..." />
-        <button id="search-button">Search</button>
+        <form>
+          <input type="text" placeholder="Search..." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
       </div>
-
-      <!--NAV BAR-->
-      <div class="main-nav-bar">
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="movies-out-now.html">Movies Out Now</a>
-          <a href="movie-library.html">Movie Library</a>
-          <a href="theaters.html">Theaters</a>
-          <a href="soundtrack-library.html">Music Library</a>
-          <a href="artifacts.html">Artifacts Library</a>
-          <a href="film-locations.html">Famous Film Locations</a>
-        </nav>
-      </div>
-    </header>
+    </div>
+    
 
     <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
     <section class="popular-movies-out-now">
