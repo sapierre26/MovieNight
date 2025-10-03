@@ -60,7 +60,11 @@ body {
   background: var(--color-main-support);
 }
 
-.movie-slideshow-img
+.movie-slideshow-img {
+  width: 300px;
+  /* max-width: 100%; */
+  height: 300px;
+}
 
 /* HOME PAGE */
 /* MOVIES OUT NOW PAGE */
