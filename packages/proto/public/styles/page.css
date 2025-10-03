@@ -1,0 +1,82 @@
+:root {
+  --color-main-background: #4c2e2e;
+  --color-sub-background: #6f3132;
+  --color-main-support: #ffffff;
+}
+
+/* APPLIED TO ALL PAGES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* #movie-logo {
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+} */
+
+.main-nav-bar {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: var(--color-main-background);
+}
+
+.main-nav-bar .nav a {
+  display: block;
+  float: right;
+  color: var(--color-main-support);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main-nav-bar .nav a:hover {
+  background-color: var(--color-sub-background);
+  color: var(--color-main-support);
+}
+
+.main-nav-bar .nav a.active {
+  background-color: var(--color-main-support);
+  color: var(--color-main-background);
+}
+
+.main-nav-bar .search-bar {
+  float: left;
+}
+
+.main-nav-bar input[type="search"] {
+  margin-top: 8px;
+  padding: 6px;
+  font-size: 17px;
+  border: none;
+}
+
+.main-nav-bar .search-bar button {
+  float: left;
+  margin-top: 8px;
+  margin-right: 16px;
+  padding: 6px 10px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+/* HOME PAGE */
+/* MOVIES OUT NOW PAGE */
+/* MOVIES OUT NOW ITEM TEMPLATE */
+/* MOVIE LIBRARY */
+/* MOVIE LIBRARY ITEM TEMPLATE */
+/* THEATERS */
+/* THEATERS ITEM TEMPLATE */
+/* MUSIC LIBRARY */
+/* MUSIC LIBRARY ITEM TEMPLATE */
+/* ARTIFACT LIBRARY */
+/* FAMOUS FILM LOCATION */
