@@ -9,23 +9,35 @@ body {
 }
 
 .main-nav-bar {
+  display: flex;
+  align-items: center;                 
+  justify-content: space-between; 
+  padding: 0 20px;
+  height: 70px;
+
   overflow: hidden;
   background-color: var(--color-main-background);
 }
 
 #logo {
-  float: left;
-  display: inline;
+  /* float: left;
+  display: inline; */
+  margin-left: 20px;
   width: auto;
-  height: 48px;
+  height: 70px;
 }
 
 .main-nav-bar a {
-  display: block;
-  float: left;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  line-height: 70px;
+
+  /* display: block;
+  float: left; */
   color: var(--color-white);
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   text-decoration: none;
   font-size: 17px;
   height: 100%;
@@ -37,31 +49,40 @@ body {
 }
 
 .main-nav-bar .search-bar {
-  float: right;
+  display: flex;
+  align-items: center;
+
+  /* float: right; */
 }
 
 .main-nav-bar input[type="text"] {
-  padding: 6px;
-  margin-top: 8px;
+  padding: 8px 10px;
+
+  /* padding: 6px; */
+  /* margin-top: 8px; */
   font-size: 17px;
   border: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
 }
 
 .main-nav-bar .search-bar button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: var(--color-sub-background);
+  padding: 8px 10px;
+
+  /* float: right; */
+  /* padding: 6px 10px; */
+  /* margin-top: 8px;
+  margin-right: 16px; */
+  background-color: var(--color-sub-background);
   font-size: 17px;
   border: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 .main-nav-bar .search-bar button:hover {
-  background: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-sub-background);
+  border-radius: 4px 0 0 4px;
 }
 
 .popular-movies-out-now {
