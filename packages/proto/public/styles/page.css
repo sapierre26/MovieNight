@@ -15,6 +15,7 @@ body {
 
 /* #logo {
   float: left;
+  display: inline;
   max-width: 100%;
   height: 40px;
 } */
@@ -60,10 +61,41 @@ body {
   background: var(--color-main-support);
 }
 
-.movie-slideshow-img {
-  width: 700px;
-  /* max-width: 100%; */
-  height: 300px;
+.popular-movies-out-now {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  /* background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center; */
+  /* width: 50%;
+  height: 300px; */
+  width: 100vw;
+  height: 33vw;
+}
+
+.background-slide {
+  display: flex;
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100%;
+  animation: popular-movies-out-now fade 20s infinite;
+}
+
+.background-slide img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes popular-movies-out-now {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(0); }
+  40%  { transform: translateX(-100vw); }
+  73%  { transform: translateX(-100vw); }
+  80%  { transform: translateX(-200vw); }
+  100% { transform: translateX(-200vw); }
 }
 
 /* HOME PAGE */
