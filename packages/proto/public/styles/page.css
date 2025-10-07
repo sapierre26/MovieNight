@@ -148,6 +148,79 @@ body {
 
 
 /* MOVIES OUT NOW PAGE */
+/* .out-now-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+} */
+
+.out-now-grid-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 450px;
+  background-color: var(--color-main-background);
+  /* border: 1px solid red; */
+}
+
+.out-now-grid-item-img img {
+  width: 200px;
+  height: 191px;
+  /* border: 1px solid green; */
+}
+
+.out-now-grid-item-text p {
+  color: var(--color-white);
+  font-family: var(--sub-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h3-font-size);
+  /* border: 1px solid blue; */
+}
+
+.squares {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-bottom: 15px;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-white);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.buttons button {
+  background-color: var(--color-sub-background);
+  color: var(--color-white);
+  text-align: center;
+  width: 200px;
+  font-family: var(--sub-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--p-font-size);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: var(--color-white);
+  color: var(--color-sub-background);
+  transform: scale(1.03);
+}
+
 /* MOVIES OUT NOW ITEM TEMPLATE */
 /* MOVIE LIBRARY */
 /* MOVIE LIBRARY ITEM TEMPLATE */
