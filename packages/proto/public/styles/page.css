@@ -130,7 +130,7 @@ body {
   font-style: var(--main-font-type);
 }
 
-/* HOME PAGE */
+/* HOME */
 .home-page {
   padding: 20px;
 }
@@ -163,9 +163,10 @@ body {
   height: 350px;
 } */
 
-/* MOVIES OUT NOW & MOVIE LIBRARY PAGES */
+/* MOVIES OUT NOW , MOVIE LIBRARY, & SOUNDTRACK LIBRARY */
 .out-now-grid,
-.movie-library-grid {
+.movie-library-grid, 
+.soundtrack-library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 2rem;
@@ -185,13 +186,15 @@ body {
 }
 
 .out-now-grid-item-img img,
-.movie-library-grid-item-img img {
+.movie-library-grid-item-img img,
+.soundtrack-library-grid-item-img img {
   width: 200px;
   height: 191px;
 }
 
 .out-now-grid-item-text p,
-.movie-library-grid-item-text p {
+.movie-library-grid-item-text p,
+.soundtrack-library-grid-item-text p {
   color: var(--color-white);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
@@ -213,15 +216,9 @@ body {
   background-color: var(--color-white);
 }
 
-/* MOVIES OUT NOW PAGE */
-.buttons {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-}
-
 .buttons button,
-.movie-library-grid-item button {
+.movie-library-grid-item button, 
+.soundtrack-library-grid-item-text button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,14 +238,24 @@ body {
 }
 
 .buttons button:hover,
-.movie-library-grid-item button:hover {
+.movie-library-grid-item button:hover,
+.soundtrack-library-grid-item-text button:hover {
   background-color: var(--color-white);
   color: var(--color-sub-background);
   text-decoration: underline;
   transform: scale(1.03);
 }
 
+
+/* MOVIES OUT NOW */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
 /* MOVIES OUT NOW ITEM TEMPLATE */
+
+
 /* MOVIE LIBRARY */
 .sub-nav-bar {
   display: flex;
@@ -312,9 +319,38 @@ body {
   background-color: var(--color-main-background);
 }
 /* MOVIE LIBRARY ITEM TEMPLATE */
+
+
 /* THEATERS */
 /* THEATERS ITEM TEMPLATE */
+
+
 /* MUSIC LIBRARY */
 /* MUSIC LIBRARY ITEM TEMPLATE */
+.soundtrack-library-grid-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 475px;
+  background-color: var(--color-main-background);
+}
+
+.soundtrack-library-grid-item-text {
+  width: 200px;
+}
+
+#runtime {
+  color: var(--color-white);
+  font-family: var(--sub-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--p-font-size-smaller);
+}
+
 /* ARTIFACT LIBRARY */
+
+
 /* FAMOUS FILM LOCATION */
