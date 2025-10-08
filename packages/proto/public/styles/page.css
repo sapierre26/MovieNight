@@ -130,6 +130,7 @@ body {
   font-style: var(--main-font-type);
 }
 
+
 /* HOME */
 .home-page {
   padding: 20px;
@@ -163,10 +164,12 @@ body {
   height: 350px;
 } */
 
-/* MOVIES OUT NOW , MOVIE LIBRARY, & SOUNDTRACK LIBRARY */
+
+/* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
 .out-now-grid,
 .movie-library-grid, 
-.soundtrack-library-grid {
+.soundtrack-library-grid,
+.artifact-library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 2rem;
@@ -187,14 +190,16 @@ body {
 
 .out-now-grid-item-img img,
 .movie-library-grid-item-img img,
-.soundtrack-library-grid-item-img img {
+.soundtrack-library-grid-item-img img,
+.artifact-library-grid-item-img img {
   width: 200px;
   height: 191px;
 }
 
 .out-now-grid-item-text p,
 .movie-library-grid-item-text p,
-.soundtrack-library-grid-item-text p {
+.soundtrack-library-grid-item-text p,
+.artifact-library-grid-item-text p {
   color: var(--color-white);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
@@ -351,6 +356,28 @@ body {
 }
 
 /* ARTIFACT LIBRARY */
+.artifact-library-grid-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 575px;
+  background-color: var(--color-main-background);
+}
+
+.artifact-library-grid-item-text {
+  width: 200px;
+}
+
+#artifact-description {
+  color: var(--color-white);
+  font-family: var(--sub-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--p-font-size-smaller);
+}
 
 
 /* FAMOUS FILM LOCATION */
