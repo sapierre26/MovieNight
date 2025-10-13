@@ -129,7 +129,6 @@ body {
   font-style: var(--main-font-type);
 }
 
-
 /* HOME */
 .home-page {
   padding: 20px;
@@ -163,10 +162,9 @@ body {
   height: 350px;
 } */
 
-
 /* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
 .out-now-grid,
-.movie-library-grid, 
+.movie-library-grid,
 .soundtrack-library-grid,
 .artifact-library-grid {
   display: grid;
@@ -221,7 +219,7 @@ body {
 }
 
 .buttons button,
-.movie-library-grid-item button, 
+.movie-library-grid-item button,
 .soundtrack-library-grid-item-text button {
   display: flex;
   align-items: center;
@@ -250,7 +248,6 @@ body {
   transform: scale(1.03);
 }
 
-
 /* MOVIES OUT NOW */
 .buttons {
   display: flex;
@@ -272,7 +269,8 @@ body {
   font-size: var(--h1-font-size);
 }
 
-.movie-bio-background h2, .theater-item h2 {
+.movie-bio-background h2,
+.theater-item h2 {
   color: var(--color-white);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
@@ -326,7 +324,6 @@ body {
   text-decoration: underline;
   transform: scale(1.03);
 }
-
 
 /* MOVIE LIBRARY */
 .sub-nav-bar {
@@ -408,10 +405,8 @@ body {
   font-size: var(--p-font-size);
 }
 
-
 /* THEATERS */
 /* THEATERS ITEM TEMPLATE */
-
 
 /* MUSIC LIBRARY */
 .soundtrack-library-grid-item {
@@ -454,7 +449,8 @@ body {
   font-size: var(--h1-font-size);
 }
 
-.playlist-heading h2, .playlist-text h2 {
+.playlist-heading h2,
+.playlist-text h2 {
   color: var(--color-white);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
@@ -482,6 +478,7 @@ body {
 
 .playlist-text {
   flex: 1;
+  position: relative;
   background-color: var(--color-main-background);
   padding: 20px;
 }
@@ -502,6 +499,21 @@ body {
   font-size: var(--p-font-size);
 }
 
+.svg.icon {
+  display: inline;
+  width: 2em;
+  height: 2em;
+  vertical-align: top;
+  fill: var(--color-white);
+}
+
+.playlist-text .icon {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  bottom: 10px;
+  right: 10px;
+}
 
 /* ARTIFACT LIBRARY */
 .artifact-library-grid-item {
@@ -526,6 +538,5 @@ body {
   font-style: var(--main-font-type);
   font-size: var(--p-font-size-smaller);
 }
-
 
 /* FAMOUS FILM LOCATION */
