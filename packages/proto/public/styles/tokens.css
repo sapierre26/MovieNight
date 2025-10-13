@@ -10,8 +10,12 @@
   --main-font-weight: 400;
   --main-font-type: normal;
 
+  --main-alternative-font-family: fira-sans-condensed-2, sans-serif;
+  --main-alternative-font-weight: 700;
+
   --sub-font-family: vesper-libre, sans-serif;
 
+  --h1-font-size: 30px;
   --h2-font-size: 25px;
   --h3-font-size: 20px;
   --p-font-size: 17px;
