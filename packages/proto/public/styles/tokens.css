@@ -20,4 +20,11 @@
   --h3-font-size: 20px;
   --p-font-size: 17px;
   --p-font-size-smaller: 15px;
+
+  /* SPACING */
+  --margin-for-body: 32px;
+  --margin-zero: 0px;
+
+  --padding-body: 32px;
+  --padding-insider: 20px;
 }

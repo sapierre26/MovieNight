@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: var(--margin-zero);
   padding: 0;
 }
 
@@ -93,27 +93,6 @@ body {
   object-fit: cover;
 }
 
-@keyframes popular-movies-out-now {
-  0% {
-    transform: translateX(0);
-  }
-  33% {
-    transform: translateX(0);
-  }
-  40% {
-    transform: translateX(-100vw);
-  }
-  73% {
-    transform: translateX(-100vw);
-  }
-  80% {
-    transform: translateX(-200vw);
-  }
-  100% {
-    transform: translateX(-200vw);
-  }
-}
-
 .footer {
   display: flex;
   align-items: center;
@@ -129,9 +108,10 @@ body {
   font-style: var(--main-font-type);
 }
 
+
 /* HOME */
 .home-page {
-  padding: 20px;
+  padding: var(--padding-insider);
 }
 
 .theaters-near-you h2,
@@ -162,6 +142,7 @@ body {
   height: 350px;
 } */
 
+
 /* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
 .out-now-grid,
 .movie-library-grid,
@@ -170,7 +151,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 2rem;
-  padding: 32px;
+  padding: var(--padding-body);
   justify-content: center;
 }
 
@@ -248,6 +229,7 @@ body {
   transform: scale(1.03);
 }
 
+
 /* MOVIES OUT NOW */
 .buttons {
   display: flex;
@@ -257,8 +239,8 @@ body {
 /* MOVIES OUT NOW ITEM TEMPLATE */
 .movie-bio-background {
   background-color: var(--color-main-background);
-  margin: 32px;
-  padding: 20px;
+  margin: var(--margin-for-body);
+  padding: var(--padding-insider);
 }
 
 .movie-bio-background h1 {
@@ -280,7 +262,7 @@ body {
 
 .theater-item {
   margin-top: 25px;
-  padding: 20px;
+  padding: var(--padding-insider);
   height: 150px;
   border: 1px solid var(--color-white);
 }
@@ -325,12 +307,13 @@ body {
   transform: scale(1.03);
 }
 
+
 /* MOVIE LIBRARY */
 .sub-nav-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: var(--padding-body);
   background-color: var(--color-main-background);
 }
 
@@ -405,8 +388,10 @@ body {
   font-size: var(--p-font-size);
 }
 
+
 /* THEATERS */
 /* THEATERS ITEM TEMPLATE */
+
 
 /* MUSIC LIBRARY */
 .soundtrack-library-grid-item {
@@ -433,12 +418,12 @@ body {
 }
 /* MUSIC LIBRARY ITEM TEMPLATE */
 .playlist-bio {
-  margin: 32px;
+  margin: var(--margin-for-body);
 }
 
 .playlist-heading {
   background-color: var(--color-main-background);
-  padding: 20px;
+  padding: var(--padding-insider);
 }
 
 .playlist-heading h1 {
@@ -459,7 +444,7 @@ body {
 }
 
 .playlist {
-  margin-top: 32px;
+  margin-top: var(--margin-for-body);
 }
 
 .playlist-item {
@@ -480,7 +465,7 @@ body {
   flex: 1;
   position: relative;
   background-color: var(--color-main-background);
-  padding: 20px;
+  padding: var(--padding-insider);
 }
 
 .playlist-text h3 {
@@ -515,6 +500,7 @@ body {
   right: 10px;
 }
 
+
 /* ARTIFACT LIBRARY */
 .artifact-library-grid-item {
   display: flex;
@@ -538,5 +524,6 @@ body {
   font-style: var(--main-font-type);
   font-size: var(--p-font-size-smaller);
 }
+
 
 /* FAMOUS FILM LOCATION */
