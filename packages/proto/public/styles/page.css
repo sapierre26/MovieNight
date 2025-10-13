@@ -73,23 +73,22 @@ body {
 }
 
 .popular-movies-out-now {
-  display: flex;
+  width: 100%;
+  height: 400px;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 33vw;
 }
 
 .background-slide {
-  display: flex;
-  flex-shrink: 0;
   width: 100%;
   height: 100%;
-  animation: popular-movies-out-now fade 20s infinite;
+  position: absolute;
+  transition: opacity 1.5s ease-in-out;
 }
 
 .background-slide img {
-  width: 50%;
+  display: block;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
