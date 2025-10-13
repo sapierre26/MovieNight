@@ -261,7 +261,7 @@ body {
 /* MOVIES OUT NOW ITEM TEMPLATE */
 .movie-bio-background {
   background-color: var(--color-main-background);
-  margin: 50px;
+  margin: 32px;
   padding: 20px;
 }
 
@@ -415,7 +415,6 @@ body {
 
 
 /* MUSIC LIBRARY */
-/* MUSIC LIBRARY ITEM TEMPLATE */
 .soundtrack-library-grid-item {
   display: flex;
   flex: 1;
@@ -438,6 +437,72 @@ body {
   font-style: var(--main-font-type);
   font-size: var(--p-font-size-smaller);
 }
+/* MUSIC LIBRARY ITEM TEMPLATE */
+.playlist-bio {
+  margin: 32px;
+}
+
+.playlist-heading {
+  background-color: var(--color-main-background);
+  padding: 20px;
+}
+
+.playlist-heading h1 {
+  color: var(--color-white);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h1-font-size);
+}
+
+.playlist-heading h2, .playlist-text h2 {
+  color: var(--color-white);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h2-font-size);
+}
+
+.playlist {
+  margin-top: 32px;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.playlist-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playlist-text {
+  flex: 1;
+  background-color: var(--color-main-background);
+  padding: 20px;
+}
+
+.playlist-text h3 {
+  color: var(--color-white);
+  font-family: var(--main-alternative-font-family);
+  font-weight: var(--main-alternative-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h3-font-size);
+}
+
+.playlist-text p {
+  color: var(--color-white);
+  font-family: var(--main-alternative-font-family);
+  font-weight: var(--main-alternative-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--p-font-size);
+}
+
 
 /* ARTIFACT LIBRARY */
 .artifact-library-grid-item {
