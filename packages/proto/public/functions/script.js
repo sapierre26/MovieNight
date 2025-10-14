@@ -16,3 +16,24 @@ function slidesBanner() {
     backgroundSlides[slideIndex - 1].style.display = "block";
     setTimeout(slidesBanner, 10000); // changes the image every 10 seconds
 }
+
+// HORIZONTAL SLIDER
+let scrollContainer = document.querySelector(".horizontal-slider-gallery");
+let backButton = document.querySelector(".left-arrow");
+let forwardButton = document.querySelector('.right-arrow');
+const scrollAmount = 900;
+
+forwardButton.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+
+backButton.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+scrollContainer.addEventListener("scroll", () => {
+    const limitBackButton = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    backButton.style.display = scrollContainer.scrollLeft > 0 ? "flex" : "none"; // show left arrow after a scroll right happens
+    forwardButton.style.display = scrollContainer.scrollLeft >= limitBackButton - 5 ? "none" : "flex"; // hide right arrow when done scrolling
+});

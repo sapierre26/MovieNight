@@ -27,4 +27,10 @@
 
   --padding-body: 32px;
   --padding-insider: 20px;
+
+  /* SIZING */
+  --width-horizontal-slider-container: 1400px;
+
+  --width-slider-imgs: 200px;
+  --height-slider-imgs: 316px;
 }

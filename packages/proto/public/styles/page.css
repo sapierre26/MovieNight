@@ -111,6 +111,7 @@ body {
 
 /* HOME */
 .home-page {
+  margin: var(--margin-for-body);
   padding: var(--padding-insider);
 }
 
@@ -137,10 +138,74 @@ body {
   font-size: var(--h3-font-size);
 }
 
-/* .horizontal-slider img {
-  width: 250px;
-  height: 350px;
-} */
+.horizontal-slider-gallery-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.horizontal-slider-gallery-wrap button {
+  border-radius: 30px;
+}
+
+.horizontal-slider-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  width: var(--width-horizontal-slider-container);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.horizontal-slider-gallery div {
+  display: flex;
+  gap: 1rem;
+}
+
+.horizontal-slider-gallery div span {
+  flex: 0 0 auto;
+}
+
+.horizontal-slider-gallery div img {
+  width: var(--width-slider-imgs);
+  height: var(--height-slider-imgs);
+  object-fit: cover;
+}
+
+.horizontal-slider-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-sub-background);
+  color: var(--color-white);
+  font-size: var(--h3-font-size);
+  border: none;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: var(--color-white);
+  color: var(--color-sub-background)
+}
+
+.left-arrow {
+  display: none;
+  position: absolute;
+  left: 10px
+}
+
+.right-arrow {
+  position: absolute;
+  right: 10px;
+}
 
 
 /* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
