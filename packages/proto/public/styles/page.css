@@ -108,7 +108,6 @@ body {
   font-style: var(--main-font-type);
 }
 
-
 /* HOME */
 .home-page {
   margin: var(--margin-for-body);
@@ -136,6 +135,29 @@ body {
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
   font-size: var(--h3-font-size);
+}
+
+.theaters-near-you-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.theaters-near-you-list-item {
+  padding: var(--padding-insider);
+  width: 500px;
+  height: auto;
+  border: 2px solid var(--color-main-background);
+}
+
+.theaters-near-you-list-item a {
+  text-decoration: none;
+  color: var(--color-sub-background);
+  font-family: var(--sub-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--p-font-size);
 }
 
 .horizontal-slider-gallery-wrap {
@@ -193,20 +215,19 @@ body {
 
 .arrow:hover {
   background-color: var(--color-white);
-  color: var(--color-sub-background)
+  color: var(--color-sub-background);
 }
 
 .left-arrow {
   display: none;
   position: absolute;
-  left: 10px
+  left: 0px;
 }
 
 .right-arrow {
   position: absolute;
-  right: 10px;
+  right: 0px;
 }
-
 
 /* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
 .out-now-grid,
@@ -294,7 +315,6 @@ body {
   transform: scale(1.03);
 }
 
-
 /* MOVIES OUT NOW */
 .buttons {
   display: flex;
@@ -328,7 +348,8 @@ body {
 .theater-item {
   margin-top: 25px;
   padding: var(--padding-insider);
-  height: 150px;
+  width: auto;
+  height: auto;
   border: 1px solid var(--color-white);
 }
 
@@ -371,7 +392,6 @@ body {
   text-decoration: underline;
   transform: scale(1.03);
 }
-
 
 /* MOVIE LIBRARY */
 .sub-nav-bar {
@@ -453,10 +473,8 @@ body {
   font-size: var(--p-font-size);
 }
 
-
 /* THEATERS */
 /* THEATERS ITEM TEMPLATE */
-
 
 /* MUSIC LIBRARY */
 .soundtrack-library-grid-item {
@@ -565,7 +583,6 @@ body {
   right: 10px;
 }
 
-
 /* ARTIFACT LIBRARY */
 .artifact-library-grid-item {
   display: flex;
@@ -589,6 +606,5 @@ body {
   font-style: var(--main-font-type);
   font-size: var(--p-font-size-smaller);
 }
-
 
 /* FAMOUS FILM LOCATION */
