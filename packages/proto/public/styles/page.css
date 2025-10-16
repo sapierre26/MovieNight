@@ -148,7 +148,7 @@ body {
   padding: var(--padding-insider);
   width: 500px;
   height: auto;
-  border: 2px solid var(--color-main-background);
+  border: 3px solid var(--color-main-background);
 }
 
 .theaters-near-you-list-item a {
@@ -474,6 +474,49 @@ body {
 }
 
 /* THEATERS */
+.theaters-list-background {
+  background-color: var(--color-main-background);
+  margin: var(--margin-for-body);
+  padding: var(--padding-insider);
+}
+
+.theater-list-item {
+  margin-top: 25px;
+  padding: var(--padding-insider);
+  width: auto;
+  height: auto;
+  border: 1px solid var(--color-white);
+}
+
+.theater-list-item h2 {
+  color: var(--color-white);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h2-font-size);
+}
+
+.theater-list-item h3 {
+  color: var(--color-white);
+  font-family: var(--main-alternative-font-family);
+  font-weight: var(--main-alternative-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h3-font-size);
+}
+
+.theaters-gallery {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  width: auto;
+  height: auto;
+}
+
+.theaters-gallery img {
+  width: var(--width-theater-imgs);
+  height: var(--height-theater-imgs);
+  object-fit: cover;
+}
 /* THEATERS ITEM TEMPLATE */
 
 /* MUSIC LIBRARY */
