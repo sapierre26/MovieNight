@@ -39,3 +39,6 @@ document.querySelectorAll(".horizontal-slider-gallery-wrap").forEach((slider) =>
         forwardButton.style.display = scrollContainer.scrollLeft >= limitBackButton - 5 ? "none" : "flex"; // hide right arrow when done scrolling
     });
 });
+
+// DARK AND LIGHT MODE SWITCH
+

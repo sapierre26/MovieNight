@@ -4,7 +4,6 @@
   --color-sub-background: #6f3132;
   --color-white: #ffffff;
 
-
   /* FONTS */
   --main-font-family: fira-sans-condensed, sans-serif;
   --main-font-weight: 400;
@@ -36,4 +35,10 @@
 
   --width-theater-imgs: 125px;
   --height-theater-imgs: 197.5px;
+}
+
+body.dark-mode {
+  --color-main-background: #6f3132;
+  --color-sub-background: #ffffff;
+  --color-white: #4c2e2e;
 }
