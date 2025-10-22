@@ -31,10 +31,10 @@ body {
   align-items: center;
   padding: 0 16px;
   line-height: 70px;
-  color: var(--color-white);
+  color: var(--color-main-support);
   text-align: center;
   text-decoration: none;
-  font-size: 17px;
+  font-size: var(--p-font-size);
   height: 100%;
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
@@ -43,7 +43,7 @@ body {
 
 .main-nav-bar a:hover {
   background-color: var(--color-sub-background);
-  color: var(--color-white);
+  color: var(--color-main-support);
 }
 
 .main-nav-bar .search-bar {
@@ -53,7 +53,7 @@ body {
 
 .main-nav-bar input[type="text"] {
   padding: 8px 10px;
-  font-size: 17px;
+  font-size: var(--p-font-size);
   border: none;
   border-radius: 4px;
 }
@@ -68,25 +68,63 @@ body {
 }
 
 .main-nav-bar .search-bar button:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-main-support);
   color: var(--color-sub-background);
   border-radius: 4px;
 }
 
-input[type="checkbox"]::before {
-  content: "";
-  position: absolute;
-  width: 100vw;
-  height: 100vw;
-  background-color: var(--color-main-background);
-  z-index: -1;
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
 }
 
-label[for="switch"] {
-  width: 200px;
-  height: 80px;
-  background-color: var(--color-white);
-  
+.toggle-switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch-slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.toggle-switch-slider::before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked+.toggle-switch-slider {
+  background-color: #66bb6a;
+}
+
+input:checked+.toggle-switch-slider::before {
+  transform: translateX(26px);
+}
+
+.toggle-switch-slider.round {
+  border-radius: 34px;
+}
+
+.toggle-switch-slider.round::before {
+  border-radius: 50%;
 }
 
 .popular-movies-out-now {
@@ -119,7 +157,7 @@ label[for="switch"] {
 }
 
 .footer p {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -136,7 +174,7 @@ label[for="switch"] {
 .coming-soon h2,
 .goat h2 {
   margin-bottom: 5px;
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -147,7 +185,7 @@ label[for="switch"] {
 .movies-out-now h3,
 .goat h3 {
   margin-top: 5px;
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -165,13 +203,13 @@ label[for="switch"] {
   padding: var(--padding-insider);
   width: 500px;
   height: auto;
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .theaters-near-you-list-item a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -225,14 +263,14 @@ label[for="switch"] {
   width: 50px;
   height: 50px;
   background-color: var(--color-sub-background);
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-size: var(--h3-font-size);
   border: none;
   cursor: pointer;
 }
 
 .arrow:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-main-support);
   color: var(--color-sub-background);
 }
 
@@ -270,8 +308,8 @@ label[for="switch"] {
   width: 250px;
   height: auto;
   background-color: var(--color-main-background);
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .out-now-grid-item-img img,
@@ -286,7 +324,7 @@ label[for="switch"] {
 .movie-library-grid-item-text p,
 .soundtrack-library-grid-item-text p,
 .artifact-library-grid-item-text p {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -304,7 +342,7 @@ label[for="switch"] {
 .square {
   width: 20px;
   height: 20px;
-  background-color: var(--color-white);
+  background-color: var(--color-main-support);
 }
 
 .buttons button,
@@ -314,7 +352,7 @@ label[for="switch"] {
   align-items: center;
   justify-content: center;
   background-color: var(--color-sub-background);
-  color: var(--color-white);
+  color: var(--color-main-support);
   text-align: center;
   text-decoration: none;
   width: 200px;
@@ -323,8 +361,8 @@ label[for="switch"] {
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
   font-size: var(--p-font-size);
-  border: 3px solid var(--color-sub-background);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-sub-background);
+  border-radius: var(--border-radius-content);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -332,7 +370,7 @@ label[for="switch"] {
 .buttons button:hover,
 .movie-library-grid-item button:hover,
 .soundtrack-library-grid-item-text button:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-main-support);
   color: var(--color-sub-background);
   text-decoration: underline;
   transform: scale(1.03);
@@ -349,12 +387,12 @@ label[for="switch"] {
   background-color: var(--color-main-background);
   margin: var(--margin-for-body);
   padding: var(--padding-insider);
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .movie-bio-background h1 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -363,7 +401,7 @@ label[for="switch"] {
 
 .movie-bio-background h2,
 .theater-item h2 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -375,12 +413,12 @@ label[for="switch"] {
   padding: var(--padding-insider);
   width: auto;
   height: auto;
-  border: 1px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .theater-item h3 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-alternative-font-family);
   font-weight: var(--main-alternative-font-weight);
   font-style: var(--main-font-type);
@@ -398,7 +436,7 @@ label[for="switch"] {
   align-items: center;
   justify-content: center;
   background-color: var(--color-sub-background);
-  color: var(--color-white);
+  color: var(--color-main-support);
   text-align: center;
   text-decoration: none;
   width: 100px;
@@ -407,14 +445,14 @@ label[for="switch"] {
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
   font-size: var(--p-font-size);
-  border: 3px solid var(--color-sub-background);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-sub-background);
+  border-radius: var(--border-radius-content);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .showing-times button:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-main-support);
   color: var(--color-sub-background);
   text-decoration: underline;
   transform: scale(1.03);
@@ -435,7 +473,7 @@ label[for="switch"] {
 
 .sub-nav-bar p {
   text-align: left;
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -456,7 +494,7 @@ label[for="switch"] {
   justify-content: center;
   padding: 0 16px;
   background-color: var(--color-sub-background);
-  color: var(--color-white);
+  color: var(--color-main-support);
   text-align: center;
   text-decoration: none;
   width: 145px;
@@ -465,12 +503,12 @@ label[for="switch"] {
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
-  border: 3px solid var(--color-sub-background);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-sub-background);
+  border-radius: var(--border-radius-content);
 }
 
 .sub-nav-bar-links a:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-main-support);
   color: var(--color-sub-background);
 }
 
@@ -483,8 +521,8 @@ label[for="switch"] {
   width: 250px;
   height: 400px;
   background-color: var(--color-main-background);
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 /* MOVIE LIBRARY ITEM TEMPLATE */
 .movie-bio-background img {
@@ -497,7 +535,7 @@ label[for="switch"] {
 }
 
 .movie-bio-text p {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-alternative-font-family);
   font-weight: var(--main-alternative-font-weight);
   font-style: var(--main-font-type);
@@ -516,12 +554,12 @@ label[for="switch"] {
   padding: var(--padding-insider);
   width: auto;
   height: auto;
-  border: 1px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .theater-list-item h2 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -529,7 +567,7 @@ label[for="switch"] {
 }
 
 .theater-list-item h3 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-alternative-font-family);
   font-weight: var(--main-alternative-font-weight);
   font-style: var(--main-font-type);
@@ -563,8 +601,8 @@ label[for="switch"] {
   width: 250px;
   height: auto;
   background-color: var(--color-main-background);
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .soundtrack-library-grid-item-text {
@@ -572,7 +610,7 @@ label[for="switch"] {
 }
 
 #runtime {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -586,12 +624,12 @@ label[for="switch"] {
 .playlist-heading {
   background-color: var(--color-main-background);
   padding: var(--padding-insider);
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .playlist-heading h1 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -600,7 +638,7 @@ label[for="switch"] {
 
 .playlist-heading h2,
 .playlist-text h2 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
@@ -623,8 +661,8 @@ label[for="switch"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-left-radius: var(--border-radius-content);
+  border-bottom-left-radius: var(--border-radius-content);
 }
 
 .playlist-text {
@@ -632,13 +670,13 @@ label[for="switch"] {
   position: relative;
   background-color: var(--color-main-background);
   padding: var(--padding-insider);
-  border: 1px solid var(--color-white);
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border: 1px solid var(--color-main-support);
+  border-top-right-radius: var(--border-radius-content);
+  border-bottom-right-radius: var(--border-radius-content);
 }
 
 .playlist-text h3 {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-alternative-font-family);
   font-weight: var(--main-alternative-font-weight);
   font-style: var(--main-font-type);
@@ -646,7 +684,7 @@ label[for="switch"] {
 }
 
 .playlist-text p {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--main-alternative-font-family);
   font-weight: var(--main-alternative-font-weight);
   font-style: var(--main-font-type);
@@ -658,7 +696,7 @@ label[for="switch"] {
   width: 2em;
   height: 2em;
   vertical-align: top;
-  fill: var(--color-white);
+  fill: var(--color-main-support);
 }
 
 .playlist-text .icon {
@@ -680,8 +718,8 @@ label[for="switch"] {
   width: 250px;
   height: auto;
   background-color: var(--color-main-background);
-  border: 3px solid var(--color-white);
-  border-radius: 15px;
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
 }
 
 .artifact-library-grid-item-text {
@@ -689,7 +727,7 @@ label[for="switch"] {
 }
 
 #artifact-description {
-  color: var(--color-white);
+  color: var(--color-main-support);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);

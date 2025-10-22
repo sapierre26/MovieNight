@@ -2,7 +2,7 @@
   /* COLORS */
   --color-main-background: #4c2e2e;
   --color-sub-background: #6f3132;
-  --color-white: #ffffff;
+  --color-main-support: #ffffff;
 
   /* FONTS */
   --main-font-family: fira-sans-condensed, sans-serif;
@@ -35,10 +35,12 @@
 
   --width-theater-imgs: 125px;
   --height-theater-imgs: 197.5px;
+
+  --border-thickness-content: 1px;
+  --border-radius-content: 15px;
 }
 
-body.dark-mode {
-  --color-main-background: #6f3132;
-  --color-sub-background: #ffffff;
-  --color-white: #4c2e2e;
+[theme="light"] {
+  --color-main-background: #ffffff;
+  --color-main-support: #4c2e2e;
 }

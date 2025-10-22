@@ -41,4 +41,13 @@ document.querySelectorAll(".horizontal-slider-gallery-wrap").forEach((slider) =>
 });
 
 // DARK AND LIGHT MODE SWITCH
+const toggle = document.querySelector('.toggle-switch input[type="checkbox"]');
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('theme', 'light');
+    } else {
+        document.documentElement.setAttribute('theme', 'dark');
+    }
+}
 
+toggle.addEventListener('change', switchTheme, false);
