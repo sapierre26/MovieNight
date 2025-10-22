@@ -101,7 +101,7 @@ body {
 }
 
 .toggle-switch-slider::before {
-  background-color: #fff;
+  background-color: var(--color-main-support);
   bottom: 4px;
   content: "";
   height: 26px;
@@ -109,10 +109,6 @@ body {
   position: absolute;
   transition: .4s;
   width: 26px;
-}
-
-input:checked+.toggle-switch-slider {
-  background-color: #66bb6a;
 }
 
 input:checked+.toggle-switch-slider::before {
