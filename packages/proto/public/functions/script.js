@@ -42,11 +42,18 @@ document.querySelectorAll(".horizontal-slider-gallery-wrap").forEach((slider) =>
 
 // DARK AND LIGHT MODE SWITCH
 const toggle = document.querySelector('.toggle-switch input[type="checkbox"]');
+const logo = document.querySelector('#logo');
+const label = document.querySelector('#toggle-switch-label');
+
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('theme', 'light');
+        logo.src = 'images/movie-night-logo-black.png';
+        label.textContent = 'DARK MODE';
     } else {
         document.documentElement.setAttribute('theme', 'dark');
+        logo.src = 'images/movie-night-logo-white.png';
+        label.textContent = 'LIGHT MODE';
     }
 }
 

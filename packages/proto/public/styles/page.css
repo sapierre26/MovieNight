@@ -54,7 +54,7 @@ body {
 .main-nav-bar input[type="text"] {
   padding: 8px 10px;
   font-size: var(--p-font-size);
-  border: none;
+  border: 1px solid var(--color-sub-support);
   border-radius: 4px;
 }
 
@@ -62,7 +62,7 @@ body {
   padding: 8px 10px;
   background-color: var(--color-sub-background);
   font-size: 17px;
-  border: none;
+  border: 1px solid var(--color-sub-support);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -76,6 +76,9 @@ body {
 .toggle-switch-container {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 20px;
 }
 
 .toggle-switch {
@@ -97,7 +100,8 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  transition: .4s;
+  transition: 0.4s;
+  border: 1px solid var(--color-sub-support);
 }
 
 .toggle-switch-slider::before {
@@ -107,11 +111,11 @@ body {
   height: 26px;
   left: 4px;
   position: absolute;
-  transition: .4s;
+  transition: 0.4s;
   width: 26px;
 }
 
-input:checked+.toggle-switch-slider::before {
+input:checked + .toggle-switch-slider::before {
   transform: translateX(26px);
 }
 
@@ -121,6 +125,14 @@ input:checked+.toggle-switch-slider::before {
 
 .toggle-switch-slider.round::before {
   border-radius: 50%;
+}
+
+#toggle-switch-label {
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--h3-font-type);
+  user-select: none;
 }
 
 .popular-movies-out-now {
@@ -259,7 +271,7 @@ input:checked+.toggle-switch-slider::before {
   width: 50px;
   height: 50px;
   background-color: var(--color-sub-background);
-  color: var(--color-main-support);
+  color: var(--color-sub-support);
   font-size: var(--h3-font-size);
   border: none;
   cursor: pointer;
