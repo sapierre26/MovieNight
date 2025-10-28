@@ -3,6 +3,7 @@
   <head>
     <title>Movie Night</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="/styles/tokens.css">
@@ -51,17 +52,19 @@
     
 
     <!--BODY-->
-    <div class="film-map">
-      <img src="#world-map" alt="World Map">
-
-      <svg class="icon"><use href="icons/locations.svg#icon-locations-pins" /></svg>
-    </div>
+    <div id="film-map"></div>
 
     <!--FOOTER-->
     <footer class="footer">
       <p>© 2025 | Created by Sanaia Pierre | Dynamic Web Development</p>
     </footer>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="functions/script.js"></script>
   </body>
 </html>
+
+
+      <!-- <img src="#world-map" alt="World Map"> -->
+
+      <!-- <svg class="icon"><use href="icons/locations.svg#icon-locations-pins" /></svg> -->

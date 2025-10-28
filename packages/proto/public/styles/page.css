@@ -390,7 +390,7 @@ input:checked + .toggle-switch-slider::before {
   flex-direction: column;
   row-gap: 1rem;
 }
-/* MOVIES OUT NOW ITEM TEMPLATE */
+/* MOVIES OUT NOW & THEATER ITEM */
 .movie-bio-background {
   background-color: var(--color-main-background);
   margin: var(--margin-for-body);
@@ -532,7 +532,7 @@ input:checked + .toggle-switch-slider::before {
   border: var(--border-thickness-content) solid var(--color-main-support);
   border-radius: var(--border-radius-content);
 }
-/* MOVIE LIBRARY ITEM TEMPLATE */
+/* MOVIE LIBRARY ITEM, MOVIES OUT NOW, THEATER ITEM */
 .movie-bio-background img {
   width: 1000px;
   height: auto;
@@ -595,7 +595,6 @@ input:checked + .toggle-switch-slider::before {
   height: var(--height-theater-imgs);
   object-fit: cover;
 }
-/* THEATERS ITEM TEMPLATE */
 
 /* MUSIC LIBRARY */
 .soundtrack-library-grid-item {
@@ -667,7 +666,9 @@ input:checked + .toggle-switch-slider::before {
 .playlist-item img {
   display: block;
   width: 100%;
+  max-width: 500px;
   height: 100%;
+  max-height: 500px;
   object-fit: cover;
   border-top-left-radius: var(--border-radius-content);
   border-bottom-left-radius: var(--border-radius-content);
@@ -699,18 +700,13 @@ input:checked + .toggle-switch-slider::before {
   font-size: var(--p-font-size);
 }
 
-.svg.icon {
+#play-button {
   display: inline;
-  width: 2em;
-  height: 2em;
+  width: 64px;
+  height: 64px;
   vertical-align: top;
   fill: var(--color-main-support);
-}
-
-.playlist-text .icon {
   position: absolute;
-  width: 110px;
-  height: 110px;
   bottom: 10px;
   right: 10px;
 }
@@ -743,3 +739,46 @@ input:checked + .toggle-switch-slider::before {
 }
 
 /* FAMOUS FILM LOCATION */
+#film-map {
+  display: block;
+  margin: var(--margin-for-body) auto;
+  position: relative;
+  width: calc(100% - (var(--margin-for-body) * 2));
+  height: 600px;
+  overflow: hidden;
+  box-sizing: border-box; 
+  border-radius: var(--border-radius-content);
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--color-main-background);
+  font-family: var(--main-font-family);
+  font-size: var(--p-font-size-smaller);
+}
+
+.leaflet-popup-content {
+  color: var(--color-main-support);
+  margin: 10px 15px;
+  line-height: 1.5;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--color-main-background);
+}
+
+/* .leaflet-marker-icon {
+  background-color: var(--color-sub-background);
+  color: var(--color-button-text);
+  border: var(--border-thickness-content) solid var(--color-sub-background);
+  border-radius: var(--border-radius-content);
+  transition: transform 0.2s ease;
+} */
+
+.icon-marker svg path {
+  fill: var(--color-main-background);
+  transition: transform 0.2s ease;
+}
+
+.icon-marker:hover svg path {
+  transform: scale(1.03);
+}
