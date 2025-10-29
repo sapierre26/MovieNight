@@ -746,7 +746,7 @@ input:checked + .toggle-switch-slider::before {
   width: calc(100% - (var(--margin-for-body) * 2));
   height: 600px;
   overflow: hidden;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border-radius: var(--border-radius-content);
 }
 

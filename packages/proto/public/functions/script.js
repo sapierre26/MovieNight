@@ -48,12 +48,34 @@ document
   });
 
 // DARK AND LIGHT MODE SWITCH
+const toggleContainer = document.querySelector(".toggle-switch-container");
 const toggle = document.querySelector('.toggle-switch input[type="checkbox"]');
 const logo = document.querySelector("#logo");
 const label = document.querySelector("#toggle-switch-label");
 
-function switchTheme(e) {
-  if (e.target.checked) {
+function relayEvent(event) {
+  // event.stopPropagation();
+
+  const customEvent = new CustomEvent("dark-mode:toggle", {
+    bubbles: true,
+    detail: { checked: event },
+  });
+  toggleContainer.dispatchEvent(customEvent);
+}
+
+toggleContainer.addEventListener("click", (e) => {
+  if (e.target.tagName !== "INPUT") {
+    e.preventDefault();
+    toggle.checked = !toggle.checked;
+  }
+
+  relayEvent(toggle.checked);
+});
+
+document.body.addEventListener("dark-mode:toggle", (e) => {
+  const isChecked = e.detail.checked;
+
+  if (isChecked) {
     document.documentElement.setAttribute("theme", "light");
     logo.src = "images/movie-night-logo-black.png";
     label.textContent = "DARK MODE";
@@ -62,9 +84,7 @@ function switchTheme(e) {
     logo.src = "images/movie-night-logo-white.png";
     label.textContent = "LIGHT MODE";
   }
-}
-
-toggle.addEventListener("change", switchTheme, false);
+});
 
 // FILM MAP
 const map = L.map("film-map", {
