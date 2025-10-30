@@ -2,18 +2,29 @@
 <html lang="en">
   <head>
     <title>Movie Night</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" />
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/page.css">
-    <link rel="stylesheet" href="/styles/tokens.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.typekit.net/hdy8gyr.css">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="utf-8"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/hdy8gyr.css" />
   </head>
 
   <body>
     <!--HEADER-->
     <div class="main-nav-bar">
-      <img id="logo" src="images/movie-night-logo-white.png" alt="Movie Night Logo">
+      <img
+        id="logo"
+        src="images/movie-night-logo-white.png"
+        alt="Movie Night Logo"
+      />
 
       <a href="index.html">Home</a>
       <a href="movies-out-now.html">Movies Out Now</a>
@@ -25,7 +36,7 @@
 
       <div class="search-bar">
         <form>
-          <input type="text" placeholder="Search..." name="search">
+          <input type="text" placeholder="Search..." name="search" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
@@ -33,85 +44,88 @@
 
     <div class="toggle-switch-container">
       <label class="toggle-switch" for="checkbox">
-        <input type="checkbox" autocomplete="off" id="checkbox">
+        <input type="checkbox" autocomplete="off" id="checkbox" />
         <div class="round toggle-switch-slider"></div>
       </label>
       <span id="toggle-switch-label">LIGHT MODE</span>
     </div>
-    
-    
+
     <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
     <div class="popular-movies-out-now">
-      <div class="background-slide"><img src="images/the-conjuring-for-slides.jpg" alt="The Conjuring Movie Poster"></div>
-      <div class="background-slide"><img src="images/him-for-slides.png" alt="Him Movie Poster"></div>
-      <div class="background-slide"><img src="images/tron-ares-for-slides.jpeg" alt="Tron: Ares Movie Poster"></div>
-      <div class="background-slide"><img src="images/weapons-for-slides.jpg" alt="Weapons Movie Poster"></div>
-      <div class="background-slide"><img src="images/one-battle-after-another-for-slides.png" alt="One Battle After Another Movie Poster"></div>
-      <div class="background-slide"><img src="images/star-wars-for-slides.avif" alt="Star Wars Movie Poster"></div>
+      <div class="background-slide">
+        <img
+          src="images/the-conjuring-for-slides.jpg"
+          alt="The Conjuring Movie Poster"
+        />
+      </div>
+      <div class="background-slide">
+        <img src="images/him-for-slides.png" alt="Him Movie Poster" />
+      </div>
+      <div class="background-slide">
+        <img
+          src="images/tron-ares-for-slides.jpeg"
+          alt="Tron: Ares Movie Poster"
+        />
+      </div>
+      <div class="background-slide">
+        <img src="images/weapons-for-slides.jpg" alt="Weapons Movie Poster" />
+      </div>
+      <div class="background-slide">
+        <img
+          src="images/one-battle-after-another-for-slides.png"
+          alt="One Battle After Another Movie Poster"
+        />
+      </div>
+      <div class="background-slide">
+        <img
+          src="images/star-wars-for-slides.avif"
+          alt="Star Wars Movie Poster"
+        />
+      </div>
     </div>
-
 
     <!--BODY-->
     <div class="soundtrack-library-grid">
       <soundtrack-library-grid-item
-        img-src="movie-flyer-images-horizontal/star-wars.png"
+        img-src="/movie-flyer-images-horizontal/star-wars.png"
         soundtrack-name="Star Wars: A New Hope (Original Motion Pictures)"
         runtime="1 hr 15 min"
-        href="soundtrack-item.html">
-        Star Wars: A New Hope
+        href="soundtrack-item.html"
+      >
       </soundtrack-library-grid-item>
-      <!-- <div class="soundtrack-library-grid-item">
-        <div class="soundtrack-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div>
 
-          <div class="soundtrack-library-grid-item-text">
-              <p>Star Wars: A New Hope (Original Motion Pictures)</p>
-              <p id="runtime">1 hr 15 min</p>
-              <a href="soundtrack-item.html"><button>Listen to Full Playlist</button></a>
-          </div>
-      </div>
+      <soundtrack-library-grid-item
+        img-src="/movie-flyer-images-horizontal/star-wars.png"
+        soundtrack-name="The BodyGuard (Original Soundtrack Album)"
+        runtime="57 min 44 sec"
+        href="soundtrack-item.html"
+      >
+      </soundtrack-library-grid-item>
 
-      <div class="soundtrack-library-grid-item">
-        <div class="soundtrack-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div>
+      <soundtrack-library-grid-item
+        img-src="/movie-flyer-images-horizontal/star-wars.png"
+        soundtrack-name="Romeo + Juliet (Music from the Motion Picture)"
+        runtime="2 hr"
+        href="soundtrack-item.html"
+      >
+      </soundtrack-library-grid-item>
 
-          <div class="soundtrack-library-grid-item-text">
-              <p>Star Wars: A New Hope (Original Motion Pictures)</p>
-              <p id="runtime">1 hr 15 min</p>
-              <a href="soundtrack-item.html"><button>Listen to Full Playlist</button></a>
-          </div>
-      </div>
+      <soundtrack-library-grid-item
+        img-src="/movie-flyer-images-horizontal/star-wars.png"
+        soundtrack-name="Footloose (Music from 1984 Original Soundtrack)"
+        runtime="36 min 25 sec"
+        href="soundtrack-item.html"
+      >
+      </soundtrack-library-grid-item>
 
-      <div class="soundtrack-library-grid-item">
-        <div class="soundtrack-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div>
-
-          <div class="soundtrack-library-grid-item-text">
-              <p>Star Wars: A New Hope (Original Motion Pictures)</p>
-              <p id="runtime">1 hr 15 min</p>
-              <a href="soundtrack-item.html"><button>Listen to Full Playlist</button></a>
-          </div>
-      </div>
-
-      <div class="soundtrack-library-grid-item">
-        <div class="soundtrack-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div>
-
-          <div class="soundtrack-library-grid-item-text">
-              <p>Star Wars: A New Hope (Original Motion Pictures)</p>
-              <p id="runtime">1 hr 15 min</p>
-              <a href="soundtrack-item.html"><button>Listen to Full Playlist</button></a>
-          </div>
-      </div>
-
-      <div class="soundtrack-library-grid-item">
-        <div class="soundtrack-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div>
-
-          <div class="soundtrack-library-grid-item-text">
-              <p>Star Wars: A New Hope (Original Motion Pictures)</p>
-              <p id="runtime">1 hr 15 min</p>
-              <a href="soundtrack-item.html"><button>Listen to Full Playlist</button></a>
-          </div>
-      </div> -->
-
+      <soundtrack-library-grid-item
+        img-src="/movie-flyer-images-horizontal/star-wars.png"
+        soundtrack-name="‘Spider-Man: Across the Spider-Verse’ (soundtrack)"
+        runtime="47 min 10 sec"
+        href="soundtrack-item.html"
+      >
+      </soundtrack-library-grid-item>
     </div>
-
 
     <!--FOOTER-->
     <footer class="footer">
@@ -119,5 +133,13 @@
     </footer>
 
     <script src="functions/script.js"></script>
+    <script type="module">
+        import { define } from "@calpoly/mustang";
+        import { SoundtrackLibraryGridItemElement } from "/src/soundtrack-library-grid-item.js";
+
+        define({
+          "soundtrack-library-grid-item": SoundtrackLibraryGridItemElement
+        });
+      </script>
   </body>
 </html>
