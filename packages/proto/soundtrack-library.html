@@ -85,47 +85,8 @@
     </div>
 
     <!--BODY-->
-    <div class="soundtrack-library-grid">
-      <soundtrack-library-grid-item
-        img-src="/movie-flyer-images-horizontal/star-wars.png"
-        soundtrack-name="Star Wars: A New Hope (Original Motion Pictures)"
-        runtime="1 hr 15 min"
-        href="soundtrack-item.html"
-      >
-      </soundtrack-library-grid-item>
-
-      <soundtrack-library-grid-item
-        img-src="/movie-flyer-images-horizontal/the-bodyguard.jpg"
-        soundtrack-name="The BodyGuard (Original Soundtrack Album)"
-        runtime="57 min 44 sec"
-        href="soundtrack-item.html"
-      >
-      </soundtrack-library-grid-item>
-
-      <soundtrack-library-grid-item
-        img-src="/movie-flyer-images-horizontal/romeo-and-juliet.jpg"
-        soundtrack-name="Romeo + Juliet (Music from the Motion Picture)"
-        runtime="2 hr"
-        href="soundtrack-item.html"
-      >
-      </soundtrack-library-grid-item>
-
-      <soundtrack-library-grid-item
-        img-src="/movie-flyer-images-horizontal/footloose.jpg"
-        soundtrack-name="Footloose (Music from 1984 Original Soundtrack)"
-        runtime="36 min 25 sec"
-        href="soundtrack-item.html"
-      >
-      </soundtrack-library-grid-item>
-
-      <soundtrack-library-grid-item
-        img-src="/movie-flyer-images-horizontal/across-the-spider-verse.jpg"
-        soundtrack-name="‘Spider-Man: Across the Spider-Verse’ (soundtrack)"
-        runtime="47 min 10 sec"
-        href="soundtrack-item.html"
-      >
-      </soundtrack-library-grid-item>
-    </div>
+    <soundtrack-library-grid src="/functions/my-data.json"></soundtrack-library-grid>
+    
 
     <!--FOOTER-->
     <footer class="footer">
@@ -136,9 +97,12 @@
     <script type="module">
         import { define } from "@calpoly/mustang";
         import { SoundtrackLibraryGridItemElement } from "/src/soundtrack-library-grid-item.js";
+        import { SoundtrackLibraryGridElement } from "/src/soundtrack-library-grid.js";
+
 
         define({
-          "soundtrack-library-grid-item": SoundtrackLibraryGridItemElement
+          "soundtrack-library-grid-item": SoundtrackLibraryGridItemElement,
+          "soundtrack-library-grid": SoundtrackLibraryGridElement
         });
       </script>
   </body>

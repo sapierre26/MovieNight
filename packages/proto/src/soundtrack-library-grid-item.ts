@@ -17,18 +17,18 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
 
   override render() {
     return html`
-            <article class="soundtrack-library-grid-item">
-                <article class="soundtrack-library-grid-item-img">
-                    <img src="${this.imgSrc}" alt="${this.soundtrackName}">
-                </article>
+      <article class="soundtrack-library-grid-item">
+          <article class="soundtrack-library-grid-item-img">
+              <slot name="img-src"><img src="${this.imgSrc}" alt="${this.soundtrackName}"></slot>
+          </article>
 
-                <article class="soundtrack-library-grid-item-text">
-                    <p><slot name="soundtrack-name">${this.soundtrackName}</slot></p>
-                    <p id="runtime"><slot name="duration">${this.runtime}</slot></p>
-                    <a href="${this.href}"><button><slot name="soundtrack-songs">Listen to Full Playlist</slot></button></a>
-                </article>
-            </article>
-        `;
+          <article class="soundtrack-library-grid-item-text">
+              <p><slot name="soundtrack-name">${this.soundtrackName}</slot></p>
+              <p id="runtime"><slot name="duration">${this.runtime}</slot></p>
+              <a href="${this.href}"><button><slot name="soundtrack-songs">Listen to Full Playlist</slot></button></a>
+          </article>
+      </article>
+  `;
   }
 
   static styles = [
@@ -92,6 +92,7 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
       .soundtrack-library-grid-item-img img {
         width: 200px;
         height: 191px;
+        object-fit: cover;
       }
 
       .soundtrack-library-grid-item-text p {
