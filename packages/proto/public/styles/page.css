@@ -295,8 +295,7 @@ input:checked + .toggle-switch-slider::before {
 
 /* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
 .out-now-grid,
-.movie-library-grid,
-.artifact-library-grid {
+.movie-library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
   gap: 2rem;
@@ -320,15 +319,14 @@ input:checked + .toggle-switch-slider::before {
 }
 
 .out-now-grid-item-img img,
-.movie-library-grid-item-img img,
-.artifact-library-grid-item-img img {
+.movie-library-grid-item-img img {
   width: 200px;
   height: 191px;
+  object-fit: cover;
 }
 
 .out-now-grid-item-text p,
-.movie-library-grid-item-text p,
-.artifact-library-grid-item-text p {
+.movie-library-grid-item-text p {
   color: var(--color-main-support);
   font-family: var(--sub-font-family);
   font-weight: var(--main-font-weight);
@@ -680,31 +678,7 @@ input:checked + .toggle-switch-slider::before {
 }
 
 /* ARTIFACT LIBRARY */
-.artifact-library-grid-item {
-  display: flex;
-  padding: var(--padding-insider);
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: auto;
-  background-color: var(--color-main-background);
-  border: var(--border-thickness-content) solid var(--color-main-support);
-  border-radius: var(--border-radius-content);
-}
 
-.artifact-library-grid-item-text {
-  width: 200px;
-}
-
-#artifact-description {
-  color: var(--color-main-support);
-  font-family: var(--sub-font-family);
-  font-weight: var(--main-font-weight);
-  font-style: var(--main-font-type);
-  font-size: var(--p-font-size-smaller);
-}
 
 /* FAMOUS FILM LOCATION */
 #film-map {

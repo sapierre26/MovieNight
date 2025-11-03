@@ -17,7 +17,7 @@ export default defineConfig({
         // sub: resolve(__dirname, 'theaters-item.html'),
         sub: resolve(__dirname, "soundtrack-library.html"),
         // sub: resolve(__dirname, 'soundtrack-library-item.html'),
-        // sub: resolve(__dirname, 'artifacts-library.html'),
+        sub: resolve(__dirname, 'artifacts-library.html'),
         // sub: resolve(__dirname, 'film-locations.html')
       },
     },
