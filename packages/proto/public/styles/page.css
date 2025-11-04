@@ -294,7 +294,6 @@ input:checked + .toggle-switch-slider::before {
 }
 
 /* MOVIES OUT NOW , MOVIE LIBRARY, SOUNDTRACK LIBRARY, ARTIFACTS LIBRARY */
-.out-now-grid,
 .movie-library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 250px);
@@ -303,29 +302,12 @@ input:checked + .toggle-switch-slider::before {
   justify-content: center;
 }
 
-.out-now-grid-item {
-  display: flex;
-  padding: var(--padding-insider);
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  width: 250px;
-  height: auto;
-  background-color: var(--color-main-background);
-  border: var(--border-thickness-content) solid var(--color-main-support);
-  border-radius: var(--border-radius-content);
-}
-
-.out-now-grid-item-img img,
 .movie-library-grid-item-img img {
   width: 200px;
   height: 191px;
   object-fit: cover;
 }
 
-.out-now-grid-item-text p,
 .movie-library-grid-item-text p {
   color: var(--color-main-support);
   font-family: var(--sub-font-family);
@@ -334,21 +316,6 @@ input:checked + .toggle-switch-slider::before {
   font-size: var(--h3-font-size);
 }
 
-.squares {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 1rem;
-  padding-bottom: 15px;
-}
-
-.square {
-  width: 20px;
-  height: 20px;
-  background-color: var(--color-main-support);
-}
-
-.buttons button,
 .movie-library-grid-item button {
   display: flex;
   align-items: center;
@@ -369,7 +336,6 @@ input:checked + .toggle-switch-slider::before {
   transition: transform 0.3s ease;
 }
 
-.buttons button:hover,
 .movie-library-grid-item button:hover {
   background-color: var(--color-button-text);
   color: var(--color-sub-background);

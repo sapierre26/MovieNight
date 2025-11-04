@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         // sub: resolve(__dirname, 'movies-out-now.html'),
-        // sub: resolve(__dirname, 'movies-out-now-item.html'),
+        sub: resolve(__dirname, 'movies-out-now-item.html'),
         // sub: resolve(__dirname, 'movie-library.html'),
         // sub: resolve(__dirname, 'movie-library-item.html'),
         // sub: resolve(__dirname, 'theaters.html'),

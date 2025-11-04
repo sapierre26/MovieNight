@@ -50,7 +50,7 @@ export class ArtifactLibraryGridElement extends LitElement {
     return html`
       <div class="artifact-library-grid">
         ${this.artifactGridItems.map((item) =>
-          this.renderArtifactLibraryGridItem(item)
+          this.renderArtifactLibraryGridItem(item),
         )}
       </div>
     `;
@@ -58,11 +58,11 @@ export class ArtifactLibraryGridElement extends LitElement {
 
   static styles = css`
     .artifact-library-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 250px);
-        gap: 2rem;
-        padding: var(--padding-body);
-        justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 250px);
+      gap: 2rem;
+      padding: var(--padding-body);
+      justify-content: center;
     }
   `;
 }
