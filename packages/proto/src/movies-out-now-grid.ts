@@ -43,8 +43,8 @@ export class MoviesOutNowGridElement extends LitElement {
         img-src="${gridItem.imgSrc}"
         out-now-name="${gridItem.outNowName}"
         squares="${gridItem.squares}"
-        seeMovieTimesButton="${gridItem.seeMovieTimesButton}"
-        watchTrailerNowButton="${gridItem.watchTrailerNowButton}"
+        see-movie-times="${gridItem.seeMovieTimesButton}"
+        watch-movie-trailer="${gridItem.watchTrailerNowButton}"
       >
       </movies-out-now-grid-item>
     `;

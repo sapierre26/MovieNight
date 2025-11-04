@@ -85,83 +85,7 @@
 
     </div>
 
-    <div class="movie-library-grid">
-      <div class="movie-library-grid-item">
-        <div class="movie-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div> 
-
-          <div class="movie-library-grid-item-text">
-              <p>Movie Name</p>
-              <div class="squares">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-              </div>
-
-              <a href="movie-library-item.html"><button>Movie Info</button></a>
-          </div>
-      </div>
-
-      <div class="movie-library-grid-item">
-        <div class="movie-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div> 
-
-          <div class="movie-library-grid-item-text">
-              <p>Movie Name</p>
-              <div class="squares">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-              </div>
-
-              <a href="movie-library-item.html"><button>Movie Info</button></a>
-          </div>
-      </div>
-
-      <div class="movie-library-grid-item">
-        <div class="movie-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div> 
-
-          <div class="movie-library-grid-item-text">
-              <p>Movie Name</p>
-              <div class="squares">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-              </div>
-
-              <a href="movie-library-item.html"><button>Movie Info</button></a>
-          </div>
-      </div>
-
-      <div class="movie-library-grid-item">
-        <div class="movie-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div> 
-
-          <div class="movie-library-grid-item-text">
-              <p>Movie Name</p>
-              <div class="squares">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-              </div>
-
-              <a href="movie-library-item.html"><button>Movie Info</button></a>
-          </div>
-      </div>
-
-      <div class="movie-library-grid-item">
-        <div class="movie-library-grid-item-img"><img src="movie-flyer-images-horizontal/star-wars.png" alt="Star Wars"></div> 
-
-          <div class="movie-library-grid-item-text">
-              <p>Movie Name</p>
-              <div class="squares">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-              </div>
-
-              <a href="movie-library-item.html"><button>Movie Info</button></a>
-          </div>
-      </div>
-
-    </div>
+    <movie-library-grid src="/functions/movie-library-data.json"></movie-library-grid>
 
 
     <!--FOOTER-->
@@ -170,5 +94,16 @@
     </footer>
 
     <script src="functions/script.js"></script>
+    <script type="module">
+        import { define } from "@calpoly/mustang";
+        import { MovieLibraryGridItemElement } from "/src/movie-library-grid-item.js";
+        import { MovieLibraryGridElement } from "/src/movie-library-grid.js";
+
+
+        define({
+          "movie-library-grid-item": MovieLibraryGridItemElement,
+          "movie-library-grid": MovieLibraryGridElement
+        });
+      </script>
   </body>
 </html>
