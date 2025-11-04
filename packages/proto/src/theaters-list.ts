@@ -54,7 +54,7 @@ export class TheatersListElement extends LitElement {
     return html`
       <div class="theaters-list">
         ${this.theatersListItems.map((item) =>
-          this.renderTheatersListItem(item)
+          this.renderTheatersListItem(item),
         )}
       </div>
     `;
@@ -62,8 +62,8 @@ export class TheatersListElement extends LitElement {
 
   static styles = css`
     .theaters-list {
-        background-color: var(--color-main-background);
-        margin: var(--margin-for-body);
+      background-color: var(--color-main-background);
+      margin: var(--margin-for-body);
     }
   `;
 }
