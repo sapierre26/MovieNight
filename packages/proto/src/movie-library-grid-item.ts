@@ -17,26 +17,26 @@ export class MovieLibraryGridItemElement extends LitElement {
 
   override render() {
     return html`
-    <article class="movie-library-grid-item">
-        <article class="movie-library-grid-item-img">
-            <slot name="img-src"><img src="${this.imgSrc}" alt="${this.movieName}"></slot>
-        </article> 
+        <article class="movie-library-grid-item">
+            <article class="movie-library-grid-item-img">
+                <slot name="img-src"><img src="${this.imgSrc}" alt="${this.movieName}"></slot>
+            </article> 
 
-        <article class="movie-library-grid-item-text">
-            <p><slot name="movie-name">${this.movieName}</slot></p>
-            <div class="squares">
-                ${Array(this.squares)
-                    .fill(0)
-                    .map(() => html`
-                        <div class="square"></div>
-                    `)
-                }
-            </div>
+            <article class="movie-library-grid-item-text">
+                <p><slot name="movie-name">${this.movieName}</slot></p>
+                <div class="squares">
+                    ${Array(this.squares)
+                        .fill(0)
+                        .map(() => html`
+                            <div class="square"></div>
+                        `)
+                    }
+                </div>
 
-            <a href="${this.movieInfoButton}"><button><slot name="movie-info">Movie Info</slot></button></a>
+                <a href="${this.movieInfoButton}"><button><slot name="movie-info">Movie Info</slot></button></a>
+            </article>
         </article>
-    </article>
-  `;
+    `;
   }
 
   static styles = [

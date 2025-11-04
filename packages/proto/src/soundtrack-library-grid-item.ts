@@ -28,7 +28,7 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
               <a href="${this.href}"><button><slot name="soundtrack-songs">Listen to Full Playlist</slot></button></a>
           </article>
       </article>
-  `;
+    `;
   }
 
   static styles = [

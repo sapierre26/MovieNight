@@ -42,7 +42,7 @@ export class MoviesOutNowGridItemElement extends LitElement {
                 </article>
             </article>
         </article>
-  `;
+    `;
   }
 
   static styles = [

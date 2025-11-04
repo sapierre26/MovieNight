@@ -13,7 +13,7 @@ export default defineConfig({
         sub: resolve(__dirname, 'movies-out-now-item.html'),
         sub: resolve(__dirname, 'movie-library.html'),
         // sub: resolve(__dirname, 'movie-library-item.html'),
-        // sub: resolve(__dirname, 'theaters.html'),
+        sub: resolve(__dirname, 'theaters.html'),
         // sub: resolve(__dirname, 'theaters-item.html'),
         sub: resolve(__dirname, "soundtrack-library.html"),
         // sub: resolve(__dirname, 'soundtrack-library-item.html'),
