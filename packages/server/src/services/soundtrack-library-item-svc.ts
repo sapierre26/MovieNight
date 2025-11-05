@@ -20,11 +20,11 @@ function index(): Promise<SoundtrackLibraryItem[]> {
   return SoundtrackLibraryItemModel.find();
 }
 
-function get(userid: String): Promise<SoundtrackLibraryItem> {
-  return SoundtrackLibraryItemModel.find({ userid })
+function get(soundtrackName: String): Promise<SoundtrackLibraryItem> {
+  return SoundtrackLibraryItemModel.find({ soundtrackName })
     .then((list) => list[0])
     .catch((err) => {
-      throw `${userid} Not Found`;
+      throw `${soundtrackName} Not Found`;
     });
 }
 

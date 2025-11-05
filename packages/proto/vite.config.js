@@ -9,16 +9,16 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        // sub: resolve(__dirname, 'movies-out-now.html'),
-        sub: resolve(__dirname, "movies-out-now-item.html"),
-        sub: resolve(__dirname, "movie-library.html"),
-        // sub: resolve(__dirname, 'movie-library-item.html'),
-        sub: resolve(__dirname, "theaters.html"),
-        // sub: resolve(__dirname, 'theaters-item.html'),
-        sub: resolve(__dirname, "soundtrack-library.html"),
-        // sub: resolve(__dirname, 'soundtrack-library-item.html'),
-        sub: resolve(__dirname, "artifacts-library.html"),
-        // sub: resolve(__dirname, 'film-locations.html')
+        sub1: resolve(__dirname, "movies-out-now.html"),
+        // sub1a: resolve(__dirname, "movies-out-now-item.html"),
+        sub2: resolve(__dirname, "movie-library.html"),
+        // sub2a: resolve(__dirname, 'movie-library-item.html'),
+        sub3: resolve(__dirname, "theaters.html"),
+        // sub3a: resolve(__dirname, 'theaters-item.html'),
+        sub4: resolve(__dirname, "soundtrack-library.html"),
+        // sub4a: resolve(__dirname, 'soundtrack-library-item.html'),
+        sub5: resolve(__dirname, "artifacts.html"),
+        // sub6: resolve(__dirname, 'film-locations.html')
       },
     },
   },

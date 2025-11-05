@@ -5,7 +5,7 @@ import "./theaters-list-item.js";
 interface TheatersListItemData {
   theaterName: string;
   theaterInfo: string;
-  moviePaths: Array<{ src: string; movieName: string }>;
+  moviePaths: Array<{ imgSrc: string; movieName: string }>;
   imgSrc: string;
   href: string;
   movieName: string;

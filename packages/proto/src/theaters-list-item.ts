@@ -10,7 +10,7 @@ export class TheatersListItemElement extends LitElement {
   theaterInfo?: string;
   
   @property({ type: Array })
-  moviePaths = [];  
+  moviePaths: Array<{ imgSrc: string; movieName: string }> = [];
 
   @property({ attribute: "img-src" })
   imgSrc?: string;
