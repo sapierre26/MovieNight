@@ -39,16 +39,15 @@
       "theaterName": "Regal Edwards Santa Maria & RPX",
       "theaterInfo": "100 Town Center East, Santa Maria, CA 93454",
       "moviePaths": [
-        { "imgSrc": "/movie-flyer-images-vertical/violent-ends.jpg", "movieName": "Violent Ends" },
-        { "imgSrc": "/movie-flyer-images-vertical/anniversary.jpg", "movieName": "Anniversary" },
-        { "imgSrc": "/movie-flyer-images-vertical/bugonia.jpg", "movieName": "Bugonia" },
-        { "imgSrc": "/movie-flyer-images-vertical/chainsaw-man.jpg", "movieName": "Chainsaw Man - The Movie: Reze Arc" },
-        { "imgSrc": "/movie-flyer-images-vertical/regretting-you.jpg", "movieName": "Regretting You" },
-        { "imgSrc": "/movie-flyer-images-vertical/springsteen.jpg", "movieName": "Springsteen: Deliver Me from Nowhere" },
-        { "imgSrc": "/movie-flyer-images-vertical/black-phone-2.jpg", "movieName": "Black Phone 2" },
-        { "imgSrc": "/movie-flyer-images-vertical/tron-ares.jpg", "movieName": "Tron: Ares" }
-      ],
-      "href": "theaters-item.html"
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/violent-ends.jpg", "movieName": "Violent Ends" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/anniversary.jpg", "movieName": "Anniversary" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/bugonia.jpg", "movieName": "Bugonia" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/chainsaw-man.jpg", "movieName": "Chainsaw Man - The Movie: Reze Arc" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/regretting-you.jpg", "movieName": "Regretting You" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/springsteen.jpg", "movieName": "Springsteen: Deliver Me from Nowhere" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/black-phone-2.jpg", "movieName": "Black Phone 2" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/tron-ares.jpg", "movieName": "Tron: Ares" }
+      ]
     }
   ]
 }
