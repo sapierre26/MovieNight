@@ -59,72 +59,9 @@
 
         <img src="images/him-for-slides.png" alt="Him Movie Poster">
 
-        <section class="theater-item">
-          <h2>Theater Name</h2>
-          <h3>Theater Location | Distance from you</h3>
-
-          <div class="showing-times">
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-          </div>
-        </section>
-
-        <section class="theater-item">
-          <h2>Theater Name</h2>
-          <h3>Theater Location | Distance from you</h3>
-
-          <div class="showing-times">
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-          </div>
-        </section>
-
-        <section class="theater-item">
-          <h2>Theater Name</h2>
-          <h3>Theater Location | Distance from you</h3>
-
-          <div class="showing-times">
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-          </div>
-        </section>
-
-        <section class="theater-item">
-          <h2>Theater Name</h2>
-          <h3>Theater Location | Distance from you</h3>
-
-          <div class="showing-times">
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-          </div>
-        </section>
-
-        <section class="theater-item">
-          <h2>Theater Name</h2>
-          <h3>Theater Location | Distance from you</h3>
-
-          <div class="showing-times">
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-            <a href="#"><button>Time</button></a>
-          </div>
-        </section>
+        <theaters-subitem-list src="/functions/theaters-subitem-data.json"></theaters-subitem-list>
       </div>
-      
+        
     </section>
 
 
@@ -134,5 +71,16 @@
     </footer>
 
     <script src="functions/script.js"></script>
+    <script type="module">
+        import { define } from "@calpoly/mustang";
+        import { TheatersSubItemElement } from "/src/theaters-subitem.js";
+        import { TheatersSubItemListElement } from "/src/theaters-subitem-list.js";
+
+
+        define({
+          "theaters-subitem": TheatersSubItemElement,
+          "theaters-subitem-list": TheatersSubItemListElement
+        });
+      </script>
   </body>
 </html>
