@@ -16,8 +16,8 @@ export default defineConfig({
         sub3: resolve(__dirname, "theaters.html"),
         // sub3a: resolve(__dirname, 'theaters-item.html'),
         sub4: resolve(__dirname, "soundtrack-library.html"),
-        // sub4a: resolve(__dirname, 'soundtrack-library-item.html'),
-        sub5: resolve(__dirname, "artifacts.html"),
+        sub5: resolve(__dirname, 'soundtrack-item.html'),
+        sub6: resolve(__dirname, "artifacts.html"),
         // sub6: resolve(__dirname, 'film-locations.html')
       },
     },
