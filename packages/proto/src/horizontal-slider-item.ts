@@ -25,10 +25,14 @@ export class HorizontalSliderItemElement extends LitElement {
   static styles = [
     reset.styles,
     css`
+      span {
+        flex: 0 0 auto;
+      }
+
       img {
-          width: var(--width-slider-imgs);
-          height: var(--height-slider-imgs);
-          object-fit: cover;
+        width: var(--width-slider-imgs);
+        height: var(--height-slider-imgs);
+        object-fit: cover;
       }
     `,
   ];
