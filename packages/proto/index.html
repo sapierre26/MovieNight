@@ -123,7 +123,8 @@
         src="/functions/out-now-slider-data.json"
         sectionHeading="MOVIES OUT NOW"
         seeAll="SEE ALL MOVIES OUT NOW"
-        seeAllLink="movies-out-now.html">
+        seeAllLink="movies-out-now.html"
+      >
       </horizontal-slider-section>
 
       <!--COMING SOON TO THEATERS SLIDER-->
@@ -157,13 +158,12 @@
 
     <script src="functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
-        import { HorizontalSliderElement } from "/src/horizontal-slider.js";
+      import { define } from "@calpoly/mustang";
+      import { HorizontalSliderElement } from "/src/horizontal-slider.js";
 
-
-        define({
-          "horizontal-slider-section": HorizontalSliderElement
-        });
-      </script>
+      define({
+        "horizontal-slider-section": HorizontalSliderElement,
+      });
+    </script>
   </body>
 </html>

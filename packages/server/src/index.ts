@@ -2,6 +2,7 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
+import MoviesOutNowItem from "./services/movies-out-now-item-svc";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -25,6 +26,19 @@ app.get(
     const { soundtrackName } = req.params;
 
     SoundtrackLibraryItem.get(soundtrackName).then((data) => {
+      if (data)
+        res.set("Content-Type", "application/json").send(JSON.stringify(data));
+      else res.status(404).send();
+    });
+  },
+);
+
+app.get(
+  "/MoviesOutNowItem/:outNowName",
+  (req: Request, res: Response) => {
+    const { outNowName } = req.params;
+
+    MoviesOutNowItem.get(outNowName).then((data) => {
       if (data)
         res.set("Content-Type", "application/json").send(JSON.stringify(data));
       else res.status(404).send();
