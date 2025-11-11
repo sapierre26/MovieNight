@@ -9,6 +9,7 @@ import MovieLibraryItem from "./services/movie-library-item-svc";
 import TheatersListItem from "./services/theaters-item-svc";
 import TheaterSubItem from "./services/theater-subitem-svc";
 import ArtifactsItem from "./services/artifacts-item-svc";
+import soundtracks from "./routes/soundtracks";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,6 +19,8 @@ app.use(express.static(staticDir));
 
 app.use(express.json());
 
+app.use("/api/soundtracks", soundtracks);
+
 app.get("/hello", (req: Request, res: Response) => {
   res.send("Hello, World");
 });
@@ -26,7 +29,7 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-connect("blazing");
+connect("Blazing");
 
 app.get(
   "/SoundtrackLibraryItem/:soundtrackName",
