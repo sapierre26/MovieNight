@@ -179,6 +179,7 @@ input:checked + .toggle-switch-slider::before {
 
 .theaters-near-you h2,
 .movies-out-now h2,
+.coming-soon h2,
 .goat h2 {
   margin-bottom: 5px;
   color: var(--color-main-support);
@@ -189,6 +190,7 @@ input:checked + .toggle-switch-slider::before {
 }
 
 .theaters-near-you h3,
+.movies-out-now h3,
 .goat h3 {
   margin-top: 5px;
   color: var(--color-main-support);
@@ -222,7 +224,74 @@ input:checked + .toggle-switch-slider::before {
   font-size: var(--p-font-size);
 }
 
+.horizontal-slider-gallery-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
+.horizontal-slider-gallery-wrap button {
+  border-radius: 30px;
+}
+
+.horizontal-slider-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  width: var(--width-horizontal-slider-container);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.horizontal-slider-gallery div {
+  display: flex;
+  gap: 1rem;
+}
+
+.horizontal-slider-gallery div span {
+  flex: 0 0 auto;
+}
+
+.horizontal-slider-gallery div img {
+  width: var(--width-slider-imgs);
+  height: var(--height-slider-imgs);
+  object-fit: cover;
+}
+
+.horizontal-slider-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-sub-background);
+  color: var(--color-sub-support);
+  font-size: var(--h3-font-size);
+  border: none;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: var(--color-main-support);
+  color: var(--color-sub-background);
+}
+
+.left-arrow {
+  display: none;
+  position: absolute;
+  left: 0px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 0px;
+}
 
 /* MOVIES OUT NOW */
 

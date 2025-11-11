@@ -6,14 +6,21 @@ const TheatersSubItemSchema = new Schema<TheatersSubItem>(
     theaterName: { type: String, required: true },
     theaterLocation: { type: String, required: true },
     distanceFromYou: { type: String, required: true },
-    // movieTimes: { type: Array, required: true },
+    movieTimes: {
+      type: [
+        {
+          movieTime: { type: String, required: true }
+        },
+      ],
+      required: true,
+    },
     movieTime: { type: String, required: true }
   },
-  { collection: "theaters-subitems" }
+  { collection: "theaters-subitem-data" }
 );
 
 const TheatersSubItemModel = model<TheatersSubItem>(
-  "Theaters Profile",
+  "Theaters SubItem Profile",
   TheatersSubItemSchema
 );
 

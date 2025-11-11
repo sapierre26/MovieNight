@@ -6,14 +6,14 @@ const SoundtrackLibraryItemSchema = new Schema<SoundtrackLibraryItem>(
     imgSrc: { type: String, required: true },
     soundtrackName: { type: String, required: true },
     runtime: { type: String, required: true },
-    href: { type: String, required: true }
+    href: { type: String, required: true },
   },
-  { collection: "soundtrack_library_items" }
+  { collection: "soundtrack-data" },
 );
 
 const SoundtrackLibraryItemModel = model<SoundtrackLibraryItem>(
   "Soundtrack Profile",
-  SoundtrackLibraryItemSchema
+  SoundtrackLibraryItemSchema,
 );
 
 function index(): Promise<SoundtrackLibraryItem[]> {

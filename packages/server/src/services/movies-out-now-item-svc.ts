@@ -9,7 +9,7 @@ const MoviesOutNowItemSchema = new Schema<MoviesOutNowItem>(
     seeMovieTimesButton: { type: String, required: true },
     watchTrailerNowButton: { type: String, required: true },
   },
-  { collection: "movies_out-now_items" },
+  { collection: "movies-out-now-data" },
 );
 
 const MoviesOutNowItemModel = model<MoviesOutNowItem>(
