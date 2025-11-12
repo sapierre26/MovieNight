@@ -2,6 +2,7 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
+import MovieGoer from "./services/movie-goer-svc";
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
 import PlaylistItem from "./services/playlist-item-svc";
 import MoviesOutNowItem from "./services/movies-out-now-item-svc";
@@ -10,7 +11,6 @@ import MovieLibraryItem from "./services/movie-library-item-svc";
 import TheatersListItem from "./services/theaters-item-svc";
 import TheaterSubItem from "./services/theater-subitem-svc";
 import ArtifactsItem from "./services/artifacts-item-svc";
-import soundtracks from "./routes/soundtracks";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -19,8 +19,6 @@ const staticDir = process.env.STATIC || "public";
 app.use(express.static(staticDir));
 
 app.use(express.json());
-
-app.use("/api/soundtracks", authenticateUser, soundtracks);
 
 app.use("/auth", auth);
 
@@ -33,6 +31,18 @@ app.listen(port, () => {
 });
 
 connect("Blazing");
+
+app.get("/MovieGoer/:userid", (req: Request, res: Response) => {
+  const { userid } = req.params;
+
+  MovieGoer.get(userid).then((data) => {
+    if (data) res
+      .set("Content-Type", "application/json")
+      .send(JSON.stringify(data));
+    else res
+      .status(404).send();
+  });
+});
 
 app.get(
   "/SoundtrackLibraryItem/:soundtrackName",

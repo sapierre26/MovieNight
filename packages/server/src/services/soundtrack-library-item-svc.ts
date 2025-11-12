@@ -28,29 +28,4 @@ function get(soundtrackName: String): Promise<SoundtrackLibraryItem> {
     });
 }
 
-function create(json: SoundtrackLibraryItem): Promise<SoundtrackLibraryItem> {
-  const t = new SoundtrackLibraryItemModel(json);
-  return t.save();
-}
-
-function update(
-  soundtrackName: String,
-  soundtrack: SoundtrackLibraryItem
-): Promise<SoundtrackLibraryItem> {
-  return SoundtrackLibraryItemModel.findOneAndUpdate({ soundtrackName }, soundtrack, {
-    new: true
-  }).then((updated) => {
-    if (!updated) throw `${soundtrackName} not updated`;
-    else return updated as SoundtrackLibraryItem;
-  });
-}
-
-function remove(soundtrackName: String): Promise<void> {
-  return SoundtrackLibraryItemModel.findOneAndDelete({ soundtrackName }).then(
-    (deleted) => {
-      if (!deleted) throw `${soundtrackName} not deleted`;
-    }
-  );
-}
-
-export default { index, get, create, update, remove };
+export default { index, get };
