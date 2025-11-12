@@ -1,6 +1,7 @@
 // src/index.ts
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
+import auth from "./routes/auth";
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
 import PlaylistItem from "./services/playlist-item-svc";
 import MoviesOutNowItem from "./services/movies-out-now-item-svc";
@@ -20,6 +21,8 @@ app.use(express.static(staticDir));
 app.use(express.json());
 
 app.use("/api/soundtracks", soundtracks);
+
+app.use("/auth", auth);
 
 app.get("/hello", (req: Request, res: Response) => {
   res.send("Hello, World");
