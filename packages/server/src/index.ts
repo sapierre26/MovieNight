@@ -21,7 +21,7 @@ app.use(express.static(staticDir));
 
 app.use(express.json());
 
-app.use("/api/movie-goers", movieGoers);
+app.use("/api/movie-goers", authenticateUser, movieGoers);
 
 app.use("/auth", auth);
 

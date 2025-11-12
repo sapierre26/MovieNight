@@ -1,5 +1,6 @@
-import { html, css, LitElement } from "lit";
-import { property } from "lit/decorators.js";
+import { LitElement } from "lit";
+import { state } from "lit/decorators.js";
+import { Auth, Observer } from "@calpoly/mustang";
 
 export class HeaderElement extends LitElement {
   _authObserver = new Observer<Auth.Model>(this, "Blazing:auth");
