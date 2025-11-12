@@ -18,324 +18,337 @@
   </head>
 
   <body>
-    <!--HEADER-->
-    <div class="main-nav-bar">
-      <img
-        id="logo"
-        src="images/movie-night-logo-white.png"
-        alt="Movie Night Logo"
-      />
-
-      <a href="index.html">HOME</a>
-      <a href="movies-out-now.html">MOVIES OUT NOW</a>
-      <a href="movie-library.html">MOVIE LIBRARY</a>
-      <a href="theaters.html">THEATERS</a>
-      <a href="soundtrack-library.html">MUSIC LIBRARY</a>
-      <a href="artifacts.html">ARTIFACTS LIBRARY</a>
-      <a href="film-locations.html">FAMOUS FILM LOCATIONS</a>
-
-      <div class="search-bar">
-        <form>
-          <input type="text" placeholder="Search..." name="search" />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
-    </div>
-
-    <div class="toggle-switch-container">
-      <label class="toggle-switch" for="checkbox">
-        <input type="checkbox" autocomplete="off" id="checkbox" />
-        <div class="round toggle-switch-slider"></div>
-      </label>
-      <span id="toggle-switch-label">LIGHT MODE</span>
-    </div>
-
-    <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
-    <div class="popular-movies-out-now">
-      <div class="background-slide">
+    <mu-auth provides="Blazing:auth">
+      <!--HEADER-->
+      <div class="main-nav-bar">
         <img
-          src="images/the-conjuring-for-slides.jpg"
-          alt="The Conjuring Movie Poster"
+          id="logo"
+          src="images/movie-night-logo-white.png"
+          alt="Movie Night Logo"
         />
-      </div>
-      <div class="background-slide">
-        <img src="images/him-for-slides.png" alt="Him Movie Poster" />
-      </div>
-      <div class="background-slide">
-        <img
-          src="images/tron-ares-for-slides.jpeg"
-          alt="Tron: Ares Movie Poster"
-        />
-      </div>
-      <div class="background-slide">
-        <img src="images/weapons-for-slides.jpg" alt="Weapons Movie Poster" />
-      </div>
-      <div class="background-slide">
-        <img
-          src="images/one-battle-after-another-for-slides.png"
-          alt="One Battle After Another Movie Poster"
-        />
-      </div>
-      <div class="background-slide">
-        <img
-          src="images/star-wars-for-slides.avif"
-          alt="Star Wars Movie Poster"
-        />
-      </div>
-    </div>
 
-    <!--BODY-->
-    <div class="home-page">
-      <!--THEATERS NEAR YOU-->
-      <section class="theaters-near-you">
-        <h2>THEATERS NEAR YOU</h2>
-        <a href="theaters.html"><h3>SEE MORE THEATERS</h3></a>
+        <a href="index.html">HOME</a>
+        <a href="movies-out-now.html">MOVIES OUT NOW</a>
+        <a href="movie-library.html">MOVIE LIBRARY</a>
+        <a href="theaters.html">THEATERS</a>
+        <a href="soundtrack-library.html">MUSIC LIBRARY</a>
+        <a href="artifacts.html">ARTIFACTS LIBRARY</a>
+        <a href="film-locations.html">FAMOUS FILM LOCATIONS</a>
 
-        <div class="theaters-near-you-list">
-          <div class="theaters-near-you-list-item">
-            <h2>Theater Name</h2>
-            <h3>Theater Location | Distance</h3>
-            <a href="#">Theater Website</a>
-          </div>
-
-          <div class="theaters-near-you-list-item">
-            <h2>Theater Name</h2>
-            <h3>Theater Location | Distance</h3>
-            <a href="#">Theater Website</a>
-          </div>
-
-          <div class="theaters-near-you-list-item">
-            <h2>Theater Name</h2>
-            <h3>Theater Location | Distance</h3>
-            <a href="#">Theater Website</a>
-          </div>
-
-          <div class="theaters-near-you-list-item">
-            <h2>Theater Name</h2>
-            <h3>Theater Location | Distance</h3>
-            <a href="#">Theater Website</a>
-          </div>
+        <div class="search-bar">
+          <form>
+            <input type="text" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
         </div>
-      </section>
+      </div>
 
-      <!--ALL MOVIES CURRENTLY PLAYING SLIDER-->
-      <section class="movies-out-now">
-        <h2>MOVIES OUT NOW</h2>
-        <a href="movies-out-now.html"><h3>SEE ALL MOVIES OUT NOW</h3></a>
+      <div class="toggle-switch-container">
+        <label class="toggle-switch" for="checkbox">
+          <input type="checkbox" autocomplete="off" id="checkbox" />
+          <div class="round toggle-switch-slider"></div>
+        </label>
+        <span id="toggle-switch-label">LIGHT MODE</span>
+      </div>
 
-        <div class="horizontal-slider-gallery-wrap">
-          <button class="arrow left-arrow">&#10094;</button>
+      <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
+      <div class="popular-movies-out-now">
+        <div class="background-slide">
+          <img
+            src="images/the-conjuring-for-slides.jpg"
+            alt="The Conjuring Movie Poster"
+          />
+        </div>
+        <div class="background-slide">
+          <img src="images/him-for-slides.png" alt="Him Movie Poster" />
+        </div>
+        <div class="background-slide">
+          <img
+            src="images/tron-ares-for-slides.jpeg"
+            alt="Tron: Ares Movie Poster"
+          />
+        </div>
+        <div class="background-slide">
+          <img src="images/weapons-for-slides.jpg" alt="Weapons Movie Poster" />
+        </div>
+        <div class="background-slide">
+          <img
+            src="images/one-battle-after-another-for-slides.png"
+            alt="One Battle After Another Movie Poster"
+          />
+        </div>
+        <div class="background-slide">
+          <img
+            src="images/star-wars-for-slides.avif"
+            alt="Star Wars Movie Poster"
+          />
+        </div>
+      </div>
 
-          <div class="horizontal-slider-gallery">
-            <div>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
+      <!--BODY-->
+      <div class="home-page">
+        <!--THEATERS NEAR YOU-->
+        <section class="theaters-near-you">
+          <h2>THEATERS NEAR YOU</h2>
+          <a href="theaters.html"><h3>SEE MORE THEATERS</h3></a>
+
+          <div class="theaters-near-you-list">
+            <div class="theaters-near-you-list-item">
+              <h2>Theater Name</h2>
+              <h3>Theater Location | Distance</h3>
+              <a href="#">Theater Website</a>
+            </div>
+
+            <div class="theaters-near-you-list-item">
+              <h2>Theater Name</h2>
+              <h3>Theater Location | Distance</h3>
+              <a href="#">Theater Website</a>
+            </div>
+
+            <div class="theaters-near-you-list-item">
+              <h2>Theater Name</h2>
+              <h3>Theater Location | Distance</h3>
+              <a href="#">Theater Website</a>
+            </div>
+
+            <div class="theaters-near-you-list-item">
+              <h2>Theater Name</h2>
+              <h3>Theater Location | Distance</h3>
+              <a href="#">Theater Website</a>
             </div>
           </div>
+        </section>
 
-          <button class="arrow right-arrow">&#10095;</button>
-        </div>
-      </section>
+        <!--ALL MOVIES CURRENTLY PLAYING SLIDER-->
+        <section class="movies-out-now">
+          <h2>MOVIES OUT NOW</h2>
+          <a href="movies-out-now.html"><h3>SEE ALL MOVIES OUT NOW</h3></a>
 
-      <!--COMING SOON TO THEATERS SLIDER-->
-      <section class="coming-soon">
-        <h2>COMING SOON</h2>
+          <div class="horizontal-slider-gallery-wrap">
+            <button class="arrow left-arrow">&#10094;</button>
 
-        <div class="horizontal-slider-gallery-wrap">
-          <button class="arrow left-arrow">&#10094;</button>
-
-          <div class="horizontal-slider-gallery">
-            <div>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
+            <div class="horizontal-slider-gallery">
+              <div>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+              </div>
             </div>
+
+            <button class="arrow right-arrow">&#10095;</button>
           </div>
+        </section>
 
-          <button class="arrow right-arrow">&#10095;</button>
-        </div>
-      </section>
+        <!--COMING SOON TO THEATERS SLIDER-->
+        <section class="coming-soon">
+          <h2>COMING SOON</h2>
 
-      <!--GREATEST SOUNDTRACKS OF ALL TIME-->
-      <section class="goat">
-        <h2>GREATEST SOUNDTRACKS OF ALL TIME</h2>
-        <a href="soundtrack-library.html"><h3>SEE ALL SOUNDTRACKS</h3></a>
+          <div class="horizontal-slider-gallery-wrap">
+            <button class="arrow left-arrow">&#10094;</button>
 
-        <div class="horizontal-slider-gallery-wrap">
-          <button class="arrow left-arrow">&#10094;</button>
-
-          <div class="horizontal-slider-gallery">
-            <div>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
-              <span
-                ><a href="movies-out-now-item.html"
-                  ><img
-                    src="movie-flyer-images-vertical/him.jpg"
-                    alt="Him" /></a
-              ></span>
+            <div class="horizontal-slider-gallery">
+              <div>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+              </div>
             </div>
+
+            <button class="arrow right-arrow">&#10095;</button>
           </div>
+        </section>
 
-          <button class="arrow right-arrow">&#10095;</button>
-        </div>
-      </section>
-    </div>
+        <!--GREATEST SOUNDTRACKS OF ALL TIME-->
+        <section class="goat">
+          <h2>GREATEST SOUNDTRACKS OF ALL TIME</h2>
+          <a href="soundtrack-library.html"><h3>SEE ALL SOUNDTRACKS</h3></a>
 
-    <!--FOOTER-->
-    <footer class="footer">
-      <p>© 2025 | Created by Sanaia Pierre | Dynamic Web Development</p>
-    </footer>
+          <div class="horizontal-slider-gallery-wrap">
+            <button class="arrow left-arrow">&#10094;</button>
 
-    <script src="functions/script.js"></script>
+            <div class="horizontal-slider-gallery">
+              <div>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+                <span
+                  ><a href="movies-out-now-item.html"
+                    ><img
+                      src="movie-flyer-images-vertical/him.jpg"
+                      alt="Him" /></a
+                ></span>
+              </div>
+            </div>
+
+            <button class="arrow right-arrow">&#10095;</button>
+          </div>
+        </section>
+      </div>
+
+      <!--FOOTER-->
+      <footer class="footer">
+        <p>© 2025 | Created by Sanaia Pierre | Dynamic Web Development</p>
+      </footer>
+
+      <script src="functions/script.js"></script>
+      <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+        import { HeaderElement } from "/functions/header.js";
+
+        define({
+          "blz-header": HeaderElement,
+          "mu-auth": Auth.Provider,
+        });
+
+        HeaderElement.initializeOnce();
+      </script>
+    </mu-auth>
   </body>
 </html>
