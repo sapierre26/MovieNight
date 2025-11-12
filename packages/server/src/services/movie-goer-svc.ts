@@ -31,4 +31,29 @@ function get(userid: String): Promise<MovieGoer> {
     });
 }
 
-export default { index, get };
+function create(json: MovieGoer): Promise<MovieGoer> {
+  const m = new MovieGoerModel(json);
+  return m.save();
+}
+
+function update(
+  userid: String,
+  traveler: MovieGoer
+): Promise<MovieGoer> {
+  return MovieGoerModel.findOneAndUpdate({ userid }, traveler, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${userid} not updated`;
+    else return updated as MovieGoer;
+  });
+}
+
+function remove(userid: String): Promise<void> {
+  return MovieGoerModel.findOneAndDelete({ userid }).then(
+    (deleted) => {
+      if (!deleted) throw `${userid} not deleted`;
+    }
+  );
+}
+
+export default { index, get, create, update, remove };

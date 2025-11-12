@@ -3,6 +3,7 @@ import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
 import MovieGoer from "./services/movie-goer-svc";
+import movieGoers from "./routes/movie-goers";
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
 import PlaylistItem from "./services/playlist-item-svc";
 import MoviesOutNowItem from "./services/movies-out-now-item-svc";
@@ -19,6 +20,8 @@ const staticDir = process.env.STATIC || "public";
 app.use(express.static(staticDir));
 
 app.use(express.json());
+
+app.use("/api/movie-goers", movieGoers);
 
 app.use("/auth", auth);
 
