@@ -34,7 +34,6 @@
         <a href="soundtrack-library.html">MUSIC LIBRARY</a>
         <a href="artifacts.html">ARTIFACTS LIBRARY</a>
         <a href="film-locations.html">FAMOUS FILM LOCATIONS</a>
-        <a href="login.html">LOGIN</a>
 
         <div class="search-bar">
           <form>
@@ -50,6 +49,8 @@
           <div class="round toggle-switch-slider"></div>
         </label>
         <span id="toggle-switch-label">LIGHT MODE</span>
+
+        <a href="login.html">LOGIN</a>
       </div>
 
       <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
@@ -93,31 +94,7 @@
           <h2>THEATERS NEAR YOU</h2>
           <a href="theaters.html"><h3>SEE MORE THEATERS</h3></a>
 
-          <div class="theaters-near-you-list">
-            <div class="theaters-near-you-list-item">
-              <h2>Theater Name</h2>
-              <h3>Theater Location | Distance</h3>
-              <a href="#">Theater Website</a>
-            </div>
-
-            <div class="theaters-near-you-list-item">
-              <h2>Theater Name</h2>
-              <h3>Theater Location | Distance</h3>
-              <a href="#">Theater Website</a>
-            </div>
-
-            <div class="theaters-near-you-list-item">
-              <h2>Theater Name</h2>
-              <h3>Theater Location | Distance</h3>
-              <a href="#">Theater Website</a>
-            </div>
-
-            <div class="theaters-near-you-list-item">
-              <h2>Theater Name</h2>
-              <h3>Theater Location | Distance</h3>
-              <a href="#">Theater Website</a>
-            </div>
-          </div>
+          <theaters-near-you-list src="/functions/theaters-near-you-data.json"></theaters-near-you-list>
         </section>
 
         <!--ALL MOVIES CURRENTLY PLAYING SLIDER-->
@@ -337,19 +314,23 @@
       <footer class="footer">
         <p>© 2025 | Created by Sanaia Pierre | Dynamic Web Development</p>
       </footer>
+    </mu-auth>
 
       <script type="module" src="/functions/script.js"></script>
       <script type="module">
         import { define, Auth } from "@calpoly/mustang";
+        import { TheatersNearYouItemElement } from "/src/theaters-near-you-item.js";
+        import { TheatersNearYouListElement } from "/src/theaters-near-you.js";
         import { HeaderElement } from "./src/header.js";
 
         define({
+          "theaters-near-you-list-item": TheatersNearYouItemElement,
+          "theaters-near-you-list": TheatersNearYouListElement,
           "blz-header": HeaderElement,
-          "mu-auth": Auth.Provider,
+          "mu-auth": Auth.Provider
         });
 
         HeaderElement.initializeOnce();
       </script>
-    </mu-auth>
   </body>
 </html>

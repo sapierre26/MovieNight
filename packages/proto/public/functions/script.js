@@ -48,7 +48,7 @@ document
   });
 
 // DARK AND LIGHT MODE SWITCH
-const toggleContainer = document.querySelector(".toggle-switch-container");
+const toggleContainer = document.querySelector(".toggle-switch");
 const toggle = document.querySelector('.toggle-switch input[type="checkbox"]');
 const logo = document.querySelector("#logo");
 const label = document.querySelector("#toggle-switch-label");
