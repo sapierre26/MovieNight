@@ -136,25 +136,7 @@ input:checked + .toggle-switch-slider::before {
   user-select: none;
 }
 
-.toggle-switch-container a {
-  /* display: flex;
-  align-items: center; */
-  padding: 0 16px;
-  /* line-height: 70px; */
-  color: var(--color-main-support);
-  text-align: center;
-  text-decoration: none;
-  font-size: var(--p-font-size);
-  height: 100%;
-  font-family: var(--main-font-family);
-  font-weight: var(--main-font-weight);
-  font-style: var(--main-font-type);
-}
 
-.toggle-switch-container a:hover {
-  background-color: var(--color-sub-background);
-  color: var(--color-main-support);
-}
 
 .popular-movies-out-now {
   width: 100%;

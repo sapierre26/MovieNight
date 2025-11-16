@@ -21,11 +21,7 @@
     <mu-auth provides="Blazing:auth">
       <!--HEADER-->
       <div class="main-nav-bar">
-        <img
-          id="logo"
-          src="images/movie-night-logo-white.png"
-          alt="Movie Night Logo"
-        />
+        <img id="logo" src="images/movie-night-logo-white.png" alt="Movie Night Logo"/>
 
         <a href="index.html">HOME</a>
         <a href="movies-out-now.html">MOVIES OUT NOW</a>
@@ -50,7 +46,8 @@
         </label>
         <span id="toggle-switch-label">LIGHT MODE</span>
 
-        <a href="login.html">LOGIN</a>
+        <!-- <a href="login.html">LOGIN</a> -->
+        <movie-header></movie-header>
       </div>
 
       <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
@@ -326,7 +323,7 @@
         define({
           "theaters-near-you-list-item": TheatersNearYouItemElement,
           "theaters-near-you-list": TheatersNearYouListElement,
-          "blz-header": HeaderElement,
+          "movie-header": HeaderElement,
           "mu-auth": Auth.Provider
         });
 
