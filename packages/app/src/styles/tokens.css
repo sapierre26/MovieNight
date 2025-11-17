@@ -1,0 +1,50 @@
+:root {
+  /* COLORS */
+  --color-main-background: #4c2e2e;
+  --color-sub-background: #6f3132;
+  --color-main-support: #ffffff;
+  --color-sub-support: #000000;
+
+  --color-button-text: #ffffff;
+
+  /* FONTS */
+  --main-font-family: fira-sans-condensed, sans-serif;
+  --main-font-weight: 400;
+  --main-font-type: normal;
+
+  --main-alternative-font-family: fira-sans-condensed-2, sans-serif;
+  --main-alternative-font-weight: 700;
+
+  --sub-font-family: vesper-libre, sans-serif;
+
+  --h1-font-size: 30px;
+  --h2-font-size: 25px;
+  --h3-font-size: 20px;
+  --p-font-size-bigger: 20px;
+  --p-font-size: 17px;
+  --p-font-size-smaller: 15px;
+
+  /* SPACING */
+  --margin-for-body: 32px;
+  --margin-zero: 0px;
+
+  --padding-body: 32px;
+  --padding-insider: 20px;
+
+  /* SIZING */
+  --width-horizontal-slider-container: 1400px;
+
+  --width-slider-imgs: 200px;
+  --height-slider-imgs: 316px;
+
+  --width-theater-imgs: 125px;
+  --height-theater-imgs: 197.5px;
+
+  --border-thickness-content: 1px;
+  --border-radius-content: 15px;
+}
+
+[theme="light"] {
+  --color-main-background: #ffffff;
+  --color-main-support: #4c2e2e;
+}

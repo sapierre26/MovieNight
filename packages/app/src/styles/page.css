@@ -1,0 +1,453 @@
+/* APPLIED TO ALL PAGES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--margin-zero);
+  padding: 0;
+  background-color: var(--color-main-background);
+}
+
+.main-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 70px;
+
+  overflow: hidden;
+  background-color: var(--color-main-background);
+}
+
+#logo {
+  margin-left: 20px;
+  width: auto;
+  height: 70px;
+}
+
+.main-nav-bar a {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  line-height: 70px;
+  color: var(--color-main-support);
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--p-font-size);
+  height: 100%;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+}
+
+.main-nav-bar a:hover {
+  background-color: var(--color-sub-background);
+  color: var(--color-main-support);
+}
+
+.main-nav-bar .search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav-bar input[type="text"] {
+  padding: 8px 10px;
+  font-size: var(--p-font-size);
+  border: 1px solid var(--color-sub-support);
+  border-radius: 4px;
+}
+
+.main-nav-bar .search-bar button {
+  padding: 8px 10px;
+  background-color: var(--color-sub-background);
+  font-size: 17px;
+  border: 1px solid var(--color-sub-support);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-nav-bar .search-bar button:hover {
+  background-color: var(--color-main-support);
+  color: var(--color-sub-background);
+  border-radius: 4px;
+}
+
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 20px;
+}
+
+.toggle-switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch-slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border: 1px solid var(--color-sub-support);
+}
+
+.toggle-switch-slider::before {
+  background-color: var(--color-main-support);
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .toggle-switch-slider::before {
+  transform: translateX(26px);
+}
+
+.toggle-switch-slider.round {
+  border-radius: 34px;
+}
+
+.toggle-switch-slider.round::before {
+  border-radius: 50%;
+}
+
+#toggle-switch-label {
+  color: var(--color-main-support);
+  font-size: var(--p-font-size);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--h3-font-type);
+  user-select: none;
+}
+
+
+
+.popular-movies-out-now {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.background-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-main-background);
+}
+
+.footer p {
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+}
+
+/* HOME */
+.home-page {
+  margin: var(--margin-for-body);
+  padding: var(--padding-insider);
+}
+
+.theaters-near-you h2,
+.movies-out-now h2,
+.coming-soon h2,
+.goat h2 {
+  margin-bottom: 5px;
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h2-font-size);
+}
+
+.theaters-near-you h3,
+.movies-out-now h3,
+.goat h3 {
+  margin-top: 5px;
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h3-font-size);
+}
+
+.horizontal-slider-gallery-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.horizontal-slider-gallery-wrap button {
+  border-radius: 30px;
+}
+
+.horizontal-slider-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  width: var(--width-horizontal-slider-container);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.horizontal-slider-gallery div {
+  display: flex;
+  gap: 1rem;
+}
+
+.horizontal-slider-gallery div span {
+  flex: 0 0 auto;
+}
+
+.horizontal-slider-gallery div img {
+  width: var(--width-slider-imgs);
+  height: var(--height-slider-imgs);
+  object-fit: cover;
+}
+
+.horizontal-slider-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-sub-background);
+  color: var(--color-sub-support);
+  font-size: var(--h3-font-size);
+  border: none;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: var(--color-main-support);
+  color: var(--color-sub-background);
+}
+
+.left-arrow {
+  display: none;
+  position: absolute;
+  left: 0px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 0px;
+}
+
+/* MOVIES OUT NOW */
+
+/* MOVIES OUT NOW & THEATER ITEM */
+.movie-bio-background {
+  background-color: var(--color-main-background);
+  margin: var(--margin-for-body);
+  padding: var(--padding-insider);
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
+}
+
+.movie-bio-background h1 {
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h1-font-size);
+}
+
+.movie-bio-background h2 {
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h2-font-size);
+}
+
+
+/* MOVIE LIBRARY */
+.sub-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-body);
+  background-color: var(--color-main-background);
+}
+
+.sub-nav-bar-content {
+  width: 100%;
+}
+
+.sub-nav-bar p {
+  text-align: left;
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h3-font-size);
+}
+
+.sub-nav-bar-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.sub-nav-bar-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background-color: var(--color-sub-background);
+  color: var(--color-button-text);
+  text-align: center;
+  text-decoration: none;
+  width: 145px;
+  height: 45px;
+  font-size: 17px;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  border: var(--border-thickness-content) solid var(--color-sub-background);
+  border-radius: var(--border-radius-content);
+}
+
+.sub-nav-bar-links a:hover {
+  background-color: var(--color-button-text);
+  color: var(--color-sub-background);
+}
+/* MOVIE LIBRARY ITEM, MOVIES OUT NOW, THEATER ITEM */
+.movie-bio-background img {
+  width: 1000px;
+  height: auto;
+}
+
+.movie-bio-text {
+  margin-top: 25px;
+}
+
+.movie-bio-text p {
+  color: var(--color-main-support);
+  font-family: var(--main-alternative-font-family);
+  font-weight: var(--main-alternative-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--p-font-size-bigger);
+}
+
+/* THEATERS */
+
+
+
+/* MUSIC LIBRARY ITEM TEMPLATE */
+.playlist-bio {
+  margin: var(--margin-for-body);
+}
+
+.playlist-heading {
+  background-color: var(--color-main-background);
+  padding: var(--padding-insider);
+  border: var(--border-thickness-content) solid var(--color-main-support);
+  border-radius: var(--border-radius-content);
+}
+
+.playlist-heading h1 {
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h1-font-size);
+}
+
+.playlist-heading h2 {
+  color: var(--color-main-support);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-style: var(--main-font-type);
+  font-size: var(--h2-font-size);
+}
+
+
+/* ARTIFACT LIBRARY */
+
+
+/* FAMOUS FILM LOCATION */
+#film-map {
+  display: block;
+  margin: var(--margin-for-body) auto;
+  position: relative;
+  width: calc(100% - (var(--margin-for-body) * 2));
+  height: 600px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-content);
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--color-main-background);
+  font-family: var(--main-font-family);
+  font-size: var(--p-font-size-smaller);
+}
+
+.leaflet-popup-content {
+  color: var(--color-main-support);
+  margin: 10px 15px;
+  line-height: 1.5;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--color-main-background);
+}
+
+/* .leaflet-marker-icon {
+  background-color: var(--color-sub-background);
+  color: var(--color-button-text);
+  border: var(--border-thickness-content) solid var(--color-sub-background);
+  border-radius: var(--border-radius-content);
+  transition: transform 0.2s ease;
+} */
+
+.icon-marker svg path {
+  fill: var(--color-main-background);
+  transition: transform 0.2s ease;
+}
+
+.icon-marker:hover svg path {
+  transform: scale(1.03);
+}
