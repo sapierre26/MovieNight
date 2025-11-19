@@ -61,7 +61,7 @@ export class HeaderElement extends LitElement {
 
   render() {
     return html`
-      <a slot="actuator">Hello, ${this.userid || "movie goer"}</a>
+      <a id="intro" slot="actuator">Hello, ${this.userid || "movie goer"}</a>
 
       ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
     `;
@@ -70,10 +70,7 @@ export class HeaderElement extends LitElement {
   static styles = [
     css`
       #login-button {
-        /* display: flex;
-        align-items: center; */
         padding: 0 16px;
-        /* line-height: 70px; */
         color: var(--color-main-support);
         text-align: center;
         text-decoration: none;
@@ -85,8 +82,19 @@ export class HeaderElement extends LitElement {
       }
 
       #login-button:hover {
-        background-color: var(--color-sub-background);
+        text-decoration: underline;
+      }
+
+      #intro {
+        padding: 0 16px;
         color: var(--color-main-support);
+        text-align: center;
+        text-decoration: none;
+        font-size: var(--p-font-size);
+        height: 100%;
+        font-family: var(--main-font-family);
+        font-weight: var(--main-font-weight);
+        font-style: var(--main-font-type);
       }
     `,
   ];

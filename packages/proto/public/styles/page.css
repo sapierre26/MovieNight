@@ -9,10 +9,17 @@ body {
   background-color: var(--color-main-background);
 }
 
-.main-nav-bar {
+/* .main-nav-bar {
+ display: flex;
+ flex-direction: row; 
+ justify-content: space-between;
+}
+
+.nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1rem;
   padding: 0 20px;
   height: 70px;
 
@@ -21,15 +28,26 @@ body {
 }
 
 #logo {
-  margin-left: 20px;
   width: auto;
   height: 70px;
+}
+
+#login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0 20px;
+  height: 70px;
+
+  overflow: hidden;
+  background-color: var(--color-main-background);
 }
 
 .main-nav-bar a {
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 10px;
   line-height: 70px;
   color: var(--color-main-support);
   text-align: center;
@@ -42,23 +60,35 @@ body {
 }
 
 .main-nav-bar a:hover {
-  background-color: var(--color-sub-background);
-  color: var(--color-main-support);
+  text-decoration: underline;
 }
 
-.main-nav-bar .search-bar {
+.sub-nav-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.sub-nav-container .theme-switch {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
-.main-nav-bar input[type="text"] {
+.sub-nav-container .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sub-nav-container input[type="text"] {
   padding: 8px 10px;
   font-size: var(--p-font-size);
   border: 1px solid var(--color-sub-support);
   border-radius: 4px;
 }
 
-.main-nav-bar .search-bar button {
+.sub-nav-container .search-bar button {
   padding: 8px 10px;
   background-color: var(--color-sub-background);
   font-size: 17px;
@@ -67,18 +97,10 @@ body {
   cursor: pointer;
 }
 
-.main-nav-bar .search-bar button:hover {
+.sub-nav-container .search-bar button:hover {
   background-color: var(--color-main-support);
   color: var(--color-sub-background);
   border-radius: 4px;
-}
-
-.toggle-switch-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  margin: 20px;
 }
 
 .toggle-switch {
@@ -128,15 +150,14 @@ input:checked + .toggle-switch-slider::before {
 }
 
 #toggle-switch-label {
+  margin-left: 16px;
   color: var(--color-main-support);
   font-size: var(--p-font-size);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--h3-font-type);
   user-select: none;
-}
-
-
+} */
 
 .popular-movies-out-now {
   width: 100%;
