@@ -15,26 +15,26 @@ router.get("/:userid", (req: Request, res: Response) => {
   const { userid } = req.params;
 
   MovieGoers.get(userid)
-    .then((traveler: MovieGoer) => res.json(traveler))
+    .then((moviegoer: MovieGoer) => res.json(moviegoer))
     .catch((err) => res.status(404).send(err));
 });
 
 router.post("/", (req: Request, res: Response) => {
-  const newTraveler = req.body;
+  const newMovieGoer = req.body;
 
-  MovieGoers.create(newTraveler)
-    .then((traveler: MovieGoer) =>
-      res.status(201).json(traveler)
+  MovieGoers.create(newMovieGoer)
+    .then((moviegoer: MovieGoer) =>
+      res.status(201).json(moviegoer)
     )
     .catch((err) => res.status(500).send(err));
 });
 
 router.put("/:userid", (req: Request, res: Response) => {
   const { userid } = req.params;
-  const newTraveler = req.body;
+  const newMovieGoer = req.body;
 
-  MovieGoers.update(userid, newTraveler)
-    .then((traveler: MovieGoer) => res.json(traveler))
+  MovieGoers.update(userid, newMovieGoer)
+    .then((moviegoer: MovieGoer) => res.json(moviegoer))
     .catch((err) => res.status(404).end());
 });
 

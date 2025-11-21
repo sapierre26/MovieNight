@@ -14,7 +14,7 @@ const credentialSchema = new Schema<Credential>(
       required: true
     }
   },
-  { collection: "user_credentials" }
+  { collection: "user-credentials" }
 );
 
 const credentialModel = model<Credential>(
