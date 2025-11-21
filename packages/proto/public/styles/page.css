@@ -9,7 +9,7 @@ body {
   background-color: var(--color-main-background);
 }
 
-/* .main-nav-bar {
+.main-nav-bar {
  display: flex;
  flex-direction: row; 
  justify-content: space-between;
@@ -157,7 +157,7 @@ input:checked + .toggle-switch-slider::before {
   font-weight: var(--main-font-weight);
   font-style: var(--h3-font-type);
   user-select: none;
-} */
+}
 
 .popular-movies-out-now {
   width: 100%;
