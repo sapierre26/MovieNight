@@ -44,6 +44,11 @@ export class PlaylistItemElement extends LitElement {
         align-items: stretch;
         justify-content: space-between;
         margin-top: 25px;
+        transition: transform 0.3s ease;
+      }
+
+      .playlist-item:hover {
+        transform: scale(1.03);
       }
 
       .playlist-item img {
@@ -55,6 +60,7 @@ export class PlaylistItemElement extends LitElement {
         object-fit: cover;
         border-top-left-radius: var(--border-radius-content);
         border-bottom-left-radius: var(--border-radius-content);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
 
       .playlist-text {
@@ -62,9 +68,10 @@ export class PlaylistItemElement extends LitElement {
         position: relative;
         background-color: var(--color-main-background);
         padding: var(--padding-insider);
-        border: 1px solid var(--color-main-support);
+        // border: 1px solid var(--color-main-support);
         border-top-right-radius: var(--border-radius-content);
         border-bottom-right-radius: var(--border-radius-content);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
 
       .playlist-text h2 {

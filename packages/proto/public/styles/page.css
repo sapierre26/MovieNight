@@ -91,6 +91,7 @@ body {
 .sub-nav-container .search-bar button {
   padding: 8px 10px;
   background-color: var(--color-sub-background);
+  color: var(--color-main-support);
   font-size: 17px;
   border: 1px solid var(--color-sub-support);
   border-radius: 4px;
@@ -271,8 +272,9 @@ input:checked + .toggle-switch-slider::before {
   width: 50px;
   height: 50px;
   background-color: var(--color-sub-background);
-  color: var(--color-sub-support);
+  color: var(--color-main-support);
   font-size: var(--h3-font-size);
+  /* border: 1px solid var(--color-sub-support); */
   border: none;
   cursor: pointer;
 }
@@ -300,8 +302,8 @@ input:checked + .toggle-switch-slider::before {
   background-color: var(--color-main-background);
   margin: var(--margin-for-body);
   padding: var(--padding-insider);
-  border: var(--border-thickness-content) solid var(--color-main-support);
   border-radius: var(--border-radius-content);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .movie-bio-background h1 {
@@ -404,8 +406,9 @@ input:checked + .toggle-switch-slider::before {
 .playlist-heading {
   background-color: var(--color-main-background);
   padding: var(--padding-insider);
-  border: var(--border-thickness-content) solid var(--color-main-support);
+  /* border: var(--border-thickness-content) solid var(--color-main-support); */
   border-radius: var(--border-radius-content);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .playlist-heading h1 {

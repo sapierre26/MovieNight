@@ -1,3 +1,5 @@
+// Used on the index.html page
+
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
