@@ -53,13 +53,25 @@ const toggle = document.querySelector('.toggle-switch input[type="checkbox"]');
 const logo = document.querySelector("#logo");
 const label = document.querySelector("#toggle-switch-label");
 
-function relayEvent(event) {
-  // event.stopPropagation();
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme === "light") {
+  toggle.checked = true;
+  document.documentElement.setAttribute("theme", "light");
+  logo.src = "images/movie-night-logo-black.png";
+  label.textContent = "DARK MODE";
+} else {
+  toggle.checked = false;
+  document.documentElement.setAttribute("theme", "dark");
+  logo.src = "images/movie-night-logo-white.png";
+  label.textContent = "LIGHT MODE";
+}
 
+function relayEvent(event) {
   const customEvent = new CustomEvent("dark-mode:toggle", {
     bubbles: true,
     detail: { checked: event },
   });
+  localStorage.setItem("theme", event ? "light" : "dark");
   toggleContainer.dispatchEvent(customEvent);
 }
 

@@ -16,31 +16,39 @@
   <body>
     <!--HEADER-->
     <div class="main-nav-bar">
-      <img id="logo" src="images/movie-night-logo-white.png" alt="Movie Night Logo">
+        <div class="nav">
+          <img id="logo" src="images/movie-night-logo-white.png" alt="Movie Night Logo"/>
 
-      <a href="index.html">HOME</a>
-      <a href="movies-out-now.html">MOVIES OUT NOW</a>
-      <a href="movie-library.html">MOVIE LIBRARY</a>
-      <a href="theaters.html">THEATERS</a>
-      <a href="soundtrack-library.html">MUSIC LIBRARY</a>
-      <a href="artifacts.html">ARTIFACTS LIBRARY</a>
-      <a href="film-locations.html">FAMOUS FILM LOCATIONS</a>
+          <a href="index.html">HOME</a>
+          <a href="movies-out-now.html">MOVIES OUT NOW</a>
+          <a href="movie-library.html">MOVIE LIBRARY</a>
+          <a href="theaters.html">THEATERS</a>
+          <a href="soundtrack-library.html">MUSIC LIBRARY</a>
+          <a href="artifacts.html">ARTIFACTS LIBRARY</a>
+          <a href="film-locations.html">FAMOUS FILM LOCATIONS</a>
+        </div>
 
-      <div class="search-bar">
-        <form>
-          <input type="text" placeholder="Search..." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+        <div id="login">
+        <movie-header></movie-header>
+        </div>
       </div>
-    </div>
 
-    <div class="toggle-switch-container">
-      <label class="toggle-switch" for="checkbox">
-        <input type="checkbox" autocomplete="off" id="checkbox">
-        <div class="round toggle-switch-slider"></div>
-      </label>
-      <span id="toggle-switch-label">LIGHT MODE</span>
-    </div>
+      <div class="sub-nav-container">
+        <div class="theme-switch">
+          <label class="toggle-switch" for="checkbox">
+            <input type="checkbox" autocomplete="off" id="checkbox" />
+            <div class="round toggle-switch-slider"></div>
+          </label>
+          <span id="toggle-switch-label">LIGHT MODE</span>
+        </div>
+
+        <div class="search-bar">
+          <form>
+            <input type="text" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
     
     <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
     <div class="popular-movies-out-now">

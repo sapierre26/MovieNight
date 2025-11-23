@@ -52,8 +52,13 @@ export class TheatersListItemElement extends LitElement {
         padding: var(--padding-insider);
         width: auto;
         height: auto;
-        border: var(--border-thickness-content) solid var(--color-main-support);
         border-radius: var(--border-radius-content);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .theater-list-item:hover {
+        transform: scale(1.03);
       }
 
       .theater-list-item h2 {

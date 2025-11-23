@@ -20,7 +20,7 @@ export class TheatersNearYouItemElement extends LitElement {
         <article class="theaters-near-you-list-item">
             <h2><slot name="theater-name">${this.theaterName}</slot></h2>
             <h3>${this.theaterLocation}</h3>
-            <a href="${this.theaterWebsite}"><slot name="theater-website">Visit Me!</slot></a>
+            <a href="${this.theaterWebsite}"><slot name="theater-website">Visit My Site!</slot></a>
         </article>
     `;
   }
@@ -32,8 +32,13 @@ export class TheatersNearYouItemElement extends LitElement {
             padding: var(--padding-insider);
             width: 450px;
             height: auto;
-            border: var(--border-thickness-content) solid var(--color-main-support);
             border-radius: var(--border-radius-content);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .theaters-near-you-list-item:hover {
+            transform: scale(1.03);
         }
 
         .theaters-near-you-list-item h2 {

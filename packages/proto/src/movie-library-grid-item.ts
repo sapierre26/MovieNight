@@ -52,8 +52,13 @@ export class MovieLibraryGridItemElement extends LitElement {
             width: 250px;
             height: auto;
             background-color: var(--color-main-background);
-            border: var(--border-thickness-content) solid var(--color-main-support);
             border-radius: var(--border-radius-content);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-library-grid-item:hover {
+            transform: scale(1.03);
         }
 
         .movie-library-grid-item-img img {
