@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="https://use.typekit.net/hdy8gyr.css" />
   </head>
@@ -22,7 +22,11 @@
       <!--HEADER-->
       <div class="main-nav-bar">
         <div class="nav">
-          <img id="logo" src="images/movie-night-logo-white.png" alt="Movie Night Logo"/>
+          <img
+            id="logo"
+            src="images/movie-night-logo-white.png"
+            alt="Movie Night Logo"
+          />
 
           <a href="index.html">HOME</a>
           <a href="movies-out-now.html">MOVIES OUT NOW</a>
@@ -34,7 +38,7 @@
         </div>
 
         <div id="login">
-        <movie-header></movie-header>
+          <movie-header></movie-header>
         </div>
       </div>
 
@@ -54,10 +58,9 @@
           </form>
         </div>
       </div>
-
       
       <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
-      <div class="popular-movies-out-now">
+      <div class="featured-movies-slideshow">
         <div class="background-slide">
           <img
             src="images/the-conjuring-for-slides.jpg"
@@ -324,7 +327,7 @@
         import { define, Auth } from "@calpoly/mustang";
         import { TheatersNearYouItemElement } from "/src/theaters-near-you-item.js";
         import { TheatersNearYouListElement } from "/src/theaters-near-you.js";
-        import { HeaderElement } from "./src/header.js";
+        import { HeaderElement } from "/src/header.js";
 
         define({
           "theaters-near-you-list-item": TheatersNearYouItemElement,

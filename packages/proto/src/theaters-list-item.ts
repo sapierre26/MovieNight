@@ -39,7 +39,7 @@ export class TheatersListItemElement extends LitElement {
             (movie) => html`
               <a href="${movie.href}"
                 ><slot name="img-src"><img src="${movie.imgSrc}" alt="${movie.movieName}" /></slot></a>
-            `,
+            `
           )}
         </div>
       </section>

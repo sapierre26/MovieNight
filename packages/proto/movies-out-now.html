@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/page.css">
     <link rel="stylesheet" href="/styles/tokens.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="https://use.typekit.net/hdy8gyr.css">
   </head>
 
@@ -14,7 +17,11 @@
     <!--HEADER-->
     <div class="main-nav-bar">
         <div class="nav">
-          <img id="logo" src="images/movie-night-logo-white.png" alt="Movie Night Logo"/>
+          <img
+            id="logo"
+            src="images/movie-night-logo-white.png"
+            alt="Movie Night Logo"
+          />
 
           <a href="index.html">HOME</a>
           <a href="movies-out-now.html">MOVIES OUT NOW</a>
@@ -26,7 +33,7 @@
         </div>
 
         <div id="login">
-        <movie-header></movie-header>
+          <movie-header></movie-header>
         </div>
       </div>
 
@@ -49,7 +56,7 @@
     
     
     <!--POPULAR MOVIES OUT NOW SLIDESHOW-->
-    <div class="popular-movies-out-now">
+    <div class="featured-movies-slideshow">
       <div class="background-slide"><img src="images/the-conjuring-for-slides.jpg" alt="The Conjuring Movie Poster"></div>
       <div class="background-slide"><img src="images/him-for-slides.png" alt="Him Movie Poster"></div>
       <div class="background-slide"><img src="images/tron-ares-for-slides.jpeg" alt="Tron: Ares Movie Poster"></div>
@@ -74,11 +81,12 @@
         import { MoviesOutNowGridItemElement } from "/src/movies-out-now-grid-item.js";
         import { MoviesOutNowGridElement } from "/src/movies-out-now-grid.js";
 
-
         define({
           "movies-out-now-grid-item": MoviesOutNowGridItemElement,
           "movies-out-now-grid": MoviesOutNowGridElement
         });
+
+        HeaderElement.initializeOnce();
       </script>
   </body>
 </html>
