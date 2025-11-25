@@ -42,6 +42,7 @@
 
   --border-thickness-content: 1px;
   --border-radius-content: 15px;
+  --border-sub-radius-content: 4px;
 }
 
 [theme="light"] {

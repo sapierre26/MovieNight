@@ -2,6 +2,8 @@
 import express, { Request, Response } from "express";
 import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
+import fs from "node:fs/promises";
+import path from "path";
 import MovieGoer from "./services/movie-goer-svc";
 import movieGoers from "./routes/movie-goers";
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
@@ -24,6 +26,13 @@ app.use("/api/movie-goers", authenticateUser, movieGoers);
 app.use("/auth", auth);
 
 app.use(express.static(staticDir));
+
+// SPA Routes
+app.use("/app", (req: Request, res: Response) => {
+  const indexHtml = path.resolve(staticDir, "index.html");
+  fs.readFile(indexHtml, { encoding: "utf8"})
+    .then((html) => res.send(html));
+});
 
 app.get("/hello", (req: Request, res: Response) => {
   res.send("Hello, World");
