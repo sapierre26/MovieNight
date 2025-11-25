@@ -42,9 +42,7 @@ function create(username: string, password: string): Promise<Credential> {
       );
 }
 
-function verify(username: string, password: string)
-  : Promise<string>
-{
+function verify(username: string, password: string): Promise<string> {
   return credentialModel
     .find({ username })
     .then((found) => {

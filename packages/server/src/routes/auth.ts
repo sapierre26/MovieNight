@@ -8,6 +8,12 @@ import jwt from "jsonwebtoken";
 
 import credentials from "../services/credential-svc";
 
+const router = express.Router();
+
+dotenv.config();
+const TOKEN_SECRET: string =
+  process.env.TOKEN_SECRET || "NOT_A_SECRET";
+
 export function authenticateUser(
   req: Request,
   res: Response,
@@ -26,12 +32,6 @@ export function authenticateUser(
     });
   }
 }
-
-const router = express.Router();
-
-dotenv.config();
-const TOKEN_SECRET: string =
-  process.env.TOKEN_SECRET || "NOT_A_SECRET";
 
 router.post("/register", (req: Request, res: Response) => {
   const { username, password } = req.body; // from form

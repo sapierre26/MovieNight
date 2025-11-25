@@ -44,24 +44,24 @@ export class HeaderElement extends LitElement {
   }
 
   renderSignInButton() {
-    return html` <a id="login-button" href="login.html">LOGIN</a> `;
+    return html` <button class="login-out"><a href="login.html">LOGIN</a></button> `;
   }
 
   renderSignOutButton() {
     return html`
-      <button
+      <button class="login-out"
         @click=${(e: UIEvent) => {
           Events.relay(e, "auth:message", ["auth/signout"]);
         }}
       >
-        Sign Out
+        Logout
       </button>
     `;
   }
 
   render() {
     return html`
-      <a id="intro" slot="actuator">Hello, ${this.userid || "movie goer"}</a>
+      <a id="intro" slot="actuator">Hello, ${this.userid || "Moviegoer"} !</a>
 
       ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
     `;
@@ -69,7 +69,15 @@ export class HeaderElement extends LitElement {
 
   static styles = [
     css`
-      #login-button {
+      .login-out {
+        padding: 8px 10px;
+        background-color: var(--color-sub-background);
+        font-size: var(--p-font-size);
+        border: 1px solid var(--color-sub-support);
+        border-radius: var(--border-sub-radius-content);
+      }
+
+      .login-out a {
         padding: 0 16px;
         color: var(--color-main-support);
         text-align: center;
@@ -81,7 +89,7 @@ export class HeaderElement extends LitElement {
         font-style: var(--main-font-type);
       }
 
-      #login-button:hover {
+      .login-out a:hover {
         text-decoration: underline;
       }
 

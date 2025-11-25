@@ -13,12 +13,12 @@ const MoviesOutNowItemSchema = new Schema<MoviesOutNowItem>(
 );
 
 const MoviesOutNowItemModel = model<MoviesOutNowItem>(
-  "Movies Out Now Profile",
+  "MoviesOutNowItem",
   MoviesOutNowItemSchema,
 );
 
 function index(): Promise<MoviesOutNowItem[]> {
-  return MoviesOutNowItemModel.find();
+  return MoviesOutNowItemModel.find().lean();
 }
 
 function get(outNowName: String): Promise<MoviesOutNowItem> {
