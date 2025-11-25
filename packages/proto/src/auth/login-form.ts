@@ -35,7 +35,7 @@ export class LoginFormElement extends LitElement {
       >
         <slot></slot>
         <slot name="button">
-          <button ?disabled=${!this.canSubmit} type="submit">Login</button>
+          <button class="login-button" ?disabled=${!this.canSubmit} type="submit">Login</button>
         </slot>
         <p class="error">${this.error}</p>
       </form>
@@ -51,6 +51,39 @@ export class LoginFormElement extends LitElement {
         border: 1px solid var(--color-error);
         padding: var(--size-spacing-medium);
       }
+
+      .login-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        background-color: var(--color-sub-background);
+        color: var(--color-button-text);
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        max-width: 300px;
+        height: 30px;
+        font-family: var(--main-font-family);
+        font-weight: var(--main-font-weight);
+        font-style: var(--main-font-type);
+        font-size: var(--p-font-size);
+        border: var(--border-thickness-content) solid var(--color-sub-background);
+        border-radius: var(--border-sub-radius-content);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+    .login-button:hover {
+      background-color: var(--color-button-text);
+      color: var(--color-sub-background);
+      text-decoration: underline;
+      transform: scale(1.03);
+    }
+
+    .login-button:active {
+      transform: scale(1.03);
+    }
     `,
   ];
 
