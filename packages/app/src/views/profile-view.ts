@@ -1,7 +1,6 @@
 import { define, Form } from "@calpoly/mustang";
 import { html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import { MovieGoer } from "/server/models/movie-goer";
 // import reset from "./styles/reset.css.ts";
 
 export class MovieGoerViewElement extends LitElement {
@@ -16,7 +15,7 @@ export class MovieGoerViewElement extends LitElement {
   mode = "view";
 
   @state()
-  moviegoer?: MovieGoer;
+  moviegoer?: any;
 
   get src() {
     return `/api/movie-goers/${this.userid}`;

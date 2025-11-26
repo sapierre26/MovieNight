@@ -1,8 +1,8 @@
 import { Auth, define, History, Switch } from "@calpoly/mustang";
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { HeaderElement } from "./components/header.js";
 import { HomeViewElement } from "./views/home-view";
-// import { ProfileViewElement } from  "./views/profile-view";
+import { MovieGoerViewElement } from  "./views/profile-view";
 
 const routes = [
   {
@@ -39,5 +39,5 @@ define({
   },
   "movie-header": HeaderElement,
   "home-view": HomeViewElement,
-  // "profile-view": ProfileViewElement
+  "profile-view": MovieGoerViewElement
 });
