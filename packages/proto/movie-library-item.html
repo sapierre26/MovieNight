@@ -93,8 +93,8 @@
     </div>
 
     <!--BODY-->
-    <section class="movie-bio">
-      <div class="movie-bio-background">
+    <div class="movie-bio">
+      <section class="movie-bio-background">
         <h1>Star Wars</h1>
         <h2>Release Year | Runtime</h2>
 
@@ -122,8 +122,8 @@
             justice to the Galaxy.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!--FOOTER-->
     <footer class="footer">
@@ -131,5 +131,15 @@
     </footer>
 
     <script type="module" src="/functions/script.js"></script>
+    <script type="module">
+        import { define, Auth } from "@calpoly/mustang";
+        import { HeaderElement } from "/src/header.js";
+
+        define({
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
+        });
+
+    </script>
   </body>
 </html>

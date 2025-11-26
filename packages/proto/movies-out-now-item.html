@@ -86,13 +86,17 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { TheatersSubItemElement } from "/src/theaters-subitem.js";
         import { TheatersSubItemListElement } from "/src/theaters-subitem-list.js";
+        import { HeaderElement } from "/src/header.js";
+        
 
         define({
           "theaters-subitem": TheatersSubItemElement,
           "theaters-subitem-list": TheatersSubItemListElement,
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
         });
       </script>
   </body>

@@ -77,13 +77,16 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { MoviesOutNowGridItemElement } from "/src/movies-out-now-grid-item.js";
         import { MoviesOutNowGridElement } from "/src/movies-out-now-grid.js";
+        import { HeaderElement } from "/src/header.js";
 
         define({
           "movies-out-now-grid-item": MoviesOutNowGridItemElement,
-          "movies-out-now-grid": MoviesOutNowGridElement
+          "movies-out-now-grid": MoviesOutNowGridElement,
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
         });
 
         HeaderElement.initializeOnce();

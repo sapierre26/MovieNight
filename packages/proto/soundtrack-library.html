@@ -103,13 +103,16 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { SoundtrackLibraryGridItemElement } from "/src/soundtrack-library-grid-item.js";
         import { SoundtrackLibraryGridElement } from "/src/soundtrack-library-grid.js";
+        import { HeaderElement } from "/src/header.js";
 
         define({
           "soundtrack-library-grid-item": SoundtrackLibraryGridItemElement,
-          "soundtrack-library-grid": SoundtrackLibraryGridElement
+          "soundtrack-library-grid": SoundtrackLibraryGridElement,
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
         });
 
       </script>

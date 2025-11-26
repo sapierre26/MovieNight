@@ -136,13 +136,16 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-      import { define } from "@calpoly/mustang";
+      import { define, Auth } from "@calpoly/mustang";
       import { MovieLibraryGridItemElement } from "/src/movie-library-grid-item.js";
       import { MovieLibraryGridElement } from "/src/movie-library-grid.js";
+      import { HeaderElement } from "/src/header.js";
 
       define({
         "movie-library-grid-item": MovieLibraryGridItemElement,
         "movie-library-grid": MovieLibraryGridElement,
+        "movie-header": HeaderElement,
+        "mu-auth": Auth.Provider
       });
     </script>
   </body>

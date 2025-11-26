@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Movie Night</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="utf-8"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/hdy8gyr.css" />
+  </head>
+
+  <body>
+    <!--HEADER-->
+    <div class="main-nav-bar">
+      <div class="nav">
+        <img
+          id="logo"
+          src="images/movie-night-logo-white.png"
+          alt="Movie Night Logo"
+        />
+
+        <a href="index.html">HOME</a>
+        <a href="movies-out-now.html">MOVIES OUT NOW</a>
+        <a href="movie-library.html">MOVIE LIBRARY</a>
+        <a href="theaters.html">THEATERS</a>
+        <a href="soundtrack-library.html">MUSIC LIBRARY</a>
+        <a href="artifacts.html">ARTIFACTS LIBRARY</a>
+        <a href="film-locations.html">FAMOUS FILM LOCATIONS</a>
+      </div>
+
+      <div id="login">
+        <movie-header></movie-header>
+      </div>
+    </div>
+
+    <div class="sub-nav-container">
+      <div class="theme-switch">
+        <label class="toggle-switch" for="checkbox">
+          <input type="checkbox" autocomplete="off" id="checkbox" />
+          <div class="round toggle-switch-slider"></div>
+        </label>
+        <span id="toggle-switch-label">LIGHT MODE</span>
+      </div>
+
+      <div class="search-bar">
+        <form>
+          <input type="text" placeholder="Search..." name="search" />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <!--BODY-->
+    <div class="profile">
+      <section class="profile-background">
+        <div class="user-info">
+          <div class="profile-img"><img src="images/him-for-slides.png" alt="Moviegoer"></div>
+
+          <div class="profile-text">
+            <h1>Moviegoer Name</h1>
+            <h2>username</h2>
+            <h2>hometown</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+
+        <div class="favorite-movies-gallery">
+          <h2>My Favorite Movies:</h2>
+          <div>
+            <span><img
+                  src="movie-flyer-images-vertical/him.jpg"
+                  alt="Him" /></span>
+            <span
+              ><img
+                src="movie-flyer-images-vertical/him.jpg"
+                alt="Him" /></span>
+            </span>
+            <span
+              ><img
+                src="movie-flyer-images-vertical/him.jpg"
+                alt="Him" /></span>
+            <span
+              ><img
+                src="movie-flyer-images-vertical/him.jpg"
+                alt="Him" /></span>
+            </span>
+            <span
+              ><img
+                src="movie-flyer-images-vertical/him.jpg"
+                alt="Him" /></span>
+          </div>
+        </div>
+
+        <div class="edit">
+          <button class="edit-profile-button">Edit Profile</button>
+        </div>
+      </section>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+      <p>© 2025 | Created by Sanaia Pierre | Dynamic Web Development</p>
+    </footer>
+
+    <script type="module" src="/functions/script.js"></script>
+    <script type="module">
+      import { define, Auth } from "@calpoly/mustang";
+      import { TheatersNearYouItemElement } from "/src/theaters-near-you-item.js";
+      import { TheatersNearYouListElement } from "/src/theaters-near-you.js";
+      import { HeaderElement } from "/src/header.js";
+
+      define({
+        "theaters-near-you-list-item": TheatersNearYouItemElement,
+        "theaters-near-you-list": TheatersNearYouListElement,
+        "movie-header": HeaderElement,
+        "mu-auth": Auth.Provider
+      });
+
+      HeaderElement.initializeOnce();
+    </script>
+  </body>
+</html>

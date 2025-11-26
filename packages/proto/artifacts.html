@@ -75,15 +75,18 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { ArtifactLibraryGridItemElement } from "/src/artifacts-library-grid-item.js";
         import { ArtifactLibraryGridElement } from "/src/artifacts-library-grid.js";
+        import { HeaderElement } from "/src/header.js";
 
         define({
           "artifact-library-grid-item": ArtifactLibraryGridItemElement,
-          "artifact-library-grid": ArtifactLibraryGridElement
+          "artifact-library-grid": ArtifactLibraryGridElement,
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
         });
 
-      </script>
+    </script>
   </body>
 </html>

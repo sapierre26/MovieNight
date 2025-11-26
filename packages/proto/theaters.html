@@ -102,13 +102,16 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { TheatersListItemElement } from "/src/theaters-list-item.js";
         import { TheatersListElement } from "/src/theaters-list.js";
+        import { HeaderElement } from "/src/header.js";
         
         define({
           "theaters-list-item": TheatersListItemElement,
-          "theaters-list": TheatersListElement
+          "theaters-list": TheatersListElement,
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
         });
       </script>
   </body>

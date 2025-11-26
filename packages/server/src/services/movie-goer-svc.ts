@@ -7,9 +7,7 @@ const MovieGoerSchema = new Schema<MovieGoer>(
     name: { type: String, required: true, trim: true },
     username: { type: String, trim: true },
     home: { type: String, trim: true },
-    favoriteMovies: [String],
-    avatar: String,
-    color: String
+    favoriteMovies: [String]
   },
   { collection: "movie-goers" }
 );

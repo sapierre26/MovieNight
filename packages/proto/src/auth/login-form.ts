@@ -76,7 +76,6 @@ export class LoginFormElement extends LitElement {
     .login-button:hover {
       background-color: var(--color-button-text);
       color: var(--color-sub-background);
-      text-decoration: underline;
       transform: scale(1.03);
     }
 

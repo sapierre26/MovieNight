@@ -322,21 +322,21 @@
       </footer>
     </mu-auth>
 
-      <script type="module" src="/functions/script.js"></script>
-      <script type="module">
-        import { define, Auth } from "@calpoly/mustang";
-        import { TheatersNearYouItemElement } from "/src/theaters-near-you-item.js";
-        import { TheatersNearYouListElement } from "/src/theaters-near-you.js";
-        import { HeaderElement } from "/src/header.js";
+    <script type="module" src="/functions/script.js"></script>
+    <script type="module">
+      import { define, Auth } from "@calpoly/mustang";
+      import { TheatersNearYouItemElement } from "/src/theaters-near-you-item.js";
+      import { TheatersNearYouListElement } from "/src/theaters-near-you.js";
+      import { HeaderElement } from "/src/header.js";
 
-        define({
-          "theaters-near-you-list-item": TheatersNearYouItemElement,
-          "theaters-near-you-list": TheatersNearYouListElement,
-          "movie-header": HeaderElement,
-          "mu-auth": Auth.Provider
-        });
+      define({
+        "theaters-near-you-list-item": TheatersNearYouItemElement,
+        "theaters-near-you-list": TheatersNearYouListElement,
+        "movie-header": HeaderElement,
+        "mu-auth": Auth.Provider
+      });
 
-        HeaderElement.initializeOnce();
-      </script>
+      HeaderElement.initializeOnce();
+    </script>
   </body>
 </html>

@@ -6,6 +6,10 @@ function slidesBanner() {
   let i;
   let backgroundSlides = document.getElementsByClassName("background-slide");
 
+  if (backgroundSlides.length === 0) {
+    return; // Exit if there are no slides
+  }
+
   for (i = 0; i < backgroundSlides.length; i++) {
     backgroundSlides[i].style.display = "none";
   }

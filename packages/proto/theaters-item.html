@@ -67,17 +67,17 @@
 
 
     <!--BODY-->
-    <section class="movie-bio">
-      <div class="movie-bio-background">
+    <div class="movie-bio">
+      <section class="movie-bio-background">
         <h1>Movie Name</h1>
         <h2>Release Year | Runtime</h2>
 
         <img src="images/him-for-slides.png" alt="Him Movie Poster">
 
         <theater-subitem-list src="/functions/theater-subitem-data.json"></theater-subitem-list>
-      </div>
+      </section>
       
-    </section>
+    </div>
 
 
     <!--FOOTER-->
@@ -87,13 +87,16 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { TheaterSubItemElement } from "/src/theater-subitem.js";
         import { TheaterSubItemListElement } from "/src/theater-subitem-list.js";
+        import { HeaderElement } from "/src/header.js";
 
         define({
           "theater-subitem": TheaterSubItemElement,
-          "theater-subitem-list": TheaterSubItemListElement
+          "theater-subitem-list": TheaterSubItemListElement,
+          "movie-header": HeaderElement,
+          "mu-auth": Auth.Provider
         });
       </script>
   </body>

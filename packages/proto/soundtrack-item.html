@@ -93,14 +93,14 @@
     </div>
 
     <!--BODY-->
-    <section class="playlist-bio">
+    <div class="playlist-bio">
       <section class="playlist-heading">
         <h1>Star Wars: A New Hope (Original Motion Picture Soundtrack)</h1>
         <h2>1977 | 1 hr 15 min</h2>
       </section>
 
       <playlist-list src="/functions/playlist-data.json"></playlist-list>
-    </section>
+    </div>
 
     <!--FOOTER-->
     <footer class="footer">
@@ -109,13 +109,16 @@
 
     <script type="module" src="/functions/script.js"></script>
     <script type="module">
-      import { define } from "@calpoly/mustang";
+      import { define, Auth } from "@calpoly/mustang";
       import { PlaylistItemElement } from "./src/playlist-item.js";
       import { PlaylistElement } from "./src/playlist-list.js";
+      import { HeaderElement } from "/src/header.js";
 
       define({
         "playlist-item": PlaylistItemElement,
-        "playlist-list": PlaylistElement
+        "playlist-list": PlaylistElement,
+        "movie-header": HeaderElement,
+        "mu-auth": Auth.Provider
       });
 
       HeaderElement.initializeOnce();

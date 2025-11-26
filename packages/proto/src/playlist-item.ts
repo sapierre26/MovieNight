@@ -66,9 +66,7 @@ export class PlaylistItemElement extends LitElement {
       .playlist-text {
         flex: 1;
         position: relative;
-        background-color: var(--color-main-background);
         padding: var(--padding-insider);
-        // border: 1px solid var(--color-main-support);
         border-top-right-radius: var(--border-radius-content);
         border-bottom-right-radius: var(--border-radius-content);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

@@ -44,7 +44,7 @@ export class HeaderElement extends LitElement {
   }
 
   renderSignInButton() {
-    return html` <button class="login-out"><a href="login.html">LOGIN</a></button> `;
+    return html` <a href="login.html"><button class="login-out">LOGIN</button></a> `;
   }
 
   renderSignOutButton() {
@@ -70,27 +70,25 @@ export class HeaderElement extends LitElement {
   static styles = [
     css`
       .login-out {
-        padding: 8px 10px;
+        padding: 10px 20px;
         background-color: var(--color-sub-background);
-        font-size: var(--p-font-size);
-        border: 1px solid var(--color-sub-support);
-        border-radius: var(--border-sub-radius-content);
-      }
-
-      .login-out a {
-        padding: 0 16px;
-        color: var(--color-main-support);
+        color: var(--color-button-text);
         text-align: center;
         text-decoration: none;
-        font-size: var(--p-font-size);
+        width: auto;
         height: 100%;
+        font-size: var(--p-font-size);
         font-family: var(--main-font-family);
         font-weight: var(--main-font-weight);
         font-style: var(--main-font-type);
+        border: 1px solid var(--color-sub-support);
+        border-radius: var(--border-sub-radius-content);
+        cursor: pointer;
       }
 
-      .login-out a:hover {
-        text-decoration: underline;
+      .login-out:hover {
+        background-color: var(--color-button-text);
+        color: var(--color-sub-background);
       }
 
       #intro {
