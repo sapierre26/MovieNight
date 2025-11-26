@@ -12,6 +12,12 @@ const routes = [
     `
   },
   {
+    path: "/app/profile",
+    view: () => html`
+      <profile-view></profile-view>
+    `
+  },
+  {
     path: "/app",
     view: () => html`
       <home-view></home-view>
