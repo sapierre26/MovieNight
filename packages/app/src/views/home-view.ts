@@ -340,7 +340,7 @@ export class HomeViewElement extends LitElement {
         width: 50px;
         height: 50px;
         background-color: var(--color-sub-background);
-        color: var(--color-main-support);
+        color: var(--color-button-text);
         font-size: var(--h3-font-size);
         border: none;
         cursor: pointer;
@@ -348,7 +348,7 @@ export class HomeViewElement extends LitElement {
       }
 
       .arrow:hover {
-        background-color: var(--color-main-support);
+        background-color: var(--color-button-text);
         color: var(--color-sub-background);
       }
 

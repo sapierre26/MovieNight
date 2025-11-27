@@ -12,7 +12,7 @@
     "build": "npx tsc && npx vite build"
   },
   "dependencies": {
-    "@calpoly/mustang": "^0.1.13",
+    "@calpoly/mustang": "^1.0.17",
     "lit": "^3.3.1"
   },
   "devDependencies": {
