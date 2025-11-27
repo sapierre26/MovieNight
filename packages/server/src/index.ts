@@ -28,7 +28,7 @@ app.use("/auth", auth);
 app.use(express.static(staticDir));
 
 // SPA Routes
-app.use("/app", (req: Request, res: Response) => {
+app.use("/movie-night", (req: Request, res: Response) => {
   const indexHtml = path.resolve(staticDir, "index.html");
   fs.readFile(indexHtml, { encoding: "utf8"})
     .then((html) => res.send(html));
