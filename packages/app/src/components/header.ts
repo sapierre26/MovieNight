@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { state } from "lit/decorators.js";
 import { Auth, Observer, Events } from "@calpoly/mustang";
-// import headings from "./styles/headings.css.js";
+import headings from "./styles/headings.css.js";
 
 export class HeaderElement extends LitElement {
   _authObserver = new Observer<Auth.Model>(this, "Blazing:auth");
@@ -69,6 +69,6 @@ export class HeaderElement extends LitElement {
   }
 
   static styles = [
-    // headings.styles
+    headings.styles
   ];
 }

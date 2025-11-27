@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-// import reset from "./styles/reset.css.ts";
+import reset from "./styles/reset.css.ts";
 
 export class MovieLibraryGridItemElement extends LitElement {
   @property({ attribute: "img-src" })
@@ -40,7 +40,7 @@ export class MovieLibraryGridItemElement extends LitElement {
   }
 
   static styles = [
-    // reset.styles,
+    reset.styles,
     css`
         .movie-library-grid-item {
             display: flex;

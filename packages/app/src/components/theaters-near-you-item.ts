@@ -2,7 +2,7 @@
 
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-// import reset from "./styles/reset.css.ts";
+import reset from "./styles/reset.css.ts";
 
 export class TheatersNearYouItemElement extends LitElement {
   @property({ attribute: "theater-name" })
@@ -28,7 +28,7 @@ export class TheatersNearYouItemElement extends LitElement {
   }
 
   static styles = [
-    // reset.styles,
+    reset.styles,
     css`
         .theaters-near-you-list-item {
             padding: var(--padding-insider);
