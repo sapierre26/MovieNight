@@ -1,0 +1,52 @@
+{
+  "theatersSubItems": [
+    {
+      "theaterName": " The Movie Experience - Downtown Centre Cinema",
+      "theaterLocation": "888 Marsh Street, San Luis Obispo, CA 93401",
+      "distanceFromYou": "3.67 mi",
+      "movieTimes": [
+        { "movieTime": "5:00p"},
+        { "movieTime": "6:30p"},
+        { "movieTime": "7:45p"},
+        { "movieTime": "8:30p"},
+        { "movieTime": "9:15p"}
+      ]
+    },
+    {
+      "theaterName": "Regal Arroyo Grander",
+      "theaterLocation": "1160 W. Branch St., Arroyo Grande, CA 93420",
+      "distanceFromYou": "7.82 mi",
+      "movieTimes": [
+        { "movieTime": "6:10p"},
+        { "movieTime": "6:40p"},
+        { "movieTime": "7:00p"},
+        { "movieTime": "7:40p"},
+        { "movieTime": "8:00p"}
+      ]
+    },
+    {
+      "theaterName": "The Movie Experience - Colony Cinemas",
+      "theaterLocation": "6905 El Camino Real, Atascadero, CA 93422",
+      "distanceFromYou": "17.39 mi",
+      "movieTimes": [
+        { "movieTime": "3:45p"},
+        { "movieTime": "4:15p"},
+        { "movieTime": "6:45p"},
+        { "movieTime": "7:15p"},
+        { "movieTime": "7:45p"}
+      ]
+    },
+    {
+      "theaterName": "Regal Edwards Santa Maria & RPX",
+      "theaterLocation": "100 Town Center East, Santa Maria, CA 93454",
+      "distanceFromYou": "22.40 mi",
+      "movieTimes": [
+        { "movieTime": "6:00p"},
+        { "movieTime": "7:20p"},
+        { "movieTime": "7:40p"},
+        { "movieTime": "9:35p"},
+        { "movieTime": "10:30p"}
+      ]
+    }
+  ]
+}

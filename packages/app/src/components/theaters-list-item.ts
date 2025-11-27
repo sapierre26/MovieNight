@@ -28,17 +28,12 @@ export class TheatersListItemElement extends LitElement {
       <section class="theater-list-item">
         <h2><slot name="theater-name">${this.theaterName}</slot></h2>
         <h3><slot name="theater-info">${this.theaterInfo}</slot></h3>
-        <a href="movies-out-now.html"
-          ><h3>
-            <slot name="see-movies-everywhere">SEE MOVIES EVERYWHERE</slot>
-          </h3></a
-        >
+        <a href="/movie-night/movies-out-now"><h3><slot name="see-movies-everywhere">SEE MOVIES EVERYWHERE</slot></h3></a>
 
         <div class="theaters-gallery">
           ${this.moviePaths.map(
             (movie) => html`
-              <a href="${movie.href}"
-                ><slot name="img-src"><img src="${movie.imgSrc}" alt="${movie.movieName}" /></slot></a>
+              <a href="${movie.href}"><slot name="img-src"><img src="${movie.imgSrc}" alt="${movie.movieName}" /></slot></a>
             `
           )}
         </div>

@@ -14,7 +14,7 @@ export class MovieLibraryGridItemElement extends LitElement {
 
   @property({ attribute: "movie-info" })
   movieInfoButton?: string;
-
+  
   override render() {
     return html`
         <article class="movie-library-grid-item">

@@ -9,8 +9,11 @@ import { TheatersViewElement } from  "./views/theaters-view";
 import { SoundtrackViewElement } from  "./views/soundtrack-view";
 import { ArtifactsViewElement } from  "./views/artifacts-view";
 import { FilmLocationsViewElement } from  "./views/film-locations-view.js";
+
 import { MoviesOutNowGridItemElement } from "./components/movies-out-now-grid-item.js";
 import { MoviesOutNowGridElement } from "./components/movies-out-now-grid.js";
+import { TheatersSubItemElement } from "./components/theaters-subitem.js";
+import { TheatersSubItemListElement } from "./components/theaters-subitem-list.js";
 import { MovieLibraryGridItemElement } from "./components/movie-library-grid-item.js";
 import { MovieLibraryGridElement } from "./components/movie-library-grid.js";
 import { TheatersNearYouItemElement } from "./components/theaters-near-you-item.js";
@@ -51,12 +54,6 @@ const routes = [
     path: "/movie-night/movie-library",
     view: () => html`
       <movie-library-view></movie-library-view>
-    `
-  },
-  {
-    path: "/movie-night/movies-out-now/:outNowName",
-    view: (params: Switch.Params) => html`
-      <movies-out-now-view outNowName="${params.outNowName}"></movies-out-now-view>
     `
   },
   {
@@ -106,8 +103,11 @@ define({
   "soundtrack-view": SoundtrackViewElement,
   "artifacts-view": ArtifactsViewElement,
   "film-locations-view": FilmLocationsViewElement,
+
   "movies-out-now-grid-item": MoviesOutNowGridItemElement,
   "movies-out-now-grid": MoviesOutNowGridElement,
+  "theaters-subitem": TheatersSubItemElement,
+  "theaters-subitem-list": TheatersSubItemListElement,
   "movie-library-grid-item": MovieLibraryGridItemElement,
   "movie-library-grid": MovieLibraryGridElement,
   "theaters-near-you-list-item": TheatersNearYouItemElement,

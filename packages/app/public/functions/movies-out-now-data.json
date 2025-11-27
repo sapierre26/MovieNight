@@ -5,56 +5,72 @@
       "outNowName": "Regretting You",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/regretting-you-2025-2443008067642?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/regretting-you-2025-2443008067642?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/black-phone-2.jpg",
       "outNowName": "Black Phone 2",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/black-phone-2-2025-2454955075949?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/black-phone-2-2025-2454955075949?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/springsteen.png",
       "outNowName": "Springsteen: Deliver Me from Nowhere",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/springsteen-deliver-me-from-nowhere-2025-2457530947593?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/springsteen-deliver-me-from-nowhere-2025-2457530947593?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/tron-ares.jpg",
       "outNowName": "Tron: Ares",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/tron-ares-2025-2439716419747?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/tron-ares-2025-2439716419747?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/chainsaw-man.jpg",
       "outNowName": "Chainsaw Man - The Movie: Reze Arc",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/chainsaw-man-the-movie-reze-arc-2025-2450598467826?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/chainsaw-man-the-movie-reze-arc-2025-2450598467826?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/stitch-head.jpg",
       "outNowName": "Stitch Head",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/stitch-head-2025-2459020867621?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/stitch-head-2025-2459020867621?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/back-to-the-future.jpg",
       "outNowName": "Back to the Future: 40th Anniversity",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/back-to-the-future-40th-anniversary-2025-2447575107719?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/back-to-the-future-40th-anniversary-2025-2447575107719?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/good-fortune.png",
       "outNowName": "Good Furtune",
       "squares": 3,
       "seeMovieTimesButton": "movies-out-now-item.html",
-      "watchTrailerNowButton": "https://www.fandango.com/videos/player/good-fortune-2025-2452797507747?autoplay=true&index=0"
+      "watchTrailerNowButton": "https://www.fandango.com/videos/player/good-fortune-2025-2452797507747?autoplay=true&index=0",
+      "releaseYear": "2025",
+      "runtime": "1h 50m"
     }
   ]
 }
