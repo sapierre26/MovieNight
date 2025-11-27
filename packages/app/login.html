@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Movie Night</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="utf-8"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/hdy8gyr.css" />
+  </head>
+  <body class="page">
+    <mu-auth>
+      <div class="login-container">
+        <div class="login-card">
+          <h2 id="login-header">User Login</h2>
+
+          <main class="card">
+            <login-form class="login-form" api="/auth/login">
+              <div class="form-group">
+                <label>
+                  <span>Username:</span>
+                  <input name="username" autocomplete="off" />
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label>
+                  <span>Password:</span>
+                  <input type="password" name="password" />
+                </label>
+              </div>
+            </login-form>
+          </main>
+          <p id="new-user">
+            Dont have an account?
+          </p>
+          <a id="new-user-signup" href="newuser.html">Sign Up as a New User!</a>
+        </div>
+      </div>
+    </mu-auth>
+
+    <script type="module">
+      import { define, Auth } from "@calpoly/mustang";
+      import { LoginFormElement } from "/src/auth/login-form";
+
+      define({
+        "mu-auth": Auth.Provider,
+        "login-form": LoginFormElement,
+      });
+    </script>
+  </body>
+</html>

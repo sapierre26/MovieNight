@@ -1,0 +1,124 @@
+{
+  "movieLibraryGridItems": [
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/shawshank-redemption.webp",
+      "movieName": "The Shawshank Redemption",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/the-godfather.jpg",
+      "movieName": "The Godfather",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/the-dark-knight.jpg",
+      "movieName": "The Dark Knight",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/lotr-return-of-the-king.jpg",
+      "movieName": "Lord of the Rings: The Return of the King",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/schindlers-list.jpg",
+      "movieName": "Schindler's List",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/pulp-fiction.png",
+      "movieName": "Pulp Fiction",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/forrest-gump.jpg",
+      "movieName": "Forrest Gump",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/fight-club.jpg",
+      "movieName": "Fight Club",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/inception.jpg",
+      "movieName": "Inception",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/empire-strikes-back.jpg",
+      "movieName": "Star Wars: Episode V - The Empire Strikes Back",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/se7en.webp",
+      "movieName": "Se7en",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/gladiator.jpg",
+      "movieName": "Gladiator",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/the-lion-king.png",
+      "movieName": "The Lion King",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/wall-e.jpg",
+      "movieName": "Wall-E",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/infinity-war.webp",
+      "movieName": "Avengers: Infinity War",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/the-shining.jpg",
+      "movieName": "The Shining",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/aliens.jpg",
+      "movieName": "Aliens",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/coco.jpeg",
+      "movieName": "Coco",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/toy-story.jpg",
+      "movieName": "Toy Story",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/2001.jpeg",
+      "movieName": "2001: A Space Odyssey",
+      "squares": 3,
+      "movieInfoButton": "movie-library-item.html"
+    }
+  ]
+}

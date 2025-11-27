@@ -1,0 +1,54 @@
+{
+  "artifactGridItems": [
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/bullwhip-indiana-jones.jpg",
+      "artifactName": "Bullwhip from Indiana Jones",
+      "artifactDescription": "The manufacture of bullwhips nearly disappeared towards the end of the twentieth century… until Raiders of the Lost Ark was released. Now, the bullwhip, along with a fedora, are the only two objects needed to imply Indiana Jones’ character."
+    },
+    {
+      "imgSrc": "/movie-flyer-images-horizontal/darth-vader-helmet.jpg",
+      "artifactName": "Darth Vader Helmet from Star Wars",
+      "artifactDescription": "The helmet, which was created using an alloy of durasteel, plasteel, and obsidian,[8] had a sloped design for its sides and back[11] similar to that of the helmets on ancient Sith armor.[20] The helmet created Vader's well-known menacing growl, as his natural voice was extremely weak from vocal-cord damage. "
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/delorean.jpg",
+        "artifactName": "Delorean from Back to the Future",
+        "artifactDescription": "As mentioned in the introduction, this film cemented the idea of a DeLorean as a time machine. Not only that, but I totally want one. Okay, maybe that’s not the best criterion for choosing the most memorable prop in film."
+    },  
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/flying-snitch.jpg",
+        "artifactName": "Golden Snitch from Harry Potter",
+        "artifactDescription": "The Golden Snitch, often simply called the Snitch, was the third and smallest ball used in Quidditch. It was a walnut-sized gold-coloured sphere with silver wings. It flew around the Quidditch field at high speeds, sometimes pausing and hovering in place."
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/infinity-gauntlet.webp",
+        "artifactName": "Infinity Gauntlet from Avengers",
+        "artifactDescription": "The Infinity Gauntlet is one of the most powerful objects in the Universe. It was designed to hold six of the soul gems, better known as the Infinity Gems.[5] When used in combination their already impressive powers make the wearer able to do anything they want."
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/jumanji.webp",
+        "artifactName": "Jumanji Board Game from Jumanji",
+        "artifactDescription": "JUMANJI, also known as The Game is a seemingly antique board game with elaborate decorations to attract interest to the young in heart and easily bored. The magical powers JUMANJI possesses vary from being able to send players into its jungle or to send the various dangers of said reality into the real world like the original."
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/lightsaber.webp",
+        "artifactName": "Lightsaber from Star Wars",
+        "artifactDescription": "The lightsaber, also referred to as a laser sword or space sword by those who were unfamiliar with it, was a distinctive weapon, the very image of which was inextricably bound with the mythos of the Jedi Order and their polar opposites, the Sith."
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/lord-of-the-rings.png",
+        "artifactName": "Ring from Lord of the Rings",
+        "artifactDescription": "The One Ring is an evil symbol of greed that was created in Mount Doom. The only way this ring can be destroyed is if it’s thrown into the volcano in which it was created."
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/ruby-red-slippers.webp",
+        "artifactName": "Ruby Red Slippers from the Wizard of Oz",
+        "artifactDescription": "Dorothy's ruby slippers are an essential part of the film's theme. She's been taken to the Land of Oz, and after the Wicked Witch of the East dies, the slippers are transferred to Dorothy, who's in charge of protecting the magic shoes from the Wicked Witch of the West. Eventually, they turn out to be her only way to get back home to Kansas."
+    },
+    {
+        "imgSrc": "/movie-flyer-images-horizontal/the-matrix.jpg",
+        "artifactName": "Pills from the Matrix",
+        "artifactDescription": "Though the movie is complex, rich, and heavy at times, the moment Neo is forced to make a choice comes down to a very simple, clear, and visually-stunning image; choose a red pill or a blue pill. In the literary sense, the pills are a metaphor for his choice, while in the construct of the narrative."
+    }
+  ]
+}

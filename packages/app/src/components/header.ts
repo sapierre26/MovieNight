@@ -1,6 +1,7 @@
-import { html, css, LitElement } from "lit";
+import { html, LitElement } from "lit";
 import { state } from "lit/decorators.js";
 import { Auth, Observer, Events } from "@calpoly/mustang";
+// import headings from "./styles/headings.css.js";
 
 export class HeaderElement extends LitElement {
   _authObserver = new Observer<Auth.Model>(this, "Blazing:auth");
@@ -44,50 +45,30 @@ export class HeaderElement extends LitElement {
   }
 
   renderSignInButton() {
-    return html` <a id="login-button" href="login.html">LOGIN</a> `;
+    return html` <a href="login.html"><button class="login-out">LOGIN</button></a> `;
   }
 
   renderSignOutButton() {
     return html`
-      <button
+      <button class="login-out"
         @click=${(e: UIEvent) => {
           Events.relay(e, "auth:message", ["auth/signout"]);
         }}
       >
-        Sign Out
+        Logout
       </button>
     `;
   }
 
   render() {
     return html`
-      <a slot="actuator">Hello, ${this.userid || "movie goer"}</a>
+      <a id="intro" slot="actuator">Hello, ${this.userid || "Moviegoer"} !</a>
 
       ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
     `;
   }
 
   static styles = [
-    css`
-      #login-button {
-        /* display: flex;
-        align-items: center; */
-        padding: 0 16px;
-        /* line-height: 70px; */
-        color: var(--color-main-support);
-        text-align: center;
-        text-decoration: none;
-        font-size: var(--p-font-size);
-        height: 100%;
-        font-family: var(--main-font-family);
-        font-weight: var(--main-font-weight);
-        font-style: var(--main-font-type);
-      }
-
-      #login-button:hover {
-        background-color: var(--color-sub-background);
-        color: var(--color-main-support);
-      }
-    `,
+    // headings.styles
   ];
 }

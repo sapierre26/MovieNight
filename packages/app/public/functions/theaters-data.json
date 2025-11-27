@@ -1,0 +1,53 @@
+{
+  "theatersListItems": [
+    {
+      "theaterName": "The Movie Experience - Downtown Cinema Centre",
+      "theaterInfo": "888 Marsh Street, San Luis Obispo, CA 93401",
+      "moviePaths": [
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/back-to-the-future.jpg", "movieName": "Back to the Future: 40th Anniversary" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/bugonia.jpg", "movieName": "Bugonia" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/regretting-you.jpg", "movieName": "Regretting You" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/springsteen.jpg", "movieName": "Springsteen: Deliver Me from Nowhere" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/black-phone-2.jpg", "movieName": "Black Phone 2" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/frankenstein.jpg", "movieName": "Frankenstein" }
+      ],
+      "href": "theaters-item.html"
+    },
+    {
+      "theaterName": "Regal Arroyo Grande",
+      "theaterInfo": "1160 W. Branch St., Arroyo Grande, CA 93420",
+      "moviePaths": [],
+      "href": "theaters-item.html"
+    },
+    {
+      "theaterName": "The Movie Experience - Colony Cinemas",
+      "theaterInfo": "6905 El Camino Real, Atascadero, CA 93422",
+      "moviePaths": [
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/back-to-the-future.jpg", "movieName": "Back to the Future: 40th Anniversary" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/self-help.jpg", "movieName": "Self-Help" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/stitch-head.jpg", "movieName": "Stitch Head" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/bugonia.jpg", "movieName": "Bugonia" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/chainsaw-man.jpg", "movieName": "Chainsaw Man - The Movie: Reze Arc" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/regretting-you.jpg", "movieName": "Regretting You" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/springsteen.jpg", "movieName": "Springsteen: Deliver Me from Nowhere" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/frankenstein.jpg", "movieName": "Frankenstein" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/tron-ares.jpg", "movieName": "Tron: Ares" }
+      ],
+      "href": "theaters-item.html"
+    },
+    {
+      "theaterName": "Regal Edwards Santa Maria & RPX",
+      "theaterInfo": "100 Town Center East, Santa Maria, CA 93454",
+      "moviePaths": [
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/violent-ends.jpg", "movieName": "Violent Ends" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/anniversary.jpg", "movieName": "Anniversary" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/bugonia.jpg", "movieName": "Bugonia" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/chainsaw-man.jpg", "movieName": "Chainsaw Man - The Movie: Reze Arc" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/regretting-you.jpg", "movieName": "Regretting You" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/springsteen.jpg", "movieName": "Springsteen: Deliver Me from Nowhere" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/black-phone-2.jpg", "movieName": "Black Phone 2" },
+        { "href": "theaters-item.html", "imgSrc": "/movie-flyer-images-vertical/tron-ares.jpg", "movieName": "Tron: Ares" }
+      ]
+    }
+  ]
+}
