@@ -39,8 +39,12 @@ body {
   gap: 1rem;
   padding: 0 20px;
   height: 70px;
-
   overflow: hidden;
+}
+
+#profile-icon {
+  width: auto;
+  height: 40px;
 }
 
 .main-nav-bar a {

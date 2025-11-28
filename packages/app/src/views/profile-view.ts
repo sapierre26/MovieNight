@@ -27,7 +27,7 @@ export class MovieGoerViewElement extends LitElement {
         <section class="profile-background">
           <div class="user-info">
             <div class="profile-img">
-              <img src="images/him-for-slides.png" alt="Moviegoer" />
+              <img src="/images/user-placeholder.png" alt="Moviegoer" />
             </div>
 
             <div class="profile-text">
@@ -50,19 +50,19 @@ export class MovieGoerViewElement extends LitElement {
             <h2>My Favorite Movies:</h2>
             <div>
               <span
-                ><img src="movie-flyer-images-vertical/him.jpg" alt="Him"
+                ><img src="/favorite-movies/dreamgirls.jpg" alt="Dreamgirls"
               /></span>
               <span
-                ><img src="movie-flyer-images-vertical/him.jpg" alt="Him"
+                ><img src="/favorite-movies/infinity-war.jpg" alt="Avengers: Infinity War"
               /></span>
               <span
-                ><img src="movie-flyer-images-vertical/him.jpg" alt="Him"
+                ><img src="/favorite-movies/revenge-of-the-sith.jpg" alt="Star Wars: Revenge of the Sith"
               /></span>
               <span
-                ><img src="movie-flyer-images-vertical/him.jpg" alt="Him"
+                ><img src="/favorite-movies/the-lion-king.jpeg" alt="The Lion King"
               /></span>
               <span
-                ><img src="movie-flyer-images-vertical/him.jpg" alt="Him"
+                ><img src="/favorite-movies/the-winter-soldier.jpg" alt="Captain America: The Winter Soldier"
               /></span>
             </div>
           </div>
@@ -91,7 +91,7 @@ export class MovieGoerViewElement extends LitElement {
       }
 
       .profile-img img {
-        width: 430px;
+        width: 600px;
         height: 600px;
         object-fit: cover;
       }
