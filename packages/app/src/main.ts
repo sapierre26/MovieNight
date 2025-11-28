@@ -10,6 +10,7 @@ import { SoundtrackViewElement } from  "./views/soundtrack-view";
 import { ArtifactsViewElement } from  "./views/artifacts-view";
 import { FilmLocationsViewElement } from  "./views/film-locations-view.js";
 
+import { HorizontalSliderElement } from "./components/horizontal-slider.js";
 import { MoviesOutNowGridItemElement } from "./components/movies-out-now-grid-item.js";
 import { MoviesOutNowGridElement } from "./components/movies-out-now-grid.js";
 import { TheatersSubItemElement } from "./components/theaters-subitem.js";
@@ -104,6 +105,7 @@ define({
   "artifacts-view": ArtifactsViewElement,
   "film-locations-view": FilmLocationsViewElement,
 
+  "horizontal-slider": HorizontalSliderElement,
   "movies-out-now-grid-item": MoviesOutNowGridItemElement,
   "movies-out-now-grid": MoviesOutNowGridElement,
   "theaters-subitem": TheatersSubItemElement,
