@@ -1,8 +1,8 @@
 import { Auth, define, History, Switch, Store } from "@calpoly/mustang";
 import { html } from "lit";
-// import { Msg } from "./messages";
-// import { Model, init } from "./model";
-// import update from "./update";
+import { Msg } from "./messages";
+import { Model, init } from "./model";
+import update from "./update";
 import { HeaderElement } from "./components/header.js";
 import { HomeViewElement } from "./views/home-view";
 import { MovieGoerViewElement } from  "./views/profile-view";
@@ -98,11 +98,11 @@ define({
     super(routes, "Blazing:history", "Blazing:auth");
     }
   },
-  // "mu-store": class AppStore extends Store.Provider<Model, Msg> {
-  //   constructor() {
-  //     super(update, init, "Blazing:auth");
-  //   }
-  // },
+  "mu-store": class AppStore extends Store.Provider<Model, Msg> {
+    constructor() {
+      super(update, init, "Blazing:auth");
+    }
+  },
   "movie-header": HeaderElement,
   "home-view": HomeViewElement,
   "profile-view": MovieGoerViewElement,

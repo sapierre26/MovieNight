@@ -1,24 +1,22 @@
-import { define, Form } from "@calpoly/mustang";
-import { html, css, LitElement } from "lit";
+import { define, View } from "@calpoly/mustang";
+import { html, css } from "lit";
 import { property, state } from "lit/decorators.js";
+import { MovieGoer } from "../../../server/src/models/movie-goer";
+import { Msg } from "../messages";
+import { Model } from "../model";
 // import reset from "./styles/reset.css.ts";
 
-export class MovieGoerViewElement extends LitElement {
-  static uses = define({
-    "mu-form": Form.Element,
-  });
-
+export class MovieGoerViewElement extends View<Model, Msg> {
   @property({ attribute: "user-id" })
   userid?: string;
 
-  @property()
-  mode = "view";
-
   @state()
-  moviegoer?: any;
+  get profile(): MovieGoer | undefined {
+    return this.model.profile;
+  }
 
-  get src() {
-    return `/api/movie-goers/${this.userid}`;
+  constructor() {
+    super("Blazing:model");
   }
 
   render() {
@@ -53,16 +51,24 @@ export class MovieGoerViewElement extends LitElement {
                 ><img src="/favorite-movies/dreamgirls.jpg" alt="Dreamgirls"
               /></span>
               <span
-                ><img src="/favorite-movies/infinity-war.jpg" alt="Avengers: Infinity War"
+                ><img
+                  src="/favorite-movies/infinity-war.jpg"
+                  alt="Avengers: Infinity War"
               /></span>
               <span
-                ><img src="/favorite-movies/revenge-of-the-sith.jpg" alt="Star Wars: Revenge of the Sith"
+                ><img
+                  src="/favorite-movies/revenge-of-the-sith.jpg"
+                  alt="Star Wars: Revenge of the Sith"
               /></span>
               <span
-                ><img src="/favorite-movies/the-lion-king.jpeg" alt="The Lion King"
+                ><img
+                  src="/favorite-movies/the-lion-king.jpeg"
+                  alt="The Lion King"
               /></span>
               <span
-                ><img src="/favorite-movies/the-winter-soldier.jpg" alt="Captain America: The Winter Soldier"
+                ><img
+                  src="/favorite-movies/the-winter-soldier.jpg"
+                  alt="Captain America: The Winter Soldier"
               /></span>
             </div>
           </div>

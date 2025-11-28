@@ -1,7 +1,7 @@
-// import { MovieGoer } from "server/models";
+import { MovieGoer } from "../../server/src/models/movie-goer";
 
-// export interface Model {
-//     profile?: MovieGoer;
-// }
+export interface Model {
+    profile?: MovieGoer;
+}
 
-// export const init: Model = {};
+export const init: Model = {};
