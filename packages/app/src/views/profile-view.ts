@@ -1,4 +1,4 @@
-import { View } from "@calpoly/mustang";
+import { define, Form, History, View } from "@calpoly/mustang";
 import { html, css } from "lit";
 import { property, state } from "lit/decorators.js";
 import { MovieGoer } from "../../../server/src/models/movie-goer";
@@ -7,13 +7,23 @@ import { Model } from "../model";
 // import reset from "./styles/reset.css.ts";
 
 export class MovieGoerViewElement extends View<Model, Msg> {
+  static uses = define({
+    "mu-form": Form.Element, // make sure mu-form is defined
+  });
+
   @property({ attribute: "user-id" })
-  userid?: string;
+  userid!: string;
+
+  @property()
+  mode = "view";
 
   @state()
   get profile(): MovieGoer | undefined {
     return this.model.profile;
   }
+
+  @state()
+  _error?: Error;
 
   constructor() {
     super("Blazing:model");
@@ -37,64 +47,74 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     }
   }
 
-  render() {
+  handleSubmit(event: Form.SubmitEvent<MovieGoer>) {
+    const viewPath = `/movie-night/user-profile/${this.userid}`;
+
+    this.dispatchMessage([
+      "profile/save",
+      {
+        userid: this.userid,
+        profile: event.detail
+      },
+      {
+        onSuccess: () =>
+          History.dispatch(this, "history/navigate", {
+            href: viewPath
+          }),
+        onFailure: (error: Error) =>
+          this._error = error
+      }
+    ]);
+  }
+
+
+  renderEditor() {
+    const editPath = `/movie-night/user-profile/${this.userid}/edit`;
+
     return html`
-      <div class="profile">
-        <section class="profile-background">
-          <div class="user-info">
-            <div class="profile-img">
-              <img src="/images/user-placeholder.png" alt="Moviegoer" />
-            </div>
+        <main class="page">
+          <mu-form .init=${this.profile}
+            @mu-form:submit=${this.handleSubmit}>
+            <label> 
+              <span>Name: </span>
+              <input type="text" name="name" />
+            </label>
 
-            <div class="profile-text">
-              <h1>${this.profile?.name}</h1>
-              <h2>${this.profile?.username}</h2>
-              <h2>${this.profile?.hometown}</h2>
-              <p>${this.profile?.bio}</p>
-            </div>
-          </div>
+            <label>
+              <span>Username: </span>
+              <input type="text" name="username" />
+            </label>
 
-          <div class="favorite-movies-gallery">
-            <h2>My Favorite Movies:</h2>
-            <div>
-              ${this.profile?.favoriteMovies.map(
-                (movie) => html`<span
-                  ><img src="/favorite-movies/${movie}.png" alt="${movie}" /></span>`
-              )}
-              // <span
-              //   ><img 
-              //     src="/favorite-movies/user-placeholder.png" 
-              //     alt="Dreamgirls"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="Avengers: Infinity War"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="Star Wars: Revenge of the Sith"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="The Lion King"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="Captain America: The Winter Soldier"
-              // /></span>
-            </div>
-          </div>
+            <label>
+              <span>Hometown: </span>
+              <input type="text" name="hometown" />
+            </label>
 
-          <div class="edit">
-            <button class="edit-profile-button">Edit Profile</button>
-          </div>
-        </section>
-      </div>
-    `;
+            <label>
+              <span>Bio: </span>
+              <input type="text" name="bio" />
+            </label>
+
+            <label>
+              <span>Favorite Movies: </span>
+              <input type="file" name="favoriteMovies" />
+            </label>
+
+            <div class="edit">
+              <button @click=${() => History.dispatch( this, "history/navigate", { href: editPath } )}>Edit Profile</button>
+            </div>
+          </mu-form>
+        </main>
+      `;
+  }
+
+  renderError() {
+    return this._error ?
+      html`
+        <p class="error">
+          ${this._error}
+        </p>` :
+      ""
   }
 
   static styles = [
@@ -140,18 +160,10 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         font-size: var(--h2-font-size);
       }
 
-      .profile-background h3 {
+      .profile-background p {
         color: var(--color-main-support);
         font-family: var(--main-font-family);
         font-weight: var(--main-font-weight);
-        font-style: var(--main-font-type);
-        font-size: var(--h3-font-size);
-      }
-
-      .profile-background p {
-        color: var(--color-main-support);
-        font-family: var(--main-alternative-font-family);
-        font-weight: var(--main-alternative-font-weight);
         font-style: var(--main-font-type);
         font-size: var(--p-font-size-bigger);
       }
@@ -220,3 +232,20 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 //                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
 //                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 //                 sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  // render() {
+  //   return html`
+  //     <div class="profile">
+  //       <section class="profile-background">
+
+  //         <div class="user-info">
+  //           <div class="profile-img"></div>
+
+  //           <div class="profile-text"></div>
+  //         </div>
+
+  //         <div class="favorite-movies-gallery"></div>
+  //       </section>
+  //     </div>
+  //   `;
+  // }

@@ -67,13 +67,20 @@ const routes = [
     `
   },
   {
-    path: "/movie-night/profile/:id",
+    // auth: "protected",
+    path: "/movie-night/user-profile/:id/edit",
+    view: (params: Switch.Params) => html`
+      <profile-view userId="${params.id}" mode="edit"></profile-view>
+    `
+  },
+  {
+    path: "/movie-night/user-profile/:id",
     view: (params: Switch.Params) => html`
       <profile-view userId="${params.id}"></profile-view>
     `
   },
   {
-    path: "/movie-night/profile",
+    path: "/movie-night/user-profile",
     view: () => html`
       <profile-view></profile-view>
     `
