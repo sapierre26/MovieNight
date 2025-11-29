@@ -29,21 +29,10 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     super("Blazing:model");
   }
 
-  attributeChangedCallback(
-    name: string,
-    oldValue: string,
-    newValue: string
-  ) {
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     super.attributeChangedCallback(name, oldValue, newValue);
-    if (
-      name === "user-id" &&
-      oldValue !== newValue &&
-      newValue
-    ) {
-      this.dispatchMessage([
-        "profile/request",
-        { userid: newValue }
-      ]);
+    if (name === "user-id" && oldValue !== newValue && newValue) {
+      this.dispatchMessage(["profile/request", { userid: newValue }]);
     }
   }
 
@@ -54,67 +43,68 @@ export class MovieGoerViewElement extends View<Model, Msg> {
       "profile/save",
       {
         userid: this.userid,
-        profile: event.detail
+        profile: event.detail,
       },
       {
         onSuccess: () =>
           History.dispatch(this, "history/navigate", {
-            href: viewPath
+            href: viewPath,
           }),
-        onFailure: (error: Error) =>
-          this._error = error
-      }
+        onFailure: (error: Error) => (this._error = error),
+      },
     ]);
   }
-
 
   renderEditor() {
     const editPath = `/movie-night/user-profile/${this.userid}/edit`;
 
     return html`
-        <main class="page">
-          <mu-form .init=${this.profile}
-            @mu-form:submit=${this.handleSubmit}>
-            <label> 
-              <span>Name: </span>
-              <input type="text" name="name" />
-            </label>
+      <main class="page">
+        <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit}>
+          <label>
+            <input type="text" name="profileImg" />
+          </label>
 
-            <label>
-              <span>Username: </span>
-              <input type="text" name="username" />
-            </label>
+          <label>
+            <span>Name: </span>
+            <input type="text" name="name" />
+          </label>
 
-            <label>
-              <span>Hometown: </span>
-              <input type="text" name="hometown" />
-            </label>
+          <label>
+            <span>Username: </span>
+            <input type="text" name="username" />
+          </label>
 
-            <label>
-              <span>Bio: </span>
-              <input type="text" name="bio" />
-            </label>
+          <label>
+            <span>Hometown: </span>
+            <input type="text" name="hometown" />
+          </label>
 
-            <label>
-              <span>Favorite Movies: </span>
-              <input type="file" name="favoriteMovies" />
-            </label>
+          <label>
+            <span>Bio: </span>
+            <input type="text" name="bio" />
+          </label>
 
-            <div class="edit">
-              <button @click=${() => History.dispatch( this, "history/navigate", { href: editPath } )}>Edit Profile</button>
-            </div>
-          </mu-form>
-        </main>
-      `;
+          <label>
+            <span>Favorite Movies: </span>
+            <input type="file" name="favoriteMovies" />
+          </label>
+
+          <div class="edit">
+            <button
+              @click=${() =>
+                History.dispatch(this, "history/navigate", { href: editPath })}
+            >
+              Edit Profile
+            </button>
+          </div>
+        </mu-form>
+      </main>
+    `;
   }
 
   renderError() {
-    return this._error ?
-      html`
-        <p class="error">
-          ${this._error}
-        </p>` :
-      ""
+    return this._error ? html` <p class="error">${this._error}</p>` : "";
   }
 
   static styles = [
@@ -224,7 +214,6 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   ];
 }
 
-
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 //                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 //                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -233,19 +222,19 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 //                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 //                 sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-  // render() {
-  //   return html`
-  //     <div class="profile">
-  //       <section class="profile-background">
+// render() {
+//   return html`
+//     <div class="profile">
+//       <section class="profile-background">
 
-  //         <div class="user-info">
-  //           <div class="profile-img"></div>
+//         <div class="user-info">
+//           <div class="profile-img"></div>
 
-  //           <div class="profile-text"></div>
-  //         </div>
+//           <div class="profile-text"></div>
+//         </div>
 
-  //         <div class="favorite-movies-gallery"></div>
-  //       </section>
-  //     </div>
-  //   `;
-  // }
+//         <div class="favorite-movies-gallery"></div>
+//       </section>
+//     </div>
+//   `;
+// }

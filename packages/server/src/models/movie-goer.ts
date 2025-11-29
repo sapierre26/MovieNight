@@ -1,9 +1,9 @@
 export interface MovieGoer {
-  profileImg: string | undefined;
-  userid: string | undefined;
+  profileImg: string;
+  userid: string;
   name: string;
-  username: string | undefined;
-  hometown: string;
+  username: string;
+  hometown?: string;
   bio: string;
   favoriteMovies: Array<string>;
 }
