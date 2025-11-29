@@ -1,4 +1,4 @@
-import { define, View } from "@calpoly/mustang";
+import { View } from "@calpoly/mustang";
 import { html, css } from "lit";
 import { property, state } from "lit/decorators.js";
 import { MovieGoer } from "../../../server/src/models/movie-goer";
@@ -19,6 +19,24 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     super("Blazing:model");
   }
 
+  attributeChangedCallback(
+    name: string,
+    oldValue: string,
+    newValue: string
+  ) {
+    super.attributeChangedCallback(name, oldValue, newValue);
+    if (
+      name === "user-id" &&
+      oldValue !== newValue &&
+      newValue
+    ) {
+      this.dispatchMessage([
+        "profile/request",
+        { userid: newValue }
+      ]);
+    }
+  }
+
   render() {
     return html`
       <div class="profile">
@@ -29,47 +47,45 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </div>
 
             <div class="profile-text">
-              <h1>Moviegoer Name</h1>
-              <h2>username</h2>
-              <h2>hometown</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+              <h1>${this.profile?.name}</h1>
+              <h2>${this.profile?.username}</h2>
+              <h2>${this.profile?.hometown}</h2>
+              <p>${this.profile?.bio}</p>
             </div>
           </div>
 
           <div class="favorite-movies-gallery">
             <h2>My Favorite Movies:</h2>
             <div>
-              <span
-                ><img src="/favorite-movies/dreamgirls.jpg" alt="Dreamgirls"
-              /></span>
-              <span
-                ><img
-                  src="/favorite-movies/infinity-war.jpg"
-                  alt="Avengers: Infinity War"
-              /></span>
-              <span
-                ><img
-                  src="/favorite-movies/revenge-of-the-sith.jpg"
-                  alt="Star Wars: Revenge of the Sith"
-              /></span>
-              <span
-                ><img
-                  src="/favorite-movies/the-lion-king.jpeg"
-                  alt="The Lion King"
-              /></span>
-              <span
-                ><img
-                  src="/favorite-movies/the-winter-soldier.jpg"
-                  alt="Captain America: The Winter Soldier"
-              /></span>
+              ${this.profile?.favoriteMovies.map(
+                (movie) => html`<span
+                  ><img src="/favorite-movies/${movie}.png" alt="${movie}" /></span>`
+              )}
+              // <span
+              //   ><img 
+              //     src="/favorite-movies/user-placeholder.png" 
+              //     alt="Dreamgirls"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="Avengers: Infinity War"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="Star Wars: Revenge of the Sith"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="The Lion King"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="Captain America: The Winter Soldier"
+              // /></span>
             </div>
           </div>
 
@@ -195,3 +211,12 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     `,
   ];
 }
+
+
+// Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+//                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+//                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+//                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+//                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+//                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+//                 sunt in culpa qui officia deserunt mollit anim id est laborum.

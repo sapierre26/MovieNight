@@ -12,6 +12,12 @@ export default function update(
     const unhandled = message[0];
 
   switch (message[0]) {
+    // case "profile/save": {
+    //     const { userid, profile } = payload as { userid: string; profile: MovieGoer };
+    //     return [
+    //         { ...model, saveProfile: profile },
+    //     ];
+    // }
     case "profile/request": {
       const { userid } = payload;
       if (model.profile?.userid === userid ) return model;

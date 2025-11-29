@@ -22,14 +22,15 @@ body {
   gap: 1rem;
   padding: 0 20px;
   height: 70px;
-
   overflow: hidden;
   background-color: var(--color-main-background);
 }
 
 #logo {
-  width: auto;
+  width: 100%;
+  max-width: 70px;
   height: 70px;
+  object-fit: cover;
 }
 
 #login {
@@ -43,8 +44,10 @@ body {
 }
 
 #profile-icon {
-  width: auto;
+  width: 100%;
+  max-width: 40px;
   height: 40px;
+  object-fit: cover;
 }
 
 .main-nav-bar a {

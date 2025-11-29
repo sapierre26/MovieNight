@@ -44,18 +44,18 @@ export class HeaderElement extends LitElement {
     fetch(url, { headers: this.authorization }).then((res) => res.json());
   }
 
-  renderSignInButton() {
+  renderSignInButton() { // when signed in can press on the profile icon to go to profile page
     return html` <a href="login.html"><button class="login-out">LOGIN</button></a> `;
   }
 
-  renderSignOutButton() {
+  renderSignOutButton() { // when not signed in/signed out can't press on profile icon
     return html`
       <button class="login-out"
         @click=${(e: UIEvent) => {
           Events.relay(e, "auth:message", ["auth/signout"]);
         }}
       >
-        Logout
+        LOGOUT
       </button>
     `;
   }
