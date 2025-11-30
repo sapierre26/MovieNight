@@ -64,7 +64,13 @@ export class HeaderElement extends LitElement {
     return html`
       <a id="intro" slot="actuator">Hello, ${this.userid || "Moviegoer"} !</a>
 
-      ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
+      ${this.loggedIn ? html`
+          <a href="/movie-night/user-profile/${this.userid}">
+            <img id="profile-icon" src="/images/profile-icon-white.png" alt="Profile Icon" />
+          </a>
+          ${this.renderSignOutButton()}
+        `
+      : this.renderSignInButton()}
     `;
   }
 

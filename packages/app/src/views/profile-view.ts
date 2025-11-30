@@ -17,7 +17,6 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   @property()
   mode = "view";
 
-  @state()
   get profile(): MovieGoer | undefined {
     return this.model.profile;
   }
@@ -55,9 +54,45 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     ]);
   }
 
-  renderEditor() {
+  renderView() {
     const editPath = `/movie-night/user-profile/${this.userid}/edit`;
 
+    return html`
+      <div class="profile">
+        <section class="profile-background">
+          <div class="user-info">
+            <div class="profile-img">
+              <img src="${this.profile?.profileImg}" alt="Moviegoer" />
+            </div>
+
+            <div class="profile-text">
+              <h1>Name: ${this.profile?.name}</h1>
+              <h2>Username: ${this.profile?.username}</h2>
+              <h2>Hometown: ${this.profile?.hometown}</h2>
+              <p>Bio: ${this.profile?.bio}</p>
+            </div>
+          </div>
+
+          <div class="favorite-movies-gallery">
+            <h2>My Favorite Movies:</h2>
+            <div>
+            </div>
+          </div>
+
+          <div class="edit">
+            <button
+              @click=${() =>
+                History.dispatch(this, "history/navigate", { href: editPath })}
+            >
+              Edit Profile
+            </button>
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  renderEditor() {
     return html`
       <main class="page">
         <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit}>
@@ -91,12 +126,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           </label>
 
           <div class="edit">
-            <button
-              @click=${() =>
-                History.dispatch(this, "history/navigate", { href: editPath })}
-            >
-              Edit Profile
-            </button>
+            <button type="submit">Save Profile</button>
           </div>
         </mu-form>
       </main>
@@ -105,6 +135,10 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
   renderError() {
     return this._error ? html` <p class="error">${this._error}</p>` : "";
+  }
+
+  render() {
+    return this.mode === "view" ? this.renderView() : this.renderEditor();
   }
 
   static styles = [
@@ -125,6 +159,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
       .profile-img img {
         width: 600px;
         height: 600px;
+        border: 1px solid var(--color-sub-support);
         object-fit: cover;
       }
 
@@ -222,19 +257,32 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 //                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 //                 sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-// render() {
-//   return html`
-//     <div class="profile">
-//       <section class="profile-background">
-
-//         <div class="user-info">
-//           <div class="profile-img"></div>
-
-//           <div class="profile-text"></div>
-//         </div>
-
-//         <div class="favorite-movies-gallery"></div>
-//       </section>
-//     </div>
-//   `;
-// }
+// ${this.profile?.favoriteMovies.map(
+              //   (movie) => html`<span
+              //     ><img src="/favorite-movies/${movie}.png" alt="${movie}" /></span>`
+              // )}
+              // <span
+              //   ><img 
+              //     src="/favorite-movies/user-placeholder.png" 
+              //     alt="Dreamgirls"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="Avengers: Infinity War"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="Star Wars: Revenge of the Sith"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="The Lion King"
+              // /></span>
+              // <span
+              //   ><img
+              //     src="/favorite-movies/user-placeholder.png"
+              //     alt="Captain America: The Winter Soldier"
+              // /></span>
