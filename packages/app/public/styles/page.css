@@ -248,7 +248,7 @@ input:checked + .toggle-switch-slider::before {
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
-  font-size: var(--p-font-size);
+  font-size: var(--h3-font-size);
 }
 
 .form-group input {
@@ -264,16 +264,7 @@ input:checked + .toggle-switch-slider::before {
   transition: all 0.2s;
 }
 
-#new-user {
-  color: var(--color-main-background);
-  font-family: var(--main-font-family);
-  font-weight: var(--main-font-weight);
-  font-style: var(--main-font-type);
-  font-size: var(--p-font-size);
-}
-
-#new-user-signup {
-  text-decoration: none;
+#new-user, #new-user-signup {
   color: var(--color-main-background);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);

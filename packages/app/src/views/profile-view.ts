@@ -66,21 +66,28 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </div>
 
             <div class="profile-text">
-              <h1>Name: ${this.profile?.name}</h1>
+              <h2>Name: ${this.profile?.name}</h2>
+              <h3>Bio: ${this.profile?.bio}</h3>
+
               <h2>Username: ${this.profile?.username}</h2>
               <h2>Hometown: ${this.profile?.hometown}</h2>
-              <p>Bio: ${this.profile?.bio}</p>
             </div>
           </div>
 
           <div class="favorite-movies-gallery">
             <h2>My Favorite Movies:</h2>
             <div>
+               ${this.profile?.favoriteMovies.map(
+                (movie) => html`
+                  <span>
+                    <img src="/favorite-movies/${movie}.png" alt="${movie}" />
+                  </span>`
+              )}
             </div>
           </div>
 
           <div class="edit">
-            <button
+            <button class="edit-profile-button"
               @click=${() =>
                 History.dispatch(this, "history/navigate", { href: editPath })}
             >
@@ -95,38 +102,40 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   renderEditor() {
     return html`
       <main class="page">
-        <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit}>
-          <label>
-            <input type="text" name="profileImg" />
-          </label>
+        <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit}
+        
+          <div class="edit-form-group">
+            <label>
+              <span>Profile Image: </span>
+              <input type="file" name="profileImg" />
+            </label>
 
-          <label>
-            <span>Name: </span>
-            <input type="text" name="name" />
-          </label>
+            <label>
+              <span>Name: </span>
+              <input type="text" name="name" />
+            </label>
 
-          <label>
-            <span>Username: </span>
-            <input type="text" name="username" />
-          </label>
+            <label>
+              <span>Username: </span>
+              <input type="text" name="username" />
+            </label>
 
-          <label>
-            <span>Hometown: </span>
-            <input type="text" name="hometown" />
-          </label>
+            <label>
+              <span>Hometown: </span>
+              <input type="text" name="hometown" />
+            </label>
 
-          <label>
-            <span>Bio: </span>
-            <input type="text" name="bio" />
-          </label>
+            <label>
+              <span>Bio: </span>
+              <input type="text" name="bio" />
+            </label>
 
-          <label>
-            <span>Favorite Movies: </span>
-            <input type="file" name="favoriteMovies" />
-          </label>
+            <label>
+              <span>Favorite Movies: </span>
+              <input type="file" name="favoriteMovies" />
+            </label>
 
-          <div class="edit">
-            <button type="submit">Save Profile</button>
+            <button type="submit" class="edit-profile-button">Save Profile</button>
           </div>
         </mu-form>
       </main>
@@ -143,7 +152,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
   static styles = [
     css`
-      .profile-background {
+      .profile-background, .page {
         background-color: var(--color-main-background);
         margin: var(--margin-for-body);
         padding: var(--padding-insider);
@@ -169,14 +178,6 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         padding: var(--padding-insider);
       }
 
-      .profile-background h1 {
-        color: var(--color-main-support);
-        font-family: var(--main-font-family);
-        font-weight: var(--main-font-weight);
-        font-style: var(--main-font-type);
-        font-size: var(--h1-font-size);
-      }
-
       .profile-background h2 {
         color: var(--color-main-support);
         font-family: var(--main-font-family);
@@ -185,12 +186,12 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         font-size: var(--h2-font-size);
       }
 
-      .profile-background p {
+      .profile-background h3 {
         color: var(--color-main-support);
-        font-family: var(--main-font-family);
-        font-weight: var(--main-font-weight);
+        font-family: var(--main-alternative-font-family);
+        font-weight: var(--main-alternative-font-weight);
         font-style: var(--main-font-type);
-        font-size: var(--p-font-size-bigger);
+        font-size: var(--h3-font-size);
       }
 
       .favorite-movies-gallery {
@@ -213,6 +214,12 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         width: var(--width-slider-imgs);
         height: var(--height-slider-imgs);
         object-fit: cover;
+      }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .edit {
@@ -245,6 +252,34 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         color: var(--color-sub-background);
         transform: scale(1.03);
       }
+
+      .edit-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .edit-form-group label {
+        color: var(--color-main-support);
+        font-family: var(--main-font-family);
+        font-weight: var(--main-font-weight);
+        font-style: var(--main-font-type);
+        font-size: var(--h3-font-size);
+      }
+
+      .edit-form-group input {
+        padding: 8px 10px;
+        width: 100%;
+        max-width: 300px;
+        font-family: var(--main-font-family);
+        font-size: var(--p-font-size-smaller);
+        background-color: var(--color-main-support);
+        color: var(--color-sub-support);
+        border: 1px solid var(--color-sub-support);
+        border-radius: var(--border-sub-radius-content);
+        transition: all 0.2s;
+      }
     `,
   ];
 }
@@ -257,32 +292,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 //                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 //                 sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-// ${this.profile?.favoriteMovies.map(
-              //   (movie) => html`<span
-              //     ><img src="/favorite-movies/${movie}.png" alt="${movie}" /></span>`
-              // )}
-              // <span
-              //   ><img 
-              //     src="/favorite-movies/user-placeholder.png" 
-              //     alt="Dreamgirls"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="Avengers: Infinity War"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="Star Wars: Revenge of the Sith"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="The Lion King"
-              // /></span>
-              // <span
-              //   ><img
-              //     src="/favorite-movies/user-placeholder.png"
-              //     alt="Captain America: The Winter Soldier"
-              // /></span>
+
+// <div class="edit">
+//   <button type="submit" class="edit-profile-button">Save Profile</button>
+// </div>
