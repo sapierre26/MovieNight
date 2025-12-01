@@ -33,7 +33,7 @@ export class MovieLibraryGridItemElement extends LitElement {
                     }
                 </div>
 
-                <a href="${this.movieInfoButton}"><button><slot name="movie-info">Movie Info</slot></button></a>
+                <a href="/movie-night/movie-library/${this.movieName}"><button><slot name="movie-info">Movie Info</slot></button></a>
             </article>
         </article>
     `;

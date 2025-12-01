@@ -298,7 +298,6 @@ input:checked + .toggle-switch-slider::before {
   font-size: var(--h2-font-size);
 }
 
-/* MOVIE LIBRARY ITEM, MOVIES OUT NOW, THEATER ITEM */
 .movie-bio-background img {
   width: 1000px;
   height: auto;

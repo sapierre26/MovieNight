@@ -6,7 +6,6 @@ import fs from "node:fs/promises";
 import path from "path";
 import MovieGoer from "./services/movie-goer-svc";
 import movieGoers from "./routes/movie-goers";
-import moviesOutNow from "./routes/movies-out-now";
 
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
 import PlaylistItem from "./services/playlist-item-svc";
@@ -24,7 +23,6 @@ const staticDir = process.env.STATIC || "public";
 app.use(express.json());
 
 app.use("/api/movie-goers", authenticateUser, movieGoers);
-app.use("/api/movies-out-now", moviesOutNow);
 
 app.use("/auth", auth);
 

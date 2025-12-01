@@ -9,6 +9,7 @@ import { MovieGoerViewElement } from "./views/profile-view";
 import { MoviesOutNowViewElement } from "./views/movies-out-now-view";
 import { MoviesOutNowItemViewElement } from "./views/movies-out-now-item-view";
 import { MovieLibraryViewElement } from "./views/movie-library-view";
+import { MovieLibraryItemViewElement } from "./views/movie-library-item-view.js"
 import { TheatersViewElement } from "./views/theaters-view";
 import { SoundtrackViewElement } from "./views/music-library-view.js";
 import { ArtifactsViewElement } from "./views/artifacts-view";
@@ -67,7 +68,7 @@ const routes = [
     path: "/movie-night/movie-library/:movieName",
     view: (params: Switch.Params) => html`
       <movie-library-item-view
-        movieId="${params.movieName}"
+        movieName="${params.movieName}" src="/functions/movie-library-item-data.json"
       ></movie-library-item-view>
     `,
   },
@@ -133,6 +134,7 @@ define({
   "movies-out-now-view": MoviesOutNowViewElement,
   "movies-out-now-item-view": MoviesOutNowItemViewElement,
   "movie-library-view": MovieLibraryViewElement,
+  "movie-library-item-view": MovieLibraryItemViewElement,
   "theaters-view": TheatersViewElement,
   "soundtrack-view": SoundtrackViewElement,
   "artifacts-view": ArtifactsViewElement,
