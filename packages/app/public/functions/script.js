@@ -27,7 +27,6 @@ function slidesBanner() {
 const toggleContainer = document.querySelector(".toggle-switch");
 const toggle = document.querySelector('.toggle-switch input[type="checkbox"]');
 const logo = document.querySelector("#logo");
-const profile = document.querySelector("#profile-icon");
 const label = document.querySelector("#toggle-switch-label");
 
 const currentTheme = localStorage.getItem("theme");
@@ -35,13 +34,11 @@ if (currentTheme === "light") {
   toggle.checked = true;
   document.documentElement.setAttribute("theme", "light");
   logo.src = "images/movie-night-logo-black.png";
-  profile.src = "images/profile-icon-black.png";
   label.textContent = "DARK MODE";
 } else {
   toggle.checked = false;
   document.documentElement.setAttribute("theme", "dark");
   logo.src = "images/movie-night-logo-white.png";
-  profile.src = "images/profile-icon-white.png";
   label.textContent = "LIGHT MODE";
 }
 
@@ -69,12 +66,10 @@ document.body.addEventListener("dark-mode:toggle", (e) => {
   if (isChecked) {
     document.documentElement.setAttribute("theme", "light");
     logo.src = "images/movie-night-logo-black.png";
-    profile.src = "images/profile-icon-black.png";
     label.textContent = "DARK MODE";
   } else {
     document.documentElement.setAttribute("theme", "dark");
     logo.src = "images/movie-night-logo-white.png";
-    profile.src = "images/profile-icon-white.png";
     label.textContent = "LIGHT MODE";
   }
 });

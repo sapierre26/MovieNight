@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import "./soundtrack-library-grid-item.js";
+import "./music-library-grid-item.js";
 
 interface SoundtrackLibraryGridItemData {
   imgSrc?: string;
@@ -52,7 +52,7 @@ export class SoundtrackLibraryGridElement extends LitElement {
     return html`
       <div class="soundtrack-library-grid">
         ${this.soundtrackGridItems.map((item) =>
-          this.renderSoundtrackLibraryGridItem(item)
+          this.renderSoundtrackLibraryGridItem(item),
         )}
       </div>
     `;

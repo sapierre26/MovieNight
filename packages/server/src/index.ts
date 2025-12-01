@@ -6,6 +6,8 @@ import fs from "node:fs/promises";
 import path from "path";
 import MovieGoer from "./services/movie-goer-svc";
 import movieGoers from "./routes/movie-goers";
+import moviesOutNow from "./routes/movies-out-now";
+
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
 import PlaylistItem from "./services/playlist-item-svc";
 import MoviesOutNowItem from "./services/movies-out-now-item-svc";
@@ -22,6 +24,7 @@ const staticDir = process.env.STATIC || "public";
 app.use(express.json());
 
 app.use("/api/movie-goers", authenticateUser, movieGoers);
+app.use("/api/movies-out-now", moviesOutNow);
 
 app.use("/auth", auth);
 
@@ -83,11 +86,11 @@ app.get(
 );
 
 app.get(
-  "/MoviesOutNowItem/:outNowName",
+  "/MoviesOutNowItem/:movieName",
   (req: Request, res: Response) => {
-    const { outNowName } = req.params;
+    const { movieName } = req.params;
 
-    MoviesOutNowItem.get(outNowName).then((data) => {
+    MoviesOutNowItem.get(movieName).then((data) => {
       if (data)
         res.set("Content-Type", "application/json").send(JSON.stringify(data));
       else res.status(404).send();

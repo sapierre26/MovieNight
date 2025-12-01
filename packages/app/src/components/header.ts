@@ -66,7 +66,7 @@ export class HeaderElement extends LitElement {
 
       ${this.loggedIn ? html`
           <a href="/movie-night/user-profile/${this.userid}">
-            <img id="profile-icon" src="/images/profile-icon-white.png" alt="Profile Icon" />
+            <img id="profile-icon" src="/images/profile-icon.png" alt="Profile Icon" />
           </a>
           ${this.renderSignOutButton()}
         `

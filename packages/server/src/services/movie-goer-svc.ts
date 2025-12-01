@@ -6,7 +6,7 @@ const MovieGoerSchema = new Schema<MovieGoer>(
     userid: { type: String, required: true, trim: true },
     name: { type: String, required: true, trim: true },
     username: { type: String, trim: true },
-    home: { type: String, trim: true },
+    hometown: { type: String, trim: true },
     favoriteMovies: [String]
   },
   { collection: "movie-goers" }

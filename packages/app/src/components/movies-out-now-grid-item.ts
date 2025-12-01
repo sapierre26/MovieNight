@@ -37,7 +37,7 @@ export class MoviesOutNowGridItemElement extends LitElement {
                 </div>
 
                 <article class="buttons">
-                    <a href="${this.seeMovieTimesButton}"><button><slot name="see-movie-times">See Movie Times</slot></button></a>
+                    <a href="/movie-night/movies-out-now/${this.outNowName}"><button><slot name="see-movie-times">See Movie Times</slot></button></a>
                     <a href="${this.watchTrailerNowButton}"><button><slot name="watch-movie-trailer">Watch Trailer Now</slot></button></a>
                 </article>
             </article>

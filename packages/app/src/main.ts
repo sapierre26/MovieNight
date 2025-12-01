@@ -5,13 +5,14 @@ import { Model, init } from "./model";
 import update from "./update";
 import { HeaderElement } from "./components/header.js";
 import { HomeViewElement } from "./views/home-view";
-import { MovieGoerViewElement } from  "./views/profile-view";
-import { MoviesOutNowViewElement } from  "./views/movies-out-now-view";
-import { MovieLibraryViewElement } from  "./views/movie-library-view";
-import { TheatersViewElement } from  "./views/theaters-view";
-import { SoundtrackViewElement } from  "./views/soundtrack-view";
-import { ArtifactsViewElement } from  "./views/artifacts-view";
-import { FilmLocationsViewElement } from  "./views/film-locations-view.js";
+import { MovieGoerViewElement } from "./views/profile-view";
+import { MoviesOutNowViewElement } from "./views/movies-out-now-view";
+import { MoviesOutNowItemViewElement } from "./views/movies-out-now-item-view";
+import { MovieLibraryViewElement } from "./views/movie-library-view";
+import { TheatersViewElement } from "./views/theaters-view";
+import { SoundtrackViewElement } from "./views/music-library-view.js";
+import { ArtifactsViewElement } from "./views/artifacts-view";
+import { FilmLocationsViewElement } from "./views/film-locations-view.js";
 
 import { HorizontalSliderElement } from "./components/horizontal-slider.js";
 import { MoviesOutNowGridItemElement } from "./components/movies-out-now-grid-item.js";
@@ -24,77 +25,93 @@ import { TheatersNearYouItemElement } from "./components/theaters-near-you-item.
 import { TheatersNearYouListElement } from "./components/theaters-near-you.js";
 import { TheatersListItemElement } from "./components/theaters-list-item.js";
 import { TheatersListElement } from "./components/theaters-list.js";
-import { SoundtrackLibraryGridItemElement } from "./components/soundtrack-library-grid-item.js";
-import { SoundtrackLibraryGridElement } from "./components/soundtrack-library-grid.js";
+import { SoundtrackLibraryGridItemElement } from "./components/music-library-grid-item.js";
+import { SoundtrackLibraryGridElement } from "./components/music-library-grid.js";
 import { ArtifactLibraryGridItemElement } from "./components/artifacts-library-grid-item.js";
 import { ArtifactLibraryGridElement } from "./components/artifacts-library-grid.js";
 
 const routes = [
   {
     path: "/movie-night/famous-film-locations",
-    view: () => html`
-      <film-locations-view></film-locations-view>
-    `
+    view: () => html` <film-locations-view></film-locations-view> `,
   },
   {
     path: "/movie-night/famous-film-artifacts",
-    view: () => html`
-      <artifacts-view></artifacts-view>
-    `
+    view: () => html` <artifacts-view></artifacts-view> `,
+  },
+  {
+    path: "/movie-night/music-library/:playlistName",
+    view: (params: Switch.Params) => html`
+      <music-library-item-view
+        playlistName="${params.playlistName}"
+      ></music-library-item-view>
+    `,
   },
   {
     path: "/movie-night/music-library",
-    view: () => html`
-      <soundtrack-view></soundtrack-view>
-    `
+    view: () => html` <music-library-view></music-library-view> `,
+  },
+  {
+    path: "/movie-night/theaters/:theaterName",
+    view: (params: Switch.Params) => html`
+      <theaters-item-view
+        theaterName="${params.theaterName}"
+      ></theaters-item-view>
+    `,
   },
   {
     path: "/movie-night/theaters",
-    view: () => html`
-      <theaters-view></theaters-view>
-    `
+    view: () => html` <theaters-view></theaters-view> `,
+  },
+  {
+    path: "/movie-night/movie-library/:movieName",
+    view: (params: Switch.Params) => html`
+      <movie-library-item-view
+        movieId="${params.movieName}"
+      ></movie-library-item-view>
+    `,
   },
   {
     path: "/movie-night/movie-library",
-    view: () => html`
-      <movie-library-view></movie-library-view>
-    `
+    view: () => html` <movie-library-view></movie-library-view> `,
+  },
+  {
+    path: "/movie-night/movies-out-now/:outNowName",
+    view: (params: Switch.Params) => html`
+      <movies-out-now-item-view
+        outNowName="${params.outNowName}" src="/functions/movies-out-now-item-data.json"
+      ></movies-out-now-item-view>
+    `,
   },
   {
     path: "/movie-night/movies-out-now",
-    view: () => html`
-      <movies-out-now-view></movies-out-now-view>
-    `
+    view: () => html` <movies-out-now-view></movies-out-now-view> `,
   },
   {
     // auth: "protected",
     path: "/movie-night/user-profile/:id/edit",
     view: (params: Switch.Params) => html`
       <profile-view userId="${params.id}" mode="edit"></profile-view>
-    `
+    `,
   },
   {
     path: "/movie-night/user-profile/:id",
     view: (params: Switch.Params) => html`
       <profile-view userId="${params.id}"></profile-view>
-    `
+    `,
   },
   {
     path: "/movie-night/user-profile",
-    view: () => html`
-      <profile-view></profile-view>
-    `
+    view: () => html` <profile-view></profile-view> `,
   },
   {
     path: "/movie-night",
-    view: () => html`
-      <home-view></home-view>
-    `
+    view: () => html` <home-view></home-view> `,
   },
   {
     path: "/",
-    redirect: "/movie-night"
-  }
+    redirect: "/movie-night",
+  },
 ];
 
 define({
@@ -102,7 +119,7 @@ define({
   "mu-history": History.Provider,
   "mu-switch": class AppSwitch extends Switch.Element {
     constructor() {
-    super(routes, "Blazing:history", "Blazing:auth");
+      super(routes, "Blazing:history", "Blazing:auth");
     }
   },
   "mu-store": class AppStore extends Store.Provider<Model, Msg> {
@@ -114,6 +131,7 @@ define({
   "home-view": HomeViewElement,
   "profile-view": MovieGoerViewElement,
   "movies-out-now-view": MoviesOutNowViewElement,
+  "movies-out-now-item-view": MoviesOutNowItemViewElement,
   "movie-library-view": MovieLibraryViewElement,
   "theaters-view": TheatersViewElement,
   "soundtrack-view": SoundtrackViewElement,

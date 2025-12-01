@@ -1,7 +1,6 @@
 export interface MoviesOutNowItem {
-    imgSrc: string;
     outNowName: string;
-    squares: number;
-    seeMovieTimesButton: string;
-    watchTrailerNowButton: string;  
+    releaseYear: string;
+    runtime: string;
+    imgSrc: string;
 }
