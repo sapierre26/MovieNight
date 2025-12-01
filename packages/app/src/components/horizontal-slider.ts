@@ -16,13 +16,16 @@ export class HorizontalSliderElement extends LitElement {
   src?: string;
 
   @state()
-  images: Array<{ imgSrc: string; movieName: string }> = [];
+  images: Array<{ href: string; imgSrc: string; movieName: string }> = [];
 
   @property({ attribute: "img-src" })
   imgSrc?: string;
 
   @property()
   movieName?: string;
+
+  @property()
+  href?: string;
 
   connectedCallback() {
     super.connectedCallback();
@@ -35,7 +38,7 @@ export class HorizontalSliderElement extends LitElement {
       .then((json: unknown) => {
         if (json) {
           // store the data as @state
-          this.images = json as Array<{ imgSrc: string; movieName: string }>;
+          this.images = json as Array<{ href: string; imgSrc: string; movieName: string }>;
         }
       })
   }
@@ -90,7 +93,7 @@ export class HorizontalSliderElement extends LitElement {
               ${this.images.map(
                 (movie) => html`
                   <span>
-                    <a href="movies-out-now-item.html"
+                    <a href="${movie.href ? movie.href + movie.movieName : this.href + movie.movieName}"
                       ><slot name="img-src"
                         ><img
                           src="${movie.imgSrc}"

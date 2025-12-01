@@ -1,11 +1,11 @@
 [
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/a-new-hope.webp", "movieName": "Star Wars: A New Hope" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/across-the-spiderverse.jpg", "movieName": "Spider-Man: Across the Spiderverse" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/avengers-endgame.webp", "movieName": "Avengers: Endgame" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/back-to-the-future.jpg", "movieName": "Back to the Future" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/footloose.jpg", "movieName": "Footloose" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/jurassic-park.jpg", "movieName": "Jurassic Park" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/revenge-of-the-sith.jpg", "movieName": "Star Wars: Revenge of the Sith" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/romeo-and-juliet.jpg", "movieName": "Romeo and Juliet" },
-  { "imgSrc": "/movie-flyer-images-greatest-soundtracks/the-bodyguard.jpg", "movieName": "The Bodyguard" }
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/a-new-hope.webp", "movieName": "Star Wars: A New Hope" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/across-the-spiderverse.jpg", "movieName": "Spider-Man: Across the Spiderverse" },
+  { "href": "/movie-night/music-library/","imgSrc": "/movie-flyer-images-greatest-soundtracks/avengers-endgame.webp", "movieName": "Avengers: Endgame" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/back-to-the-future.jpg", "movieName": "Back to the Future" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/footloose.jpg", "movieName": "Footloose" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/jurassic-park.jpg", "movieName": "Jurassic Park" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/revenge-of-the-sith.jpg", "movieName": "Star Wars: Revenge of the Sith" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/romeo-and-juliet.jpg", "movieName": "Romeo and Juliet" },
+  { "href": "/movie-night/music-library/", "imgSrc": "/movie-flyer-images-greatest-soundtracks/the-bodyguard.jpg", "movieName": "The Bodyguard" }
 ]
