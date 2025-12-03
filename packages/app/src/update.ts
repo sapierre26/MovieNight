@@ -1,6 +1,7 @@
 import { Auth, ThenUpdate } from "@calpoly/mustang";
 import { MovieGoer } from "../../server/src/models/movie-goer";
 import { Msg } from "./messages";
+import { Message } from "@calpoly/mustang";
 import { Model } from "./model";
 
 export default function update(
@@ -8,13 +9,13 @@ export default function update(
   model: Model,
   user: Auth.User
 ): Model | ThenUpdate<Model, Msg> {
-    const [command, payload] = message;
+    const [command, payload, callbacks] = message;
     const unhandled = message[0];
     
     switch ( command ) {
         case "profile/save": {
             const { userid } = payload;
-            return [model, saveProfile(payload, user).then((profile) =>  [
+            return [model, saveProfile(payload, user, callbacks).then((profile) =>  [
                 "profile/load", {userid, profile}
                 ])
             ];
@@ -61,6 +62,7 @@ function saveProfile(
     profile: MovieGoer;
   },
   user: Auth.User,
+  callbacks: Message.Reactions
 ): Promise<MovieGoer> {
   return fetch(`/api/movie-goers/${msg.userid}`, {
     method: "PUT",
@@ -78,10 +80,15 @@ function saveProfile(
     })
     .then((json: unknown) => {
       if (json) {
+        if (callbacks.onSuccess) callbacks.onSuccess();
         return json as MovieGoer;
       }
       throw new Error(
         `No JSON in API response`
       )
     })
+    .catch((err) => {
+      if (callbacks.onFailure) callbacks.onFailure(err);
+      throw err;
+    });
 }

@@ -11,7 +11,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     "mu-form": Form.Element, // make sure mu-form is defined
   });
 
-  @property({ type: String })
+  @property()
   userid!: string;
 
   @property()
@@ -30,8 +30,12 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     super.attributeChangedCallback(name, oldValue, newValue);
-    if (name === "user-id" && oldValue !== newValue && newValue) {
+    if (name === "userid" && oldValue !== newValue && newValue) {
       this.dispatchMessage(["profile/request", { userid: newValue }]);
+    }
+
+    if (name === "mode" && oldValue !== newValue) {
+      this.mode = newValue;
     }
   }
 
@@ -74,14 +78,6 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
           <div class="favorite-movies-gallery">
             <h2>My Favorite Movies:</h2>
-            <div>
-               ${this.profile?.favoriteMovies.map(
-                (movie) => html`
-                  <span>
-                    <img src="/favorite-movies/${movie}.png" alt="${movie}" />
-                  </span>`
-              )}
-            </div>
           </div>
 
           <div class="edit">

@@ -69,7 +69,7 @@ export class HeaderElement extends LitElement {
       ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
 
       <a href="${profile}">
-        <img id="profile-icon" src="/images/profile-icon-white.png" alt="Profile Icon" />
+        <img id="profile-icon" src="/images/profile-icon-black.png" alt="Profile Icon" />
       </a>      
     `;
   }
@@ -77,11 +77,10 @@ export class HeaderElement extends LitElement {
   static styles = [
     headings.styles,
     css `
-      #profile-icon {
-        width: 100%;
-        max-width: 40px;
-        height: 40px;
-        object-fit: cover;
+      :host {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
       }
     `
   ];

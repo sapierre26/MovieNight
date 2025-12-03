@@ -98,15 +98,15 @@ const routes = [
   },
   {
     // auth: "protected",
-    path: "/movie-night/user-profile/:id/edit",
+    path: "/movie-night/user-profile/:userid/edit",
     view: (params: Switch.Params) => html`
-      <profile-view userId="${params.id}" mode="edit"></profile-view>
+      <profile-view userid="${params.userid}" mode="edit"></profile-view>
     `,
   },
   {
     path: "/movie-night/user-profile/:userid",
     view: (params: Switch.Params) => html`
-      <profile-view userid="${params.userid}"></profile-view>
+      <profile-view userid="${params.userid}" mode="view"></profile-view>
     `,
   },
   {

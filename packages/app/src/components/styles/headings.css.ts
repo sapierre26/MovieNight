@@ -34,6 +34,13 @@ const styles = css`
         font-weight: var(--main-font-weight);
         font-style: var(--main-font-type);
       }
+
+      #profile-icon {
+        width: 100%;
+        max-width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
 `;
 
 export default { styles };
