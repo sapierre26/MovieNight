@@ -12,9 +12,6 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
   @property()
   runtime?: string;
 
-  @property()
-  href?: string;
-
   override render() {
     return html`
       <article class="soundtrack-library-grid-item">
@@ -25,7 +22,7 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
           <article class="soundtrack-library-grid-item-text">
               <p><slot name="soundtrack-name">${this.soundtrackName}</slot></p>
               <p id="runtime"><slot name="duration">${this.runtime}</slot></p>
-              <a href="${this.href}"><button><slot name="soundtrack-songs">Listen to Full Playlist</slot></button></a>
+              <a href="/movie-night/music-library/${this.soundtrackName}"><button><slot name="soundtrack-songs">Listen to Full Playlist</slot></button></a>
           </article>
       </article>
     `;

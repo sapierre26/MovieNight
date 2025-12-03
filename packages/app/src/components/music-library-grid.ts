@@ -6,7 +6,6 @@ interface SoundtrackLibraryGridItemData {
   imgSrc?: string;
   soundtrackName: string;
   runtime: string;
-  href: string;
 }
 
 export class SoundtrackLibraryGridElement extends LitElement {
@@ -42,7 +41,6 @@ export class SoundtrackLibraryGridElement extends LitElement {
         img-src="${gridItem.imgSrc}"
         soundtrack-name="${gridItem.soundtrackName}"
         runtime="${gridItem.runtime}"
-        href="${gridItem.href}"
       >
       </soundtrack-library-grid-item>
     `;

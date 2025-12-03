@@ -1,0 +1,12 @@
+[
+    {
+        "soundtrackName": "Star Wars: A New Hope (Original Motion Pictures)",
+        "releaseYear": "1977",
+        "runtime": "1h",
+        "soundtracks": [
+            { "imgSrc": "/images/a-new-hope.jpg", "songName": "Main Title", "songLength": "5 min 24 sec", "credits": "John Williams, Londo Symphony, Orchestra", "href": "https://open.spotify.com/track/3ZSf1TJZyRb0rnWYuUtdX4?si=3263cf257055482b" },
+            { "imgSrc": "/images/a-new-hope.jpg", "songName": "Main Title", "songLength": "5 min 24 sec", "credits": "John Williams, Londo Symphony, Orchestra", "href": "https://open.spotify.com/track/3ZSf1TJZyRb0rnWYuUtdX4?si=3263cf257055482b" },
+            { "imgSrc": "/images/a-new-hope.jpg", "songName": "Main Title", "songLength": "5 min 24 sec", "credits": "John Williams, Londo Symphony, Orchestra", "href": "https://open.spotify.com/track/3ZSf1TJZyRb0rnWYuUtdX4?si=3263cf257055482b" }
+        ]
+    }
+]

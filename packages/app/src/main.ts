@@ -9,10 +9,11 @@ import { MovieGoerViewElement } from "./views/profile-view";
 import { MoviesOutNowViewElement } from "./views/movies-out-now-view";
 import { MoviesOutNowItemViewElement } from "./views/movies-out-now-item-view";
 import { MovieLibraryViewElement } from "./views/movie-library-view";
-import { MovieLibraryItemViewElement } from "./views/movie-library-item-view.js"
+import { MovieLibraryItemViewElement } from "./views/movie-library-item-view.js";
 import { TheatersViewElement } from "./views/theaters-view";
-import { TheatersItemViewElement } from "./views/theaters-item-view.js"
-import { SoundtrackViewElement } from "./views/music-library-view.js";
+import { TheatersItemViewElement } from "./views/theaters-item-view.js";
+import { MusicLibraryViewElement } from "./views/music-library-view.js";
+import { MusicLibraryItemViewElement } from "./views/music-library-item-view.js";
 import { ArtifactsViewElement } from "./views/artifacts-view";
 import { FilmLocationsViewElement } from "./views/film-locations-view.js";
 
@@ -44,10 +45,11 @@ const routes = [
     view: () => html` <artifacts-view></artifacts-view> `,
   },
   {
-    path: "/movie-night/music-library/:playlistName",
+    path: "/movie-night/music-library/:soundtrackName",
     view: (params: Switch.Params) => html`
       <music-library-item-view
-        playlistName="${params.playlistName}"
+        soundtrackName="${params.soundtrackName}"
+        src="/functions/soundtrack-item-data.json"
       ></music-library-item-view>
     `,
   },
@@ -59,7 +61,8 @@ const routes = [
     path: "/movie-night/theaters/:movieName",
     view: (params: Switch.Params) => html`
       <theaters-item-view
-        movieName="${params.movieName}" src="/functions/theaters-item-data.json"
+        movieName="${params.movieName}"
+        src="/functions/theaters-item-data.json"
       ></theaters-item-view>
     `,
   },
@@ -71,7 +74,8 @@ const routes = [
     path: "/movie-night/movie-library/:movieName",
     view: (params: Switch.Params) => html`
       <movie-library-item-view
-        movieName="${params.movieName}" src="/functions/movie-library-item-data.json"
+        movieName="${params.movieName}"
+        src="/functions/movie-library-item-data.json"
       ></movie-library-item-view>
     `,
   },
@@ -83,7 +87,8 @@ const routes = [
     path: "/movie-night/movies-out-now/:outNowName",
     view: (params: Switch.Params) => html`
       <movies-out-now-item-view
-        outNowName="${params.outNowName}" src="/functions/movies-out-now-item-data.json"
+        outNowName="${params.outNowName}"
+        src="/functions/movies-out-now-item-data.json"
       ></movies-out-now-item-view>
     `,
   },
@@ -140,7 +145,8 @@ define({
   "movie-library-item-view": MovieLibraryItemViewElement,
   "theaters-view": TheatersViewElement,
   "theaters-item-view": TheatersItemViewElement,
-  "soundtrack-view": SoundtrackViewElement,
+  "music-library-view": MusicLibraryViewElement,
+  "music-library-item-view": MusicLibraryItemViewElement,
   "artifacts-view": ArtifactsViewElement,
   "film-locations-view": FilmLocationsViewElement,
 

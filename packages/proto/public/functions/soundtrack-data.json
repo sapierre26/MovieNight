@@ -3,50 +3,42 @@
     {
       "imgSrc": "/movie-flyer-images-horizontal/star-wars.png",
       "soundtrackName": "Star Wars: A New Hope (Original Motion Pictures)",
-      "runtime": "1 hr 15 min",
-      "href": "soundtrack-item.html"
+      "runtime": "1 hr 15 min"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/the-bodyguard.jpg",
       "soundtrackName": "The BodyGuard (Original Soundtrack Album)",
-      "runtime": "57 min 44 sec",
-      "href": "soundtrack-item.html"
+      "runtime": "57 min 44 sec"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/romeo-and-juliet.jpg",
       "soundtrackName": "Romeo + Juliet (Music from the Motion Picture)",
-      "runtime": "2 hr",
-      "href": "soundtrack-item.html"
+      "runtime": "2 hr"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/footloose.jpg",
       "soundtrackName": "Footloose (Music from 1984 Original Soundtrack)",
-      "runtime": "36 min 25 sec",
-      "href": "soundtrack-item.html"
+      "runtime": "36 min 25 sec"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/across-the-spider-verse.jpg",
       "soundtrackName": "Spider-Man: Across the Spider-Verse’ (soundtrack)",
-      "runtime": "47 min 10 sec",
-      "href": "soundtrack-item.html"
+      "runtime": "47 min 10 sec"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/revenge-of-the-sith.jpg",
       "soundtrackName": "Revenge of the Sith (Original Motion Picture Soundtrack)",
-      "runtime": "1 hr 11 min",
-      "href": "soundtrack-item.html"
+      "runtime": "1 hr 11 min"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/endgame.jpg",
       "soundtrackName": "Avengers: Endgame (Soundtrack Official Playlist)",
-      "runtime": "2 hr 15 min",
-      "href": "soundtrack-item.html"
+      "runtime": "2 hr 15 min"
     },
     {
       "imgSrc": "/movie-flyer-images-horizontal/jurassic-park.jpg",
       "soundtrackName": "Jurassic Park (Original Motion Picture Soundtrack)",
-      "runtime": "1 hr 10 min",
-      "href": "soundtrack-item.html"
+      "runtime": "1 hr 10 min"
     }
   ]
 }
