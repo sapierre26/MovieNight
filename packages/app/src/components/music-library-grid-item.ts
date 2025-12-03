@@ -39,7 +39,6 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
         justify-content: center;
         align-items: center;
         width: 250px;
-        width: 250px;
         height: auto;
         background-color: var(--color-main-background);
         border-radius: var(--border-radius-content);

@@ -46,6 +46,7 @@ export class ArtifactLibraryGridItemElement extends LitElement {
         background-color: var(--color-main-background);
         border-radius: var(--border-radius-content);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-sizing: border-box;
         transition: transform 0.3s ease;
       }
 

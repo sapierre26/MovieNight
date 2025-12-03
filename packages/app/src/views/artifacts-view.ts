@@ -1,5 +1,4 @@
-import { html, LitElement } from "lit";;
-// import reset from "/styles/reset.css.ts";
+import { html, LitElement } from "lit";
 
 export class ArtifactsViewElement extends LitElement {
   render() {
