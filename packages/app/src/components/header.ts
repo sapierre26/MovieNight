@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit";
+import { html, css, LitElement } from "lit";
 import { state } from "lit/decorators.js";
 import { Auth, Observer, Events } from "@calpoly/mustang";
 import headings from "./styles/headings.css.js";
@@ -61,20 +61,28 @@ export class HeaderElement extends LitElement {
   }
 
   render() {
+    const profile = this.loggedIn && this.userid ? `/movie-night/user-profile/${this.userid}` : `login.html`;
+
     return html`
       <a id="intro" slot="actuator">Hello, ${this.userid || "Moviegoer"} !</a>
 
-      ${this.loggedIn ? html`
-          <a href="/movie-night/user-profile/${this.userid}">
-            <img id="profile-icon" src="/images/profile-icon.png" alt="Profile Icon" />
-          </a>
-          ${this.renderSignOutButton()}
-        `
-      : this.renderSignInButton()}
+      ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
+
+      <a href="${profile}">
+        <img id="profile-icon" src="/images/profile-icon-white.png" alt="Profile Icon" />
+      </a>      
     `;
   }
 
   static styles = [
-    headings.styles
+    headings.styles,
+    css `
+      #profile-icon {
+        width: 100%;
+        max-width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+    `
   ];
 }

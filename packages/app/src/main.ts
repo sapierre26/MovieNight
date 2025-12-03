@@ -104,9 +104,9 @@ const routes = [
     `,
   },
   {
-    path: "/movie-night/user-profile/:id",
+    path: "/movie-night/user-profile/:userid",
     view: (params: Switch.Params) => html`
-      <profile-view userId="${params.id}"></profile-view>
+      <profile-view userid="${params.userid}"></profile-view>
     `,
   },
   {

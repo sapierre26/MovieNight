@@ -11,7 +11,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     "mu-form": Form.Element, // make sure mu-form is defined
   });
 
-  @property({ attribute: "user-id" })
+  @property({ type: String })
   userid!: string;
 
   @property()
@@ -62,15 +62,13 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         <section class="profile-background">
           <div class="user-info">
             <div class="profile-img">
-              <img src="${this.profile?.profileImg}" alt="Moviegoer" />
+              <img src="/images/user-placeholder.png" alt="Moviegoer" />
             </div>
 
             <div class="profile-text">
               <h2>Name: ${this.profile?.name}</h2>
+              <h3>Hometown: ${this.profile?.hometown}</h3>
               <h3>Bio: ${this.profile?.bio}</h3>
-
-              <h2>Username: ${this.profile?.username}</h2>
-              <h2>Hometown: ${this.profile?.hometown}</h2>
             </div>
           </div>
 
@@ -102,40 +100,29 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   renderEditor() {
     return html`
       <main class="page">
-        <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit}
+        <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit} slot="content">
         
           <div class="edit-form-group">
             <label>
               <span>Profile Image: </span>
-              <input type="file" name="profileImg" />
+              <input type="file" name="profileImg" .value=${this.profile?.profileImg} />
             </label>
 
             <label>
               <span>Name: </span>
-              <input type="text" name="name" />
-            </label>
-
-            <label>
-              <span>Username: </span>
-              <input type="text" name="username" />
+              <input type="text" name="name" .value=${this.profile?.name} />
             </label>
 
             <label>
               <span>Hometown: </span>
-              <input type="text" name="hometown" />
+              <input type="text" name="hometown" .value=${this.profile?.hometown} />
             </label>
 
             <label>
               <span>Bio: </span>
-              <input type="text" name="bio" />
+              <input type="text" name="bio" .value=${this.profile?.bio} />
             </label>
 
-            <label>
-              <span>Favorite Movies: </span>
-              <input type="file" name="favoriteMovies" />
-            </label>
-
-            <button type="submit" class="edit-profile-button">Save Profile</button>
           </div>
         </mu-form>
       </main>
@@ -166,8 +153,8 @@ export class MovieGoerViewElement extends View<Model, Msg> {
       }
 
       .profile-img img {
-        width: 600px;
-        height: 600px;
+        width: 400px;
+        height: 400px;
         border: 1px solid var(--color-sub-support);
         object-fit: cover;
       }
@@ -283,16 +270,3 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     `,
   ];
 }
-
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-//                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-//                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-//                 sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-// <div class="edit">
-//   <button type="submit" class="edit-profile-button">Save Profile</button>
-// </div>
