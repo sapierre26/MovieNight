@@ -12,13 +12,10 @@ export class TheatersListItemElement extends LitElement {
   theaterInfo?: string;
 
   @property({ type: Array })
-  moviePaths: Array<{ href: string; imgSrc: string; movieName: string }> = [];
+  moviePaths: Array<{ imgSrc: string; movieName: string }> = [];
 
   @property({ attribute: "img-src" })
   imgSrc?: string;
-
-  @property()
-  href?: string;
 
   @property()
   movieName?: string;
@@ -33,7 +30,7 @@ export class TheatersListItemElement extends LitElement {
         <div class="theaters-gallery">
           ${this.moviePaths.map(
             (movie) => html`
-              <a href="${movie.href}"><slot name="img-src"><img src="${movie.imgSrc}" alt="${movie.movieName}" /></slot></a>
+              <a href="/movie-night/theaters/${movie.movieName}"><slot name="img-src"><img src="${movie.imgSrc}" alt="${movie.movieName}" /></slot></a>
             `
           )}
         </div>

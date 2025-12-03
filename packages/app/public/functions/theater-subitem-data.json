@@ -1,0 +1,16 @@
+{
+  "theaterSubItems": [
+    {
+      "theaterName": " The Movie Experience - Downtown Centre Cinema",
+      "theaterLocation": "888 Marsh Street, San Luis Obispo, CA 93401",
+      "distanceFromYou": "3.67 mi",
+      "movieTimes": [
+        { "movieTime": "5:00p"},
+        { "movieTime": "6:30p"},
+        { "movieTime": "7:45p"},
+        { "movieTime": "8:30p"},
+        { "movieTime": "9:15p"}
+      ]
+    }
+  ]
+}

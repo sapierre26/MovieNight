@@ -11,6 +11,7 @@ import { MoviesOutNowItemViewElement } from "./views/movies-out-now-item-view";
 import { MovieLibraryViewElement } from "./views/movie-library-view";
 import { MovieLibraryItemViewElement } from "./views/movie-library-item-view.js"
 import { TheatersViewElement } from "./views/theaters-view";
+import { TheatersItemViewElement } from "./views/theaters-item-view.js"
 import { SoundtrackViewElement } from "./views/music-library-view.js";
 import { ArtifactsViewElement } from "./views/artifacts-view";
 import { FilmLocationsViewElement } from "./views/film-locations-view.js";
@@ -26,6 +27,8 @@ import { TheatersNearYouItemElement } from "./components/theaters-near-you-item.
 import { TheatersNearYouListElement } from "./components/theaters-near-you.js";
 import { TheatersListItemElement } from "./components/theaters-list-item.js";
 import { TheatersListElement } from "./components/theaters-list.js";
+import { TheaterSubItemElement } from "./components/theater-subitem.js";
+import { TheaterSubItemListElement } from "./components/theater-subitem-list.js";
 import { SoundtrackLibraryGridItemElement } from "./components/music-library-grid-item.js";
 import { SoundtrackLibraryGridElement } from "./components/music-library-grid.js";
 import { ArtifactLibraryGridItemElement } from "./components/artifacts-library-grid-item.js";
@@ -53,10 +56,10 @@ const routes = [
     view: () => html` <music-library-view></music-library-view> `,
   },
   {
-    path: "/movie-night/theaters/:theaterName",
+    path: "/movie-night/theaters/:movieName",
     view: (params: Switch.Params) => html`
       <theaters-item-view
-        theaterName="${params.theaterName}"
+        movieName="${params.movieName}" src="/functions/theaters-item-data.json"
       ></theaters-item-view>
     `,
   },
@@ -136,6 +139,7 @@ define({
   "movie-library-view": MovieLibraryViewElement,
   "movie-library-item-view": MovieLibraryItemViewElement,
   "theaters-view": TheatersViewElement,
+  "theaters-item-view": TheatersItemViewElement,
   "soundtrack-view": SoundtrackViewElement,
   "artifacts-view": ArtifactsViewElement,
   "film-locations-view": FilmLocationsViewElement,
@@ -151,6 +155,8 @@ define({
   "theaters-near-you-list": TheatersNearYouListElement,
   "theaters-list-item": TheatersListItemElement,
   "theaters-list": TheatersListElement,
+  "theater-subitem": TheaterSubItemElement,
+  "theater-subitem-list": TheaterSubItemListElement,
   "soundtrack-library-grid-item": SoundtrackLibraryGridItemElement,
   "soundtrack-library-grid": SoundtrackLibraryGridElement,
   "artifact-library-grid-item": ArtifactLibraryGridItemElement,
