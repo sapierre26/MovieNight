@@ -45,17 +45,17 @@ app.listen(port, () => {
 
 connect("Blazing");
 
-app.get("/MovieGoer/:userid", (req: Request, res: Response) => {
-  const { userid } = req.params;
+// app.get("/MovieGoer/:userid", (req: Request, res: Response) => {
+//   const { userid } = req.params;
 
-  MovieGoer.get(userid).then((data) => {
-    if (data) res
-      .set("Content-Type", "application/json")
-      .send(JSON.stringify(data));
-    else res
-      .status(404).send();
-  });
-});
+//   MovieGoer.get(userid).then((data) => {
+//     if (data) res
+//       .set("Content-Type", "application/json")
+//       .send(JSON.stringify(data));
+//     else res
+//       .status(404).send();
+//   });
+// });
 
 app.get(
   "/SoundtrackLibraryItem/:soundtrackName",

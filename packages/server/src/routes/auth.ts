@@ -7,6 +7,7 @@ import express, {
 import jwt from "jsonwebtoken";
 
 import credentials from "../services/credential-svc";
+import movieGoers from "../services/movie-goer-svc"
 
 const router = express.Router();
 
@@ -34,23 +35,42 @@ export function authenticateUser(
 }
 
 router.post("/register", (req: Request, res: Response) => {
-  const { username, password } = req.body; // from form
+  const { username, password, name, hometown, bio } = req.body; // from form
 
   if ( typeof username !== "string" ||
-    typeof password !== "string"
+    typeof password !== "string" ||
+    typeof name !== "string" ||
+    typeof hometown !== "string" ||
+    typeof bio !== "string"
   ) {
     res.status(400).send("Bad request: Invalid input data.");
-  } else {
-    credentials
-      .create(username, password)
-      .then((creds) => generateAccessToken(creds.username))
-      .then((token) => {
-        res.status(201).send({ token: token });
-      })
-      .catch((err) => {
-        res.status(409).send({ error: err.message });
-      });
-  }
+  } 
+
+  let profile: any; 
+
+  credentials
+    .create(username, password, name, hometown, bio)
+    .then (() =>
+        movieGoers.create({
+          profileImg: "/images/user-placeholder.png",
+          userid: username,
+          name, 
+          hometown, 
+          bio
+        }))
+    .then((creds) => {
+      profile = creds;
+      return generateAccessToken(username)
+    })
+    .then((token) => {
+      res.status(201).json({ 
+        message: "Signup complete",
+        token,
+        profile });
+    })
+    .catch((err) => {
+      res.status(409).send({ error: err.message });
+    });
 });
 
 router.post("/login", (req: Request, res: Response) => {
@@ -58,13 +78,30 @@ router.post("/login", (req: Request, res: Response) => {
 
   if (!username || !password) {
     res.status(400).send("Bad request: Invalid input data.");
-  } else {
-    credentials
-      .verify(username, password)
-      .then((goodUser: string) => generateAccessToken(goodUser))
-      .then((token) => res.status(200).send({ token: token }))
-      .catch((error) => res.status(401).send("Unauthorized"));
-  }
+  } 
+
+  let profile: any; // generateAccessToken(goodUser)
+
+  credentials
+    .verify(username, password)
+    .then(() => 
+      movieGoers.get(username)
+        .catch(() => 
+            movieGoers.create({
+              profileImg: "/images/user-placeholder.png",
+              userid: username,
+              name: "", 
+              hometown: "", 
+              bio: ""
+            })
+          )
+        )
+    .then((movieGoer) => {
+      profile = movieGoer;
+      return generateAccessToken(username)
+    })
+    .then((token) => res.status(200).json({ token, profile }))
+    .catch((error) => res.status(401).send("Unauthorized"));
 });
 
 function generateAccessToken(

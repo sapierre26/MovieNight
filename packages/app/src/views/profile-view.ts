@@ -1,4 +1,4 @@
-import { define, Form, History, View } from "@calpoly/mustang";
+import { History, View } from "@calpoly/mustang";
 import { html, css } from "lit";
 import { property, state } from "lit/decorators.js";
 import { MovieGoer } from "../../../server/src/models/movie-goer";
@@ -7,10 +7,6 @@ import { Model } from "../model";
 // import reset from "./styles/reset.css.ts";
 
 export class MovieGoerViewElement extends View<Model, Msg> {
-  static uses = define({
-    "mu-form": Form.Element, // make sure mu-form is defined
-  });
-
   @property()
   userid!: string;
 
@@ -22,6 +18,9 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   }
 
   @state()
+  editProfile: Partial<MovieGoer> = {};
+
+  @state()
   _error?: Error;
 
   constructor() {
@@ -30,23 +29,29 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     super.attributeChangedCallback(name, oldValue, newValue);
-    if (name === "userid" && oldValue !== newValue && newValue) {
+    if (name === "userid" && newValue !== oldValue) {
       this.dispatchMessage(["profile/request", { userid: newValue }]);
     }
 
-    if (name === "mode" && oldValue !== newValue) {
-      this.mode = newValue;
+    if (name === "mode" && newValue === "edit" && this.profile) {
+      this.editProfile = { ...this.profile};
     }
   }
 
-  handleSubmit(event: Form.SubmitEvent<MovieGoer>) {
+  handleSubmit(event: Event) {
+    event.preventDefault();
     const viewPath = `/movie-night/user-profile/${this.userid}`;
+
+     const profile: MovieGoer = {
+        ...(this.profile as MovieGoer),
+        ...this.editProfile,
+      };
 
     this.dispatchMessage([
       "profile/save",
       {
         userid: this.userid,
-        profile: event.detail,
+        profile
       },
       {
         onSuccess: () =>
@@ -66,7 +71,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         <section class="profile-background">
           <div class="user-info">
             <div class="profile-img">
-              <img src="/images/user-placeholder.png" alt="Moviegoer" />
+              <img src=${this.profile?.profileImg || "/images/user-placeholder.png"} alt="Moviegoer" />
             </div>
 
             <div class="profile-text">
@@ -96,31 +101,56 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   renderEditor() {
     return html`
       <main class="page">
-        <mu-form .init=${this.profile} @mu-form:submit=${this.handleSubmit} slot="content">
+        <form @submit=${this.handleSubmit}>
         
           <div class="edit-form-group">
             <label>
-              <span>Profile Image: </span>
-              <input type="file" name="profileImg" .value=${this.profile?.profileImg} />
+              <span>Profile Image URL: </span>
+              <input type="text" name="profileImg" .value=${this.profile?.profileImg} 
+                      @input=${(inpt: any) => 
+                        (this.editProfile = {
+                          ...this.editProfile,
+                          profileImg: inpt.target.value
+                        })
+                      } />
             </label>
 
             <label>
               <span>Name: </span>
-              <input type="text" name="name" .value=${this.profile?.name} />
+              <input type="text" name="name" .value=${this.profile?.name} 
+                      @input=${(inpt: any) => 
+                        (this.editProfile = {
+                          ...this.editProfile,
+                          name: inpt.target.value
+                        })
+                      } />
             </label>
 
             <label>
               <span>Hometown: </span>
-              <input type="text" name="hometown" .value=${this.profile?.hometown} />
+              <input type="text" name="hometown" .value=${this.profile?.hometown} 
+                      @input=${(inpt: any) => 
+                        (this.editProfile = {
+                          ...this.editProfile,
+                          hometown: inpt.target.value
+                        })
+                      } />
             </label>
 
             <label>
               <span>Bio: </span>
-              <input type="text" name="bio" .value=${this.profile?.bio} />
+              <input type="text" name="bio" .value=${this.profile?.bio}
+                      @input=${(inpt: any) => 
+                        (this.editProfile = {
+                          ...this.editProfile,
+                          bio: inpt.target.value
+                        })
+                      } />
             </label>
-
           </div>
-        </mu-form>
+
+          <button type="submit">Save Profile Changes</button>
+        </form>
       </main>
     `;
   }

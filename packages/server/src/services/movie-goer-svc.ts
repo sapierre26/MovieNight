@@ -3,18 +3,16 @@ import { MovieGoer } from "../models/movie-goer";
 
 const MovieGoerSchema = new Schema<MovieGoer>(
   {
+    profileImg: { type: String },
     userid: { type: String, required: true, trim: true },
     name: { type: String, required: true, trim: true },
     hometown: { type: String, trim: true },
-    bio: { type: String, required: true }
+    bio: { type: String, required: true },
   },
-  { collection: "movie-goers" }
+  { collection: "movie-goers" },
 );
 
-const MovieGoerModel = model<MovieGoer>(
-  "Profile",
-  MovieGoerSchema
-);
+const MovieGoerModel = model<MovieGoer>("Profile", MovieGoerSchema);
 
 function index(): Promise<MovieGoer[]> {
   return MovieGoerModel.find();
@@ -33,12 +31,9 @@ function create(json: MovieGoer): Promise<MovieGoer> {
   return m.save();
 }
 
-function update(
-  userid: String,
-  traveler: MovieGoer
-): Promise<MovieGoer> {
+function update(userid: String, traveler: MovieGoer): Promise<MovieGoer> {
   return MovieGoerModel.findOneAndUpdate({ userid }, traveler, {
-    new: true
+    new: true,
   }).then((updated) => {
     if (!updated) throw `${userid} not updated`;
     else return updated as MovieGoer;
@@ -46,11 +41,9 @@ function update(
 }
 
 function remove(userid: String): Promise<void> {
-  return MovieGoerModel.findOneAndDelete({ userid }).then(
-    (deleted) => {
-      if (!deleted) throw `${userid} not deleted`;
-    }
-  );
+  return MovieGoerModel.findOneAndDelete({ userid }).then((deleted) => {
+    if (!deleted) throw `${userid} not deleted`;
+  });
 }
 
 export default { index, get, create, update, remove };

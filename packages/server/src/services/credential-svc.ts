@@ -12,6 +12,18 @@ const credentialSchema = new Schema<Credential>(
     hashedPassword: {
       type: String,
       required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    hometown: {
+      type: String,
+      required: true
+    },
+    bio: {
+      type: String,
+      required: true
     }
   },
   { collection: "user-credentials" }
@@ -22,7 +34,7 @@ const credentialModel = model<Credential>(
   credentialSchema
 );
 
-function create(username: string, password: string): Promise<Credential> {
+function create(username: string, password: string, name: string, hometown: string, bio: string): Promise<Credential> {
     return credentialModel
       .find({ username })
       .then((found: Credential[]) => {
@@ -35,7 +47,10 @@ function create(username: string, password: string): Promise<Credential> {
           .then((hashedPassword: string) => {
             const creds = new credentialModel({
               username,
-              hashedPassword
+              hashedPassword,
+              name,
+              hometown,
+              bio
             });
             return creds.save();
           })

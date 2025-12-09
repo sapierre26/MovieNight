@@ -15,16 +15,18 @@ export default function update(
     switch ( command ) {
         case "profile/save": {
             const { userid } = payload;
-            return [model, saveProfile(payload, user, callbacks).then((profile) =>  [
-                "profile/load", {userid, profile}
-                ])
+            return [
+              model, 
+              saveProfile(payload, user, callbacks).then((profile) => [
+                  "profile/load", { userid, profile }
+              ])
             ];
         }
         case "profile/request": {
             const { userid } = payload;
-            if (model.profile?.userid === userid ) return model;
+            // if (model.profile?.userid === userid ) return model;
             return [
-                { ...model, profile: {userid} as MovieGoer},
+                model,
                 requestProfile(payload, user)
                 .then((profile) => ["profile/load", { userid, profile }])
             ];
