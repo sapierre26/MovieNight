@@ -1,12 +1,13 @@
 import { Message } from "@calpoly/mustang";
-import { MovieGoer } from "../../server/src/models/movie-goer";
+import { Credential } from "../../server/src/models/credential";
 
 export type Msg =
   | [
       "profile/save",
       {
-        userid: string,
-        profile: MovieGoer
+        userid: string;
+        profile: Credential;
+        newPassword?: string;
       },
         Message.Reactions
     ] // user edits to a profile that need to be saved
@@ -14,7 +15,7 @@ export type Msg =
   | Cmd;
 
 type Cmd =
-  | ["profile/load", { userid: string, profile: MovieGoer }] // response from server with loaded profile
+  | ["profile/load", { userid: string, profile: Credential }] // response from server with loaded profile
 
 export interface Reactions {
     onSuccess?: () => void;

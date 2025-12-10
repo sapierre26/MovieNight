@@ -1,7 +1,7 @@
 import { History, View } from "@calpoly/mustang";
 import { html, css } from "lit";
 import { property, state } from "lit/decorators.js";
-import { MovieGoer } from "../../../server/src/models/movie-goer";
+import { Credential } from "../../../server/src/models/credential";
 import { Msg } from "../messages";
 import { Model } from "../model";
 // import reset from "./styles/reset.css.ts";
@@ -11,14 +11,14 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   userid!: string;
 
   @property()
-  mode: "view" | "edit" = "view";
+  mode: "view" | "edit" | "confirm-delete" = "view";
 
-  get profile(): MovieGoer | undefined {
+  get profile(): Credential | undefined {
     return this.model?.profile;
   }
 
   @state()
-  editProfile: Partial<MovieGoer> = {};
+  editProfile: Partial<Credential> = {};
 
   @state()
   _error?: Error;
@@ -34,12 +34,6 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     }
   }
 
-  profileModel(model: Model) {
-    if (this.mode === "edit" && model.profile) {
-      this.editProfile = { ...(model.profile as MovieGoer) };
-    }
-  }
-
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     super.attributeChangedCallback(name, oldValue, newValue);
     if (name === "userid" && newValue !== oldValue) {
@@ -48,36 +42,35 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
     if (name === "mode" && newValue === "edit") {
       if (this.profile) {
-        this.editProfile = { ... (this.profile as MovieGoer) };
-      } else {
-        this.editProfile = {};
-      }
+        this.editProfile = { ... (this.profile ?? {}) };
+      } 
     }
   }
   
   handleSubmit(event: Event) {
     event.preventDefault();
 
-    const savedProfile: MovieGoer = {
-      profileImg: (this.editProfile.profileImg ?? this.profile?.profileImg ?? "/images/user-placeholder.png"),
-      userid: this.userid,
-      name: (this.editProfile.name ?? this.profile?.name ?? ""),
-      hometown: (this.editProfile.hometown ?? this.profile?.hometown ?? ""),
-      bio: (this.editProfile.bio ?? this.profile?.bio ?? "")
-    };
+    const { userid, hashedPassword, name, hometown, bio } = this.editProfile;
+    const newPassword = hashedPassword;
 
-    const viewPath = `/movie-night/user-profile/${this.userid}`;
+    // const viewPath = `/movie-night/user-profile/${this.userid}`;
 
     this.dispatchMessage([
       "profile/save",
       {
         userid: this.userid,
-        profile: savedProfile
+        profile: { 
+          userid: userid ?? "", 
+          name: name ?? "", 
+          hometown: hometown ?? "", 
+          bio: bio ?? "" 
+        } as Credential,
+        newPassword
       },
       {
         onSuccess: () =>
           History.dispatch(this, "history/navigate", {
-            href: viewPath,
+            href: `/movie-night/user-profile/${this.userid}`,
           }),
         onFailure: (error: Error) => (this._error = error),
       },
@@ -85,20 +78,23 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   }
 
   renderView() {
-    const editPath = `/movie-night/user-profile/${this.userid}/edit`;
-
     return html`
       <div class="profile">
         <section class="profile-background">
           <div class="user-info">
             <div class="profile-img">
-              <img src=${this.profile?.profileImg || "/images/user-placeholder.png"} alt="Moviegoer" />
+              <img src="/images/user-placeholder.png" alt="Moviegoer" />
             </div>
 
             <div class="profile-text">
-              <h2>Name: ${this.profile?.name || ""}</h2>
-              <h3>Hometown: ${this.profile?.hometown || ""}</h3>
-              <h3>Bio: ${this.profile?.bio || ""}</h3>
+              <h2>Username: ${this.profile?.userid}</h2>
+              <h3>Password: ${this.profile?.hashedPassword}</h3>
+
+              <br>
+
+              <h2>Name: ${this.profile?.name}</h2>
+              <h3>Hometown: ${this.profile?.hometown}</h3>
+              <h3>Bio: ${this.profile?.bio}</h3>
             </div>
           </div>
 
@@ -109,7 +105,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <div class="edit">
             <button class="edit-profile-button"
               @click=${() =>
-                History.dispatch(this, "history/navigate", { href: editPath })}>
+                History.dispatch(this, "history/navigate", { href: `/movie-night/user-profile/${this.userid}/edit` })}>
               Edit Profile
             </button>
           </div>
@@ -122,16 +118,26 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     return html`
       <main class="page">
         <form @submit=${this.handleSubmit}>
-        
           <div class="edit-form-group">
             <label>
-              <span>Profile Image URL: </span>
-              <input type="text" name="profileImg" .value=${this.editProfile.profileImg ?? ""} 
-                      @input=${(inpt: any) => 
-                        (this.editProfile = {
-                          ...this.editProfile,
-                          profileImg: inpt.target.value
-                        })
+              <span>Username: </span>
+              <input type="text" name="username" .value=${this.editProfile.userid ?? ""}
+                      @input=${(inpt: any) =>
+                      (this.editProfile = {
+                        ...this.editProfile,
+                        userid: inpt.target.value
+                      })
+                      } />
+            </label>
+
+            <label>
+              <span>Password: </span>
+              <input type="text" name="password" .value=${this.editProfile.hashedPassword ?? ""}
+                      @input=${(inpt: any) =>
+                      (this.editProfile = {
+                        ...this.editProfile,
+                        hashedPassword: inpt.target.value
+                      })
                       } />
             </label>
 
@@ -174,12 +180,10 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             @click=${() => History.dispatch(this, "history/navigate", 
               { href: `/movie-night/user-profile/${this.userid}`})}>Cancel</button>
         </form>
+
+        ${this._error ? html` <p class="error">${this._error}</p>` : ""}
       </main>
     `;
-  }
-
-  renderError() {
-    return this._error ? html` <p class="error">${this._error}</p>` : "";
   }
 
   render() {

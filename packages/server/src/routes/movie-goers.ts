@@ -1,29 +1,30 @@
 import express, { Request, Response } from "express";
-import { MovieGoer } from "../models/movie-goer";
+import { Credential } from "../models/credential";
 
-import MovieGoers from "../services/movie-goer-svc";
+import Credentials from "../services/credential-svc";
+import { authenticateUser } from "./auth";
 
 const router = express.Router();
 
 router.get("/", (_, res: Response) => {
-  MovieGoers.index()
-    .then((list: MovieGoer[]) => res.json(list))
+  Credentials.index()
+    .then((list) => res.json(list))
     .catch((err) => res.status(500).send({ error: err.message }));
 });
 
 router.get("/:userid", (req: Request, res: Response) => {
   const { userid } = req.params;
 
-  MovieGoers.get(userid)
-    .then((moviegoer: MovieGoer) => res.json(moviegoer))
-    .catch((err) => res.status(404).send({ error: err.message || err }));
+  Credentials.get(userid)
+    .then(profile => res.json(profile))
+    .catch((err) => res.status(404).send({ error: err.message }));
 });
 
 router.post("/", (req: Request, res: Response) => {
-  const newMovieGoer = req.body;
+  const { username, password, name, hometown, bio } = req.body;
 
-  MovieGoers.create(newMovieGoer)
-    .then((moviegoer: MovieGoer) =>
+  Credentials.create(username, password, name, hometown, bio)
+    .then((moviegoer: Credential) =>
       res.status(201).json(moviegoer)
     )
     .catch((err) => res.status(500).send({ error: err.message || err }));
@@ -31,17 +32,19 @@ router.post("/", (req: Request, res: Response) => {
 
 router.put("/:userid", (req: Request, res: Response) => {
   const { userid } = req.params;
-  const newMovieGoer = req.body;
+  const { profile, newPassword } = req.body;
+  // const updates = req.body.profile;
 
-  MovieGoers.update(userid, newMovieGoer)
-    .then((moviegoer: MovieGoer) => res.json(moviegoer))
-    .catch((err) => res.status(404).json({ error: err.message }));
+  Credentials
+    .update(userid, profile, newPassword)
+    .then((updated) => res.json(updated))
+    .catch((err) => res.status(400).send({ error: err.message }));
 });
 
 router.delete("/:userid", (req: Request, res: Response) => {
   const { userid } = req.params;
 
-  MovieGoers.remove(userid)
+  Credentials.remove(userid)
     .then(() => res.status(204).end())
     .catch((err) => res.status(404).send({ error: err.message || err }));
 });

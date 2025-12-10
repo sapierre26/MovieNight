@@ -1,5 +1,5 @@
 import { Auth, ThenUpdate } from "@calpoly/mustang";
-import { MovieGoer } from "../../server/src/models/movie-goer";
+import { Credential } from "../../server/src/models/credential";
 import { Msg } from "./messages";
 import { Message } from "@calpoly/mustang";
 import { Model } from "./model";
@@ -24,7 +24,6 @@ export default function update(
         }
         case "profile/request": {
             const { userid } = payload;
-            // if (model.profile?.userid === userid ) return model;
             return [
                 model,
                 requestProfile(payload, user)
@@ -32,7 +31,7 @@ export default function update(
             ];
         }
         case "profile/load": {
-            const { profile } = payload as { userid: string; profile: MovieGoer };
+            const { profile } = payload as { userid: string; profile: Credential };
             return { ...model, profile };
         }
         // put the rest of your cases here
@@ -53,7 +52,7 @@ function requestProfile(
       throw "No Response from server";
     })
     .then((json: unknown) => {
-      if (json) return json as MovieGoer;
+      if (json) return json as Credential;
       throw "No JSON in response from server";
     });
 }
@@ -61,18 +60,22 @@ function requestProfile(
 function saveProfile(
   msg: {
     userid: string;
-    profile: MovieGoer;
+    profile: Partial<Credential>;
+    newPassword?: string;
   },
   user: Auth.User,
   callbacks: Message.Reactions
-): Promise<MovieGoer> {
+): Promise<Credential> {
   return fetch(`/api/movie-goers/${msg.userid}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       ...Auth.headers(user)
     },
-    body: JSON.stringify(msg.profile)
+    body: JSON.stringify({
+      profile: msg.profile,
+      newPassword: msg.newPassword
+    })
   })
     .then((response: Response) => {
       if (response.status === 200) return response.json();
@@ -83,7 +86,7 @@ function saveProfile(
     .then((json: unknown) => {
       if (json) {
         if (callbacks.onSuccess) callbacks.onSuccess();
-        return json as MovieGoer;
+        return json as Credential;
       }
       throw new Error(
         `No JSON in API response`
