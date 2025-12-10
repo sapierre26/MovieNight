@@ -11,10 +11,10 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   userid!: string;
 
   @property()
-  mode = "view";
+  mode: "view" | "edit" = "view";
 
   get profile(): MovieGoer | undefined {
-    return this.model.profile;
+    return this.model?.profile;
   }
 
   @state()
@@ -27,31 +27,52 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     super("Blazing:model");
   }
 
+  connectedCallback() {
+    super.connectedCallback?.();
+    if (this.userid) {
+      this.dispatchMessage(["profile/request", { userid: this.userid }]);
+    }
+  }
+
+  profileModel(model: Model) {
+    if (this.mode === "edit" && model.profile) {
+      this.editProfile = { ...(model.profile as MovieGoer) };
+    }
+  }
+
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     super.attributeChangedCallback(name, oldValue, newValue);
     if (name === "userid" && newValue !== oldValue) {
       this.dispatchMessage(["profile/request", { userid: newValue }]);
     }
 
-    if (name === "mode" && newValue === "edit" && this.profile) {
-      this.editProfile = { ...this.profile};
+    if (name === "mode" && newValue === "edit") {
+      if (this.profile) {
+        this.editProfile = { ... (this.profile as MovieGoer) };
+      } else {
+        this.editProfile = {};
+      }
     }
   }
-
+  
   handleSubmit(event: Event) {
     event.preventDefault();
-    const viewPath = `/movie-night/user-profile/${this.userid}`;
 
-     const profile: MovieGoer = {
-        ...(this.profile as MovieGoer),
-        ...this.editProfile,
-      };
+    const savedProfile: MovieGoer = {
+      profileImg: (this.editProfile.profileImg ?? this.profile?.profileImg ?? "/images/user-placeholder.png"),
+      userid: this.userid,
+      name: (this.editProfile.name ?? this.profile?.name ?? ""),
+      hometown: (this.editProfile.hometown ?? this.profile?.hometown ?? ""),
+      bio: (this.editProfile.bio ?? this.profile?.bio ?? "")
+    };
+
+    const viewPath = `/movie-night/user-profile/${this.userid}`;
 
     this.dispatchMessage([
       "profile/save",
       {
         userid: this.userid,
-        profile
+        profile: savedProfile
       },
       {
         onSuccess: () =>
@@ -75,9 +96,9 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </div>
 
             <div class="profile-text">
-              <h2>Name: ${this.profile?.name}</h2>
-              <h3>Hometown: ${this.profile?.hometown}</h3>
-              <h3>Bio: ${this.profile?.bio}</h3>
+              <h2>Name: ${this.profile?.name || ""}</h2>
+              <h3>Hometown: ${this.profile?.hometown || ""}</h3>
+              <h3>Bio: ${this.profile?.bio || ""}</h3>
             </div>
           </div>
 
@@ -88,8 +109,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <div class="edit">
             <button class="edit-profile-button"
               @click=${() =>
-                History.dispatch(this, "history/navigate", { href: editPath })}
-            >
+                History.dispatch(this, "history/navigate", { href: editPath })}>
               Edit Profile
             </button>
           </div>
@@ -106,7 +126,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <div class="edit-form-group">
             <label>
               <span>Profile Image URL: </span>
-              <input type="text" name="profileImg" .value=${this.profile?.profileImg} 
+              <input type="text" name="profileImg" .value=${this.editProfile.profileImg ?? ""} 
                       @input=${(inpt: any) => 
                         (this.editProfile = {
                           ...this.editProfile,
@@ -117,7 +137,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
             <label>
               <span>Name: </span>
-              <input type="text" name="name" .value=${this.profile?.name} 
+              <input type="text" name="name" .value=${this.editProfile.name ?? ""} 
                       @input=${(inpt: any) => 
                         (this.editProfile = {
                           ...this.editProfile,
@@ -128,7 +148,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
             <label>
               <span>Hometown: </span>
-              <input type="text" name="hometown" .value=${this.profile?.hometown} 
+              <input type="text" name="hometown" .value=${this.editProfile.hometown ?? ""} 
                       @input=${(inpt: any) => 
                         (this.editProfile = {
                           ...this.editProfile,
@@ -139,17 +159,20 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
             <label>
               <span>Bio: </span>
-              <input type="text" name="bio" .value=${this.profile?.bio}
+              <textarea name="bio"
                       @input=${(inpt: any) => 
                         (this.editProfile = {
                           ...this.editProfile,
                           bio: inpt.target.value
                         })
-                      } />
+                      }>${this.editProfile.bio ?? ""}</textarea>   
             </label>
           </div>
 
           <button type="submit">Save Profile Changes</button>
+          <button type="button" 
+            @click=${() => History.dispatch(this, "history/navigate", 
+              { href: `/movie-night/user-profile/${this.userid}`})}>Cancel</button>
         </form>
       </main>
     `;

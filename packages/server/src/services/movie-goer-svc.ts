@@ -19,11 +19,20 @@ function index(): Promise<MovieGoer[]> {
 }
 
 function get(userid: String): Promise<MovieGoer> {
-  return MovieGoerModel.find({ userid })
-    .then((list) => list[0])
+  return MovieGoerModel.findOne({ userid })
+    .then((doc) => {
+      if (!doc) {
+        throw new Error(`MovieGoer ${userid} not found`);
+      }
+      return doc as MovieGoer
+    })
     .catch((err) => {
-      throw `${userid} Not Found`;
+      throw err;
     });
+    // .then((list) => list[0])
+    // .catch((err) => {
+    //   throw `${userid} Not Found`;
+    // });
 }
 
 function create(json: MovieGoer): Promise<MovieGoer> {
