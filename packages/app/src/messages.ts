@@ -6,7 +6,7 @@ export type Msg =
       "profile/save",
       {
         userid: string;
-        profile: Credential;
+        profile: Partial<Credential>;
         newPassword?: string;
       },
         Message.Reactions

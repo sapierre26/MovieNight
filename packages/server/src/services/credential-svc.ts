@@ -6,24 +6,19 @@ const credentialSchema = new Schema<Credential>(
   {
     userid: {
       type: String,
-      required: true,
       trim: true
     },
     hashedPassword: {
       type: String,
-      required: true
     },
     name: {
       type: String,
-      required: true
     },
     hometown: {
       type: String,
-      required: true
     },
     bio: {
       type: String,
-      required: true
     }
   },
   { collection: "user-credentials" }
@@ -97,7 +92,10 @@ function verify(userid: string, password: string): Promise<string> {
 }
 
 async function update(userid: string, profile: Partial<Credential>, newPassword?: string): Promise<Credential> {
-  const updates: Partial<Credential> = { ...profile };
+  const updates: Partial<Credential> = { };
+  if (profile.name !== undefined) updates.name = profile.name;
+  if (profile.hometown !== undefined) updates.hometown = profile.hometown;
+  if (profile.bio !== undefined) updates.bio = profile.bio;
 
   if (newPassword && newPassword.trim() !== "") {
     const salt = await bcrypt.genSalt(10);
@@ -105,7 +103,7 @@ async function update(userid: string, profile: Partial<Credential>, newPassword?
   }
 
   return credentialModel
-    .findByIdAndUpdate({ userid: userid }, updates, { new: true })
+    .findOneAndUpdate({ userid }, updates, { new: true })
     .then((updated) => {
       if (!updated) throw `User ${userid} not updated`;
       return updated as Credential;

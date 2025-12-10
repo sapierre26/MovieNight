@@ -51,7 +51,13 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     event.preventDefault();
 
     const { userid, hashedPassword, name, hometown, bio } = this.editProfile;
-    const newPassword = hashedPassword;
+    const profileToSave: Partial<Credential> = { 
+      userid: userid || this.userid,
+      name: name || "", 
+      hometown: hometown || "", 
+      bio: bio || "" 
+    };
+    const newPassword = hashedPassword?.trim() ? hashedPassword : undefined;
 
     // const viewPath = `/movie-night/user-profile/${this.userid}`;
 
@@ -59,12 +65,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
       "profile/save",
       {
         userid: this.userid,
-        profile: { 
-          userid: userid ?? "", 
-          name: name ?? "", 
-          hometown: hometown ?? "", 
-          bio: bio ?? "" 
-        } as Credential,
+        profile: profileToSave,
         newPassword
       },
       {
@@ -132,7 +133,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
             <label>
               <span>Password: </span>
-              <input type="text" name="password" .value=${this.editProfile.hashedPassword ?? ""}
+              <input type="password" name="password" .value=${this.editProfile.hashedPassword ?? ""}
                       @input=${(inpt: any) =>
                       (this.editProfile = {
                         ...this.editProfile,

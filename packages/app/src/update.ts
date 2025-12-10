@@ -66,16 +66,17 @@ function saveProfile(
   user: Auth.User,
   callbacks: Message.Reactions
 ): Promise<Credential> {
+  const bodyToSend = {
+    ...msg.profile,
+    newPassword: msg.newPassword
+  };
   return fetch(`/api/movie-goers/${msg.userid}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       ...Auth.headers(user)
     },
-    body: JSON.stringify({
-      profile: msg.profile,
-      newPassword: msg.newPassword
-    })
+    body: JSON.stringify(bodyToSend)
   })
     .then((response: Response) => {
       if (response.status === 200) return response.json();
