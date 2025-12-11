@@ -11,6 +11,10 @@ const credentialSchema = new Schema<Credential>(
     hashedPassword: {
       type: String,
     },
+    image: {
+      type: String,
+      default: "/images/user-placeholder.png"
+    },
     name: {
       type: String,
     },
@@ -46,7 +50,7 @@ function get(userid: String): Promise<Credential> {
     });
 }
 
-function create(userid: string, password: string, name: string, hometown: string, bio: string): Promise<Credential> {
+function create(userid: string, password: string, image: string, name: string, hometown: string, bio: string): Promise<Credential> {
     return credentialModel
       .find({ userid })
       .then((found: Credential[]) => {
@@ -60,6 +64,7 @@ function create(userid: string, password: string, name: string, hometown: string
             const creds = new credentialModel({
               userid,
               hashedPassword,
+              image,
               name,
               hometown,
               bio
@@ -93,6 +98,7 @@ function verify(userid: string, password: string): Promise<string> {
 
 async function update(userid: string, profile: Partial<Credential>, newPassword?: string): Promise<Credential> {
   const updates: Partial<Credential> = { };
+  if (profile.image !== undefined) updates.image = profile.image;
   if (profile.name !== undefined) updates.name = profile.name;
   if (profile.hometown !== undefined) updates.hometown = profile.hometown;
   if (profile.bio !== undefined) updates.bio = profile.bio;

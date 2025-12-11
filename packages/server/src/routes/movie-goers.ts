@@ -21,9 +21,9 @@ router.get("/:userid", (req: Request, res: Response) => {
 });
 
 router.post("/", (req: Request, res: Response) => {
-  const { username, password, name, hometown, bio } = req.body;
+  const { userid, password, image, name, hometown, bio } = req.body;
 
-  Credentials.create(username, password, name, hometown, bio)
+  Credentials.create(userid, password, image, name, hometown, bio)
     .then((moviegoer: Credential) =>
       res.status(201).json(moviegoer)
     )

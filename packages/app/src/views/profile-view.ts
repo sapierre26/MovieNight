@@ -50,9 +50,10 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   handleSubmit(event: Event) {
     event.preventDefault();
 
-    const { userid, hashedPassword, name, hometown, bio } = this.editProfile;
+    const { userid, hashedPassword, image, name, hometown, bio } = this.editProfile;
     const profileToSave: Partial<Credential> = { 
       userid: userid || this.userid,
+      image: image || "/images/user-placeholder.png",
       name: name || "", 
       hometown: hometown || "", 
       bio: bio || "" 
@@ -84,7 +85,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         <section class="profile-background">
           <div class="user-info">
             <div class="profile-img">
-              <img src="/images/user-placeholder.png" alt="Moviegoer" />
+              <img src="${this.profile?.image || '/images/user-placeholder.png'}" alt="Moviegoer" />
             </div>
 
             <div class="profile-text">
@@ -99,9 +100,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </div>
           </div>
 
-          <div class="favorite-movies-gallery">
-            <h2>My Favorite Movies:</h2>
-          </div>
+          
 
           <div class="edit">
             <button class="edit-profile-button"
@@ -138,6 +137,17 @@ export class MovieGoerViewElement extends View<Model, Msg> {
                       (this.editProfile = {
                         ...this.editProfile,
                         hashedPassword: inpt.target.value
+                      })
+                      } />
+            </label>
+
+            <label>
+              <span>Profile Image URL: </span>
+              <input type="text" name="image" .value=${this.editProfile.image ?? ""}
+                      @input=${(inpt: any) =>
+                      (this.editProfile = {
+                        ...this.editProfile,
+                        image: inpt.target.value
                       })
                       } />
             </label>
@@ -324,3 +334,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     `,
   ];
 }
+
+// <div class="favorite-movies-gallery">
+//   <h2>My Favorite Movies:</h2>
+// </div>
