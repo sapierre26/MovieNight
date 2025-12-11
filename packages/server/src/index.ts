@@ -4,7 +4,6 @@ import { connect } from "./services/mongo";
 import auth, { authenticateUser } from "./routes/auth";
 import fs from "node:fs/promises";
 import path from "path";
-import MovieGoer from "./services/movie-goer-svc";
 import movieGoers from "./routes/movie-goers";
 
 import SoundtrackLibraryItem from "./services/soundtrack-library-item-svc";
@@ -18,7 +17,7 @@ import ArtifactsItem from "./services/artifacts-item-svc";
 
 const app = express();
 const port = process.env.PORT || 3000;
-const staticDir = process.env.STATIC || "public";
+const staticDir = process.env.STATIC || "../..app/dist";
 
 app.use(express.json());
 
