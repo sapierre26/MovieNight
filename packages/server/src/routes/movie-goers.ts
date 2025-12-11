@@ -32,7 +32,7 @@ router.post("/", (req: Request, res: Response) => {
 
 router.put("/:userid", (req: Request, res: Response) => {
   const { userid } = req.params;
-  const { profile, newPassword } = req.body;
+  const { newPassword, ...profile } = req.body;
   // const updates = req.body.profile;
 
   Credentials
