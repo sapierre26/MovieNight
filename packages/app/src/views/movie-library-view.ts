@@ -36,7 +36,7 @@ export class MovieLibraryViewElement extends LitElement {
             </div>
         </div>
 
-        <movie-library-grid src="/functions/movie-library-data.json"></movie-library-grid>
+        <movie-library-grid src="/api/movie-library"></movie-library-grid>
     `;
   }
 

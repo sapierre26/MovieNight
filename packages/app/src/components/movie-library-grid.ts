@@ -6,7 +6,6 @@ interface MovieLibraryGridItemData {
   imgSrc?: string;
   movieName: string;
   squares: number;
-  movieInfoButton: string;
 }
 
 export class MovieLibraryGridElement extends LitElement {
@@ -24,16 +23,10 @@ export class MovieLibraryGridElement extends LitElement {
   hydrate(src: string) {
     fetch(src)
       .then((res) => res.json())
-      .then((json: object) => {
-        if (json) {
-          // store the data as @state
-          const movieLibraryGrid = json as {
-            movieLibraryGridItems: Array<MovieLibraryGridItemData>;
-          };
-
-          this.movieLibraryGridItems = movieLibraryGrid.movieLibraryGridItems;
-        }
-      });
+      .then((movies: MovieLibraryGridItemData[]) => {
+        this.movieLibraryGridItems = movies;
+      })
+      .catch(console.error);
   }
 
   renderMovieLibraryGridItem(gridItem: MovieLibraryGridItemData) {
@@ -42,7 +35,6 @@ export class MovieLibraryGridElement extends LitElement {
         img-src="${gridItem.imgSrc}"
         movie-name="${gridItem.movieName}"
         squares="${gridItem.squares}"
-        movie-info="${gridItem.movieInfoButton}"
       >
       </movie-library-grid-item>
     `;

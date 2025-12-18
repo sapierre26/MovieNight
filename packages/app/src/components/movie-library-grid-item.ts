@@ -11,19 +11,16 @@ export class MovieLibraryGridItemElement extends LitElement {
   
   @property({ attribute: "squares", type: Number })
   squares = 0;
-
-  @property({ attribute: "movie-info" })
-  movieInfoButton?: string;
   
   override render() {
     return html`
         <article class="movie-library-grid-item">
             <article class="movie-library-grid-item-img">
-                <slot name="img-src"><img src="${this.imgSrc}" alt="${this.movieName}"></slot>
+                <img src="${this.imgSrc}" alt="${this.movieName}">
             </article> 
 
             <article class="movie-library-grid-item-text">
-                <p><slot name="movie-name">${this.movieName}</slot></p>
+                <p>${this.movieName}</p>
                 <div class="squares">
                     ${Array(this.squares)
                         .fill(0)
