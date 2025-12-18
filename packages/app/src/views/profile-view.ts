@@ -154,7 +154,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </label>
 
             <label>
-              <span>Profile Image URL: </span>
+              <span>Profile Image Path: </span>
               <input type="text" name="image" .value=${this.editProfile.image ?? ""}
                       @input=${(inpt: any) =>
                       (this.editProfile = {

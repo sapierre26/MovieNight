@@ -43,13 +43,6 @@ body {
   overflow: hidden;
 }
 
-/* #profile-icon {
-  width: 100%;
-  max-width: 40px;
-  height: 40px;
-  object-fit: cover;
-} */
-
 .main-nav-bar a {
   display: flex;
   align-items: center;
@@ -271,3 +264,5 @@ input:checked + .toggle-switch-slider::before {
   font-style: var(--main-font-type);
   font-size: var(--p-font-size);
 }
+
+/* NEW USER */

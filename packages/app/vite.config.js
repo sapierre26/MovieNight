@@ -17,6 +17,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         sub0: resolve(__dirname, "login.html"),
         sub00: resolve(__dirname, "profile.html"),
+        sub000: resolve(__dirname, "newuser.html"),
         // sub1: resolve(__dirname, "movies-out-now.html"),
         // sub2: resolve(__dirname, "movies-out-now-item.html"),
         // sub3: resolve(__dirname, "movie-library.html"),
