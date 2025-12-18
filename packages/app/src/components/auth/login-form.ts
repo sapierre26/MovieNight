@@ -3,7 +3,7 @@ import { property, state } from "lit/decorators.js";
 import reset from "../styles/reset.css.js";
 
 interface LoginFormData {
-  userid?: string;
+  username?: string;
   password?: string;
 }
 
@@ -22,7 +22,7 @@ export class LoginFormElement extends LitElement {
 
   get canSubmit(): boolean {
     return Boolean(
-      this.api && this.formData.userid && this.formData.password,
+      this.api && this.formData.username && this.formData.password,
     );
   }
 
@@ -92,8 +92,8 @@ export class LoginFormElement extends LitElement {
     const prevData = this.formData;
 
     switch (name) {
-      case "userid":
-        this.formData = { ...prevData, userid: value };
+      case "username":
+        this.formData = { ...prevData, username: value };
         break;
       case "password":
         this.formData = { ...prevData, password: value };

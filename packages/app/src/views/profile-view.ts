@@ -8,7 +8,7 @@ import { Model } from "../model";
 
 export class MovieGoerViewElement extends View<Model, Msg> {
   @property()
-  userid!: string;
+  username!: string;
 
   @property()
   mode: "view" | "edit" | "confirm-delete" = "view";
@@ -23,21 +23,24 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   @state()
   _error?: Error;
 
+  @state()
+  togglePasswordVisibility = false;
+
   constructor() {
     super("Blazing:model");
   }
 
   connectedCallback() {
     super.connectedCallback?.();
-    if (this.userid) {
-      this.dispatchMessage(["profile/request", { userid: this.userid }]);
+    if (this.username) {
+      this.dispatchMessage(["profile/request", { username: this.username }]);
     }
   }
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     super.attributeChangedCallback(name, oldValue, newValue);
-    if (name === "userid" && newValue !== oldValue) {
-      this.dispatchMessage(["profile/request", { userid: newValue }]);
+    if (name === "username" && newValue !== oldValue) {
+      this.dispatchMessage(["profile/request", { username: newValue }]);
     }
 
     if (name === "mode" && newValue === "edit") {
@@ -50,9 +53,9 @@ export class MovieGoerViewElement extends View<Model, Msg> {
   handleSubmit(event: Event) {
     event.preventDefault();
 
-    const { userid, hashedPassword, image, name, hometown, bio } = this.editProfile;
+    const { username, hashedPassword, image, name, hometown, bio } = this.editProfile;
     const profileToSave: Partial<Credential> = { 
-      userid: userid || this.userid,
+      username: username || this.username,
       image: image || "/images/user-placeholder.png",
       name: name || "", 
       hometown: hometown || "", 
@@ -65,14 +68,14 @@ export class MovieGoerViewElement extends View<Model, Msg> {
     this.dispatchMessage([
       "profile/save",
       {
-        userid: this.userid,
+        username: this.username,
         profile: profileToSave,
         newPassword
       },
       {
         onSuccess: () =>
           History.dispatch(this, "history/navigate", {
-            href: `/movie-night/user-profile/${this.userid}`,
+            href: `/movie-night/user-profile/${this.username}`,
           }),
         onFailure: (error: Error) => (this._error = error),
       },
@@ -89,8 +92,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </div>
 
             <div class="profile-text">
-              <h2>Username: ${this.profile?.userid}</h2>
-              <h3>Password: ${this.profile?.hashedPassword}</h3>
+              <h2>Username: ${this.profile?.username}</h2>
 
               <br>
 
@@ -105,7 +107,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <div class="edit">
             <button class="edit-profile-button"
               @click=${() =>
-                History.dispatch(this, "history/navigate", { href: `/movie-night/user-profile/${this.userid}/edit` })}>
+                History.dispatch(this, "history/navigate", { href: `/movie-night/user-profile/${this.username}/edit` })}>
               Edit Profile
             </button>
           </div>
@@ -121,24 +123,34 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <div class="edit-form-group">
             <label>
               <span>Username: </span>
-              <input type="text" name="username" .value=${this.editProfile.userid ?? ""}
+              <input type="text" name="username" .value=${this.editProfile.username ?? ""}
                       @input=${(inpt: any) =>
                       (this.editProfile = {
                         ...this.editProfile,
-                        userid: inpt.target.value
+                        username: inpt.target.value
                       })
                       } />
             </label>
 
             <label>
               <span>Password: </span>
-              <input type="password" name="password" .value=${this.editProfile.hashedPassword ?? ""}
+              <input name="password" 
+                      id="passwordInput" 
+                      .type=${this.togglePasswordVisibility ? "text" : "password"}
+                      .value=${this.editProfile.hashedPassword ?? ""}
                       @input=${(inpt: any) =>
                       (this.editProfile = {
                         ...this.editProfile,
                         hashedPassword: inpt.target.value
                       })
                       } />
+            </label>
+
+            <label id="showPassword">
+                <input type="checkbox"
+                        @change=${(e : Event) =>
+                        (this.togglePasswordVisibility = (e.target as HTMLInputElement).checked)
+                        } /> Show Password
             </label>
 
             <label>
@@ -189,7 +201,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <button type="submit">Save Profile Changes</button>
           <button type="button" 
             @click=${() => History.dispatch(this, "history/navigate", 
-              { href: `/movie-night/user-profile/${this.userid}`})}>Cancel</button>
+              { href: `/movie-night/user-profile/${this.username}`})}>Cancel</button>
         </form>
 
         ${this._error ? html` <p class="error">${this._error}</p>` : ""}
@@ -319,7 +331,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         font-size: var(--h3-font-size);
       }
 
-      .edit-form-group input {
+      .edit-form-group input, .edit-form-group textarea {
         padding: 8px 10px;
         width: 100%;
         max-width: 300px;
@@ -331,6 +343,18 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         border-radius: var(--border-sub-radius-content);
         transition: all 0.2s;
       }
+
+      #showPassword {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+
+      // #showPassword input[type="checkbox"] {
+      //   transform: scale(1.1);
+      // }
     `,
   ];
 }

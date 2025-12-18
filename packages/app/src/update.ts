@@ -14,24 +14,24 @@ export default function update(
     
     switch ( command ) {
         case "profile/save": {
-            const { userid } = payload;
+            const { username } = payload;
             return [
               model, 
               saveProfile(payload, user, callbacks).then((profile) => [
-                  "profile/load", { userid, profile }
+                  "profile/load", { username, profile }
               ])
             ];
         }
         case "profile/request": {
-            const { userid } = payload;
+            const { username } = payload;
             return [
                 model,
                 requestProfile(payload, user)
-                .then((profile) => ["profile/load", { userid, profile }])
+                .then((profile) => ["profile/load", { username, profile }])
             ];
         }
         case "profile/load": {
-            const { profile } = payload as { userid: string; profile: Credential };
+            const { profile } = payload as { username: string; profile: Credential };
             return { ...model, profile };
         }
         // put the rest of your cases here
@@ -41,10 +41,10 @@ export default function update(
 }
 
 function requestProfile(
-  payload: { userid: string },
+  payload: { username: string },
   user: Auth.User
 ) {
-  return fetch(`/api/movie-goers/${payload.userid}`, {
+  return fetch(`/api/movie-goers/${payload.username}`, {
     headers: Auth.headers(user)
   })
     .then((response: Response) => {
@@ -59,7 +59,7 @@ function requestProfile(
 
 function saveProfile(
   msg: {
-    userid: string;
+    username: string;
     profile: Partial<Credential>;
     newPassword?: string;
   },
@@ -70,7 +70,7 @@ function saveProfile(
     ...msg.profile,
     newPassword: msg.newPassword
   };
-  return fetch(`/api/movie-goers/${msg.userid}`, {
+  return fetch(`/api/movie-goers/${msg.username}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +81,7 @@ function saveProfile(
     .then((response: Response) => {
       if (response.status === 200) return response.json();
       throw new Error(
-        `Failed to save profile for ${msg.userid}`
+        `Failed to save profile for ${msg.username}`
       );
     })
     .then((json: unknown) => {

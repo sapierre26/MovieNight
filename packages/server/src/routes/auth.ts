@@ -34,9 +34,9 @@ export function authenticateUser(
 }
 
 router.post("/register", (req: Request, res: Response) => {
-  const { userid, password, image, name, hometown, bio } = req.body; // from form
+  const { username, password, image, name, hometown, bio } = req.body; // from form
 
-  if ( typeof userid !== "string" ||
+  if ( typeof username !== "string" ||
     typeof password !== "string" ||
     typeof image !== "string" ||
     typeof name !== "string" ||
@@ -46,8 +46,8 @@ router.post("/register", (req: Request, res: Response) => {
     return res.status(400).send("Bad request: Invalid input data.");
   } else {
     credentials
-      .create(userid, password, image, name, hometown, bio)
-      .then((creds) => generateAccessToken(creds.userid))
+      .create(username, password, image, name, hometown, bio)
+      .then((creds) => generateAccessToken(creds.username))
       .then((token) => {
         return res.status(201).send({ token: token });
       })
@@ -58,13 +58,13 @@ router.post("/register", (req: Request, res: Response) => {
 });
 
 router.post("/login", (req: Request, res: Response) => {
-  const { userid, password } = req.body; // from form
+  const { username, password } = req.body; // from form
 
-  if (!userid || !password) {
+  if (!username || !password) {
     res.status(400).send("Bad request: Invalid input data.");
   } else {
     credentials
-      .verify(userid, password)
+      .verify(username, password)
       .then((goodUser: string) => generateAccessToken(goodUser))
       .then((token) => res.status(200).send({ token: token }))
       .catch((error) => res.status(401).send("Unauthorized"));
@@ -72,11 +72,11 @@ router.post("/login", (req: Request, res: Response) => {
 });
 
 function generateAccessToken(
-  userid: string
+  username: string
 ): Promise<String> {
   return new Promise((resolve, reject) => {
     jwt.sign(
-      { userid: userid },
+      { username: username },
       TOKEN_SECRET,
       { expiresIn: "1d" },
       (error, token) => {

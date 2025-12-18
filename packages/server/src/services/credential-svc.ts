@@ -4,7 +4,7 @@ import { Credential } from "../models/credential";
 
 const credentialSchema = new Schema<Credential>(
   {
-    userid: {
+    username: {
       type: String,
       trim: true
     },
@@ -37,11 +37,11 @@ function index(): Promise<Credential[]> {
   return credentialModel.find();
 }
 
-function get(userid: String): Promise<Credential> {
-  return credentialModel.findOne({ userid: userid })
+function get(username: String): Promise<Credential> {
+  return credentialModel.findOne({ username: username })
     .then((doc) => {
       if (!doc) {
-        throw new Error(`MovieGoer ${userid} not found`);
+        throw new Error(`MovieGoer ${username} not found`);
       }
       return doc as Credential
     })
@@ -50,11 +50,11 @@ function get(userid: String): Promise<Credential> {
     });
 }
 
-function create(userid: string, password: string, image: string, name: string, hometown: string, bio: string): Promise<Credential> {
+function create(username: string, password: string, image: string, name: string, hometown: string, bio: string): Promise<Credential> {
     return credentialModel
-      .find({ userid })
+      .find({ username })
       .then((found: Credential[]) => {
-        if (found.length) throw `Username exists: ${userid}`
+        if (found.length) throw `Username exists: ${username}`
       })
       .then(() =>
         bcrypt
@@ -62,7 +62,7 @@ function create(userid: string, password: string, image: string, name: string, h
           .then((salt: string) => bcrypt.hash(password, salt))
           .then((hashedPassword: string) => {
             const creds = new credentialModel({
-              userid,
+              username,
               hashedPassword,
               image,
               name,
@@ -74,9 +74,9 @@ function create(userid: string, password: string, image: string, name: string, h
       );
 }
 
-function verify(userid: string, password: string): Promise<string> {
+function verify(username: string, password: string): Promise<string> {
   return credentialModel
-    .find({ userid })
+    .find({ username })
     .then((found) => {
       if (!found || found.length !== 1)
         throw "Invalid username or password";
@@ -91,12 +91,12 @@ function verify(userid: string, password: string): Promise<string> {
         .then((result: boolean) => {
           if (!result)
             throw("Invalid username or password");
-          return credsOnFile.userid;
+          return credsOnFile.username;
         })
       );
 }
 
-async function update(userid: string, profile: Partial<Credential>, newPassword?: string): Promise<Credential> {
+async function update(username: string, profile: Partial<Credential>, newPassword?: string): Promise<Credential> {
   const updates: Partial<Credential> = { };
   if (profile.image !== undefined) updates.image = profile.image;
   if (profile.name !== undefined) updates.name = profile.name;
@@ -109,16 +109,16 @@ async function update(userid: string, profile: Partial<Credential>, newPassword?
   }
 
   return credentialModel
-    .findOneAndUpdate({ userid }, updates, { new: true })
+    .findOneAndUpdate({ username }, updates, { new: true })
     .then((updated) => {
-      if (!updated) throw `User ${userid} not updated`;
+      if (!updated) throw `User ${username} not updated`;
       return updated as Credential;
     })
 }
 
-function remove(userid: String): Promise<void> {
-  return credentialModel.findOneAndDelete({ userid: userid }).then((deleted) => {
-    if (!deleted) throw `${userid} not deleted`;
+function remove(username: String): Promise<void> {
+  return credentialModel.findOneAndDelete({ username: username }).then((deleted) => {
+    if (!deleted) throw `${username} not deleted`;
   });
 }
 

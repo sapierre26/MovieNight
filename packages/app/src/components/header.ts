@@ -11,7 +11,7 @@ export class HeaderElement extends LitElement {
   loggedIn = false;
 
   @state()
-  userid?: string;
+  username?: string;
 
   connectedCallback() {
     super.connectedCallback();
@@ -22,10 +22,10 @@ export class HeaderElement extends LitElement {
 
       if (user && user.authenticated) {
         this.loggedIn = true;
-        this.userid = user.username;
+        this.username = user.username;
       } else {
         this.loggedIn = false;
-        this.userid = undefined;
+        this.username = undefined;
       }
     });
   }
@@ -61,10 +61,10 @@ export class HeaderElement extends LitElement {
   }
 
   render() {
-    const profile = this.loggedIn && this.userid ? `/movie-night/user-profile/${this.userid}` : `login.html`;
+    const profile = this.loggedIn && this.username ? `/movie-night/user-profile/${this.username}` : `login.html`;
 
     return html`
-      <a id="intro" slot="actuator">Hello, ${this.userid || "Moviegoer"} !</a>
+      <a id="intro" slot="actuator">Hello, ${this.username || "Moviegoer"} !</a>
 
       ${this.loggedIn ? this.renderSignOutButton() : this.renderSignInButton()}
 

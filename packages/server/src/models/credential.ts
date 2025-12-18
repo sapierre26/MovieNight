@@ -1,6 +1,6 @@
 // src/models/credential.ts
 export interface Credential {
-  userid: string;
+  username: string;
   hashedPassword: string;
   image: string;
   name: string;
