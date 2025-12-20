@@ -1,11 +1,11 @@
 [
   { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/eternity.avif", "movieName": "Eternity" },
-  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/now-you-see-me.avif", "movieName": "Now You See Me" },
-  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/predator.avif", "movieName": "Predator" },
+  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/now-you-see-me.avif", "movieName": "Now You See Me: Now You Don't" },
+  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/predator.avif", "movieName": "Predator: Badlands" },
   { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/regretting-you.avif", "movieName": "Regretting You" },
   { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/rental-family.avif", "movieName": "Rental Family" },
-  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/running-man.avif", "movieName": "Running Man" },
-  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/sisu.avif", "movieName": "Sisu" },
-  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/wicked.jpg", "movieName": "Wicked" },
+  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/running-man.avif", "movieName": "The Running Man" },
+  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/sisu.avif", "movieName": "Sisu: Road to Revenge" },
+  { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/wicked.jpg", "movieName": "Wicked: For Good" },
   { "href": "/movie-night/movies-out-now/", "imgSrc": "/movie-flyer-images-out-now/zootopia2.avif", "movieName": "Zootopia 2" }
 ]
