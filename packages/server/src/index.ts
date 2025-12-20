@@ -7,6 +7,8 @@ import path from "path";
 import movieGoers from "./routes/movie-goers";
 import moviesOutNowGridItems from "./routes/movies-out-now-grid-item-route";
 import movieLibraryGridItems from "./routes/movie-library-grid-item-route";
+import musicLibraryGridItems from "./routes/music-library-grid-item-route";
+import artifactsLibraryGridItems from "./routes/artifacts-library-grid-item-route";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,6 +19,8 @@ app.use(express.json());
 app.use("/api/movie-goers", authenticateUser, movieGoers);
 app.use("/api/movies-out-now", moviesOutNowGridItems);
 app.use("/api/movie-library", movieLibraryGridItems);
+app.use("/api/music-library", musicLibraryGridItems);
+app.use("/api/famous-film-artifacts", artifactsLibraryGridItems);
 
 app.use("/auth", auth);
 

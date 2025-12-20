@@ -14,7 +14,7 @@ import { TheatersViewElement } from "./views/theaters-view";
 import { TheatersItemViewElement } from "./views/theaters-item-view.js";
 import { MusicLibraryViewElement } from "./views/music-library-view.js";
 import { MusicLibraryItemViewElement } from "./views/music-library-item-view.js";
-import { ArtifactsViewElement } from "./views/artifacts-view";
+import { ArtifactsViewElement } from "./views/artifacts-library-view.js";
 import { FilmLocationsViewElement } from "./views/film-locations-view.js";
 
 import { HorizontalSliderElement } from "./components/horizontal-slider.js";

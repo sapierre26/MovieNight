@@ -4,7 +4,7 @@ import { html, LitElement } from "lit";;
 export class MusicLibraryViewElement extends LitElement {
   render() {
     return html`
-        <soundtrack-library-grid src="/functions/soundtrack-data.json"></soundtrack-library-grid>
+        <soundtrack-library-grid src="/api/music-library"></soundtrack-library-grid>
     `;
   }
 }

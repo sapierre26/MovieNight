@@ -23,16 +23,10 @@ export class ArtifactLibraryGridElement extends LitElement {
   hydrate(src: string) {
     fetch(src)
       .then((res) => res.json())
-      .then((json: object) => {
-        if (json) {
-          // store the data as @state
-          const artifactLibraryGrid = json as {
-            artifactGridItems: Array<ArtifactLibraryGridItemData>;
-          };
-
-          this.artifactGridItems = artifactLibraryGrid.artifactGridItems;
-        }
-      });
+      .then((artifacts: ArtifactLibraryGridItemData[]) => {
+        this.artifactGridItems = artifacts;
+      })
+      .catch(console.error);
   }
 
   renderArtifactLibraryGridItem(gridItem: ArtifactLibraryGridItemData) {

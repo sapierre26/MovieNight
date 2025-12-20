@@ -23,16 +23,10 @@ export class SoundtrackLibraryGridElement extends LitElement {
   hydrate(src: string) {
     fetch(src)
       .then((res) => res.json())
-      .then((json: object) => {
-        if (json) {
-          // store the data as @state
-          const soundtrackLibraryGrid = json as {
-            soundtrackGridItems: Array<SoundtrackLibraryGridItemData>;
-          };
-
-          this.soundtrackGridItems = soundtrackLibraryGrid.soundtrackGridItems;
-        }
-      });
+      .then((soundtracks: SoundtrackLibraryGridItemData[]) => {
+        this.soundtrackGridItems = soundtracks;
+      })
+      .catch(console.error);
   }
 
   renderSoundtrackLibraryGridItem(gridItem: SoundtrackLibraryGridItemData) {
