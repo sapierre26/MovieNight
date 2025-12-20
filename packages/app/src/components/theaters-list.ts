@@ -1,3 +1,5 @@
+// Used on the theaters.html page
+
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
 import "./theaters-list-item.js";
@@ -7,7 +9,6 @@ interface TheatersListItemData {
   theaterInfo: string;
   moviePaths: Array<{ imgSrc: string; movieName: string }>;
   imgSrc: string;
-  href: string;
   movieName: string;
 }
 
@@ -26,16 +27,10 @@ export class TheatersListElement extends LitElement {
   hydrate(src: string) {
     fetch(src)
       .then((res) => res.json())
-      .then((json: object) => {
-        if (json) {
-          // store the data as @state
-          const theatersList = json as {
-            theatersListItems: Array<TheatersListItemData>;
-          };
-
-          this.theatersListItems = theatersList.theatersListItems;
-        }
-      });
+      .then((theaters: TheatersListItemData[]) => {
+        this.theatersListItems = theaters;
+      })
+      .catch(console.error);
   }
 
   renderTheatersListItem(gridItem: TheatersListItemData) {
@@ -44,7 +39,6 @@ export class TheatersListElement extends LitElement {
         theater-name="${gridItem.theaterName}"
         theater-info="${gridItem.theaterInfo}"
         .moviePaths="${gridItem.moviePaths}"
-        href="${gridItem.href}"
       >
       </theaters-list-item>
     `;

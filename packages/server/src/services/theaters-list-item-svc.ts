@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { TheatersListItem } from "../models/theaters-item";
+import { TheatersListItem } from "../models/theaters-list-item";
 
 const TheatersListItemSchema = new Schema<TheatersListItem>(
   {
@@ -15,27 +15,34 @@ const TheatersListItemSchema = new Schema<TheatersListItem>(
       required: true,
     },
     imgSrc: { type: String, required: true },
-    href: { type: String, required: true },
-    movieName: { type: String, required: true },
+    movieName: { type: String, required: true }
   },
-  { collection: "theaters_data" },
+  { collection: "theaters-list-data" },
 );
 
 const TheatersListItemModel = model<TheatersListItem>(
-  "Theater Profile",
+  "TheatersListItem",
   TheatersListItemSchema,
 );
 
 function index(): Promise<TheatersListItem[]> {
-  return TheatersListItemModel.find();
+  return TheatersListItemModel.find({});
 }
 
 function get(theaterName: String): Promise<TheatersListItem> {
-  return TheatersListItemModel.find({ theaterName })
-    .then((list) => list[0])
-    .catch((err) => {
-      throw `${theaterName} Not Found`;
-    });
+  return TheatersListItemModel.find().then(
+    (docs: any[]) =>
+      docs
+        .map((doc) => doc._id)
+        .find((theater) => theater.theaterName === theaterName) || null,
+  );
 }
 
-export default { index, get };
+function create(
+  theaterItem: TheatersListItem,
+): Promise<TheatersListItem> {
+  const newTheater = new TheatersListItemModel(theaterItem);
+  return newTheater.save();
+}
+
+export default { index, get, create };
