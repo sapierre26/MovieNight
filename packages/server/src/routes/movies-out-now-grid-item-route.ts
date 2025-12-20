@@ -1,17 +1,17 @@
 import express, { Request, Response } from "express";
-import MovieLibraryGridItems from "../services/movie-library-grid-item-svc";
+import MoviesOutNowGridItems from "../services/movies-out-now-grid-item-svc";
 
 const router = express.Router();
 
 router.get("/", async (_, res: Response) => {
-  const list = await MovieLibraryGridItems.index();
+  const list = await MoviesOutNowGridItems.index();
   res.json(list);
 });
 
-router.get("/:movieName", async (req: Request, res: Response) => {
-  const { movieName } = req.params;
+router.get("/:outNowName", async (req: Request, res: Response) => {
+  const { outNowName } = req.params;
   try {
-    const movie = await MovieLibraryGridItems.get(movieName);
+    const movie = await MoviesOutNowGridItems.get(outNowName);
     if (!movie) res.status(404).json({ error: "Movie not found" });
     else res.json(movie);
   } catch (err: any) {
@@ -22,7 +22,7 @@ router.get("/:movieName", async (req: Request, res: Response) => {
 router.post("/", (req: Request, res: Response) => {
   const newMovie = req.body;
 
-  MovieLibraryGridItems.create(newMovie)
+  MoviesOutNowGridItems.create(newMovie)
     .then((movie) => res.status(201).json(movie))
     .catch((err) => res.status(500).send({ error: err.message || err }));
 });

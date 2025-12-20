@@ -25,16 +25,10 @@ export class MoviesOutNowGridElement extends LitElement {
   hydrate(src: string) {
     fetch(src)
       .then((res) => res.json())
-      .then((json: object) => {
-        if (json) {
-          // store the data as @state
-          const moviesOutNowLibraryGrid = json as {
-            moviesOutNowGridItems: Array<MoviesOutNowGridItemData>;
-          };
-
-          this.moviesOutNowGridItems = moviesOutNowLibraryGrid.moviesOutNowGridItems;
-        }
-      });
+      .then((movies: MoviesOutNowGridItemData[]) => {
+        this.moviesOutNowGridItems = movies;
+      })
+      .catch(console.error);
   }
 
   renderMoviesOutNowGridItem(gridItem: MoviesOutNowGridItemData) {
