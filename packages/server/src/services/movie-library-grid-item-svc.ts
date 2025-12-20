@@ -5,7 +5,7 @@ const MovieLibraryGridItemSchema = new Schema<MovieLibraryGridItem>(
   {
     imgSrc: { type: String, required: true },
     movieName: { type: String, required: true },
-    squares: { type: Number, required: true }
+    squares: { type: Number, required: true },
   },
   { collection: "movie-library-data" },
 );
@@ -16,20 +16,21 @@ const MovieLibraryItemModel = model<MovieLibraryGridItem>(
 );
 
 function index(): Promise<MovieLibraryGridItem[]> {
-  return MovieLibraryItemModel.find().then((docs: any[]) =>
-    docs.map(doc => doc._id)
-  );
+  return MovieLibraryItemModel.find({});
 }
 
 function get(movieName: String): Promise<MovieLibraryGridItem> {
-  return MovieLibraryItemModel.find()
-    .then((docs: any[]) =>
-      docs.map(doc => doc._id)
-          .find(movie => movie.movieName === movieName) || null
-    );
+  return MovieLibraryItemModel.find().then(
+    (docs: any[]) =>
+      docs
+        .map((doc) => doc._id)
+        .find((movie) => movie.movieName === movieName) || null,
+  );
 }
 
-function create(movieItem: MovieLibraryGridItem): Promise<MovieLibraryGridItem> {
+function create(
+  movieItem: MovieLibraryGridItem,
+): Promise<MovieLibraryGridItem> {
   const newMovie = new MovieLibraryItemModel(movieItem);
   return newMovie.save();
 }
