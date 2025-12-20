@@ -53,7 +53,7 @@ export class MovieLibraryItemViewElement extends LitElement {
         .then((json: object) => {
             if (json) {
                 const movies = (json as any[]).find((item) => item.movieName === this.movieName);
-                this.movieName = movies.moviename;
+                this.movieName = movies.movieName;
                 this.releaseYear = movies.releaseYear;
                 this.runtime = movies.runtime;
                 this.imgSrc = movies.imgSrc;
@@ -64,7 +64,7 @@ export class MovieLibraryItemViewElement extends LitElement {
                 this.music = movies.music;
                 this.starring = movies.starring;
                 this.distributor = movies.distributor;
-                this.plot = this.plot;
+                this.plot = movies.plot;
             }
         });
     }
