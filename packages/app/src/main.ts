@@ -15,7 +15,6 @@ import { TheatersItemViewElement } from "./views/theaters-item-view.js";
 import { MusicLibraryViewElement } from "./views/music-library-view.js";
 import { MusicLibraryItemViewElement } from "./views/music-library-item-view.js";
 import { ArtifactsViewElement } from "./views/artifacts-library-view.js";
-import { FilmLocationsViewElement } from "./views/film-locations-view.js";
 
 import { HorizontalSliderElement } from "./components/horizontal-slider.js";
 import { MoviesOutNowGridItemElement } from "./components/movies-out-now-grid-item.js";
@@ -36,10 +35,6 @@ import { ArtifactLibraryGridItemElement } from "./components/artifacts-library-g
 import { ArtifactLibraryGridElement } from "./components/artifacts-library-grid.js";
 
 const routes = [
-  {
-    path: "/movie-night/famous-film-locations",
-    view: () => html` <film-locations-view></film-locations-view> `,
-  },
   {
     path: "/movie-night/famous-film-artifacts",
     view: () => html` <artifacts-view></artifacts-view> `,
@@ -148,7 +143,6 @@ define({
   "music-library-view": MusicLibraryViewElement,
   "music-library-item-view": MusicLibraryItemViewElement,
   "artifacts-view": ArtifactsViewElement,
-  "film-locations-view": FilmLocationsViewElement,
 
   "horizontal-slider": HorizontalSliderElement,
   "movies-out-now-grid-item": MoviesOutNowGridItemElement,
