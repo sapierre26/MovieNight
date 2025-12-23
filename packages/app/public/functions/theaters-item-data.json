@@ -1,8 +1,74 @@
 [
     {
         "movieName": "Back to the Future: 40th Anniversary",
+        "releaseYear": "1985",
+        "runtime": "1h 56m",
+        "imgSrc": "/movie-flyer-images-movie-details/back-to-the-future.jpg"
+    },
+    {
+        "movieName": "Bugonia",
         "releaseYear": "2025",
-        "runtime": "1h 30m",
-        "imgSrc": "/images/him-for-slides.png"
+        "runtime": "1h 59m",
+        "imgSrc": "/movie-flyer-images-movie-details/bugonia.webp"
+    },
+    {
+        "movieName": "Regretting You",
+        "releaseYear": "2025",
+        "runtime": "1h 57m",
+        "imgSrc": "/movie-flyer-images-movie-details/regretting-you.jpg"
+    },
+    {
+        "movieName": "Springsteen: Deliver Me from Nowhere",
+        "releaseYear": "2025",
+        "runtime": "2h",
+        "imgSrc": "/movie-flyer-images-movie-details/springsteen.jpeg"
+    },
+    {
+        "movieName": "Black Phone 2",
+        "releaseYear": "2025",
+        "runtime": "1h 54m",
+        "imgSrc": "/movie-flyer-images-movie-details/black-phone2.jpg"
+    },
+    {
+        "movieName": "Frankenstein",
+        "releaseYear": "2025",
+        "runtime": "2h 30m",
+        "imgSrc": "/movie-flyer-images-movie-details/frankenstein.jpg"
+    },
+    {
+        "movieName": "Self-Help",
+        "releaseYear": "2025",
+        "runtime": "1h 25m",
+        "imgSrc": "/movie-flyer-images-movie-details/self-help.jpg"
+    },
+    {
+        "movieName": "Stitch Head",
+        "releaseYear": "2025",
+        "runtime": "1h 32m",
+        "imgSrc": "/movie-flyer-images-movie-details/stitch-head.jpg"
+    },
+    {
+        "movieName": "Chainsaw Man - The Movie: Reze Arc",
+        "releaseYear": "2025",
+        "runtime": "1h 41m",
+        "imgSrc": "/movie-flyer-images-movie-details/chainsaw-man.webp"
+    },
+    {
+        "movieName": "Tron: Ares",
+        "releaseYear": "2025",
+        "runtime": "1h 59m",
+        "imgSrc": "/movie-flyer-images-movie-details/tron-ares.webp"
+    },
+    {
+        "movieName": "Violent Ends",
+        "releaseYear": "2025",
+        "runtime": "1h 51m",
+        "imgSrc": "/movie-flyer-images-movie-details/violent-ends.webp"
+    },
+    {
+        "movieName": "Anniversary",
+        "releaseYear": "2025",
+        "runtime": "1h 51m",
+        "imgSrc": "/movie-flyer-images-movie-details/anniversary.jpg"
     }
 ]
