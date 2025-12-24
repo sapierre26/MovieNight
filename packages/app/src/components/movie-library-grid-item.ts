@@ -11,6 +11,9 @@ export class MovieLibraryGridItemElement extends LitElement {
   
   @property({ attribute: "squares", type: Number })
   squares = 0;
+
+  @property()
+  genres?: string[];
   
   override render() {
     return html`

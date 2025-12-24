@@ -1,7 +1,15 @@
-import { html, css, LitElement } from "lit";;
+import { html, css, LitElement } from "lit";
+import type { MovieLibraryGridElement } from "../components/movie-library-grid";
 // import reset from "/styles/reset.css.ts";
 
 export class MovieLibraryViewElement extends LitElement {
+  filterByGenre(genre: string | null) {
+    const movieGrid = this.renderRoot.querySelector(
+      "#movie-library-grid") as MovieLibraryGridElement;
+
+    movieGrid?.filterByGenre(genre);
+  }
+
   render() {
     return html`
         <div class="sub-nav-bar">
@@ -9,34 +17,40 @@ export class MovieLibraryViewElement extends LitElement {
                 <p>FILTER BY GENRE</p>
 
                 <div class="sub-nav-bar-links">
-                    <a href="#3d">3D</a>
-                    <a href="#action">Action</a>
-                    <a href="#animated">Animated</a>
-                    <a href="#classic">Classic</a>
-                    <a href="#comedy">Comedy</a>
-                    <a href="#dance">Dance</a>
-                    <a href="#documentaries">Documentaries</a>
-                    <a href="#drama">Drama</a>
-                    <a href="#film-tv-radio">Film, Tv, Radio</a>
-                    <a href="#foreign">Foreign</a>
-                    <a href="#historical-film">Historical Film</a>
-                    <a href="#horror">Horror</a>
-                    <a href="#imax">IMAX</a>
-                    <a href="#indie">Indie</a>
-                    <a href="#kids">Kids</a>
-                    <a href="#music-peforming-arts">Peformance Arts</a>
-                    <a href="#romance">Romance</a>
-                    <a href="#sci-fi">Sci-Fi</a>
-                    <a href="#special-events">Special Events</a>
-                    <a href="#spy-film">Spy Film</a>
-                    <a href="#suspense">Suspense</a>
-                    <a href="#war">War</a>
-                    <a href="#western">Western</a>
+                    <a @click=${() => this.filterByGenre(null)}>ALL MOVIES</a>
+                    <a @click=${() => this.filterByGenre("3D")}>3D</a>
+                    <a @click=${() => this.filterByGenre("Action")}>Action</a>
+                    <a @click=${() => this.filterByGenre("Adventure")}>Adventure</a>
+                    <a @click=${() => this.filterByGenre("Animated")}>Animated</a>
+                    <a @click=${() => this.filterByGenre("Classic")}>Classic</a>
+                    <a @click=${() => this.filterByGenre("Comedy")}>Comedy</a>
+                    <a @click=${() => this.filterByGenre("Crime")}>Crime</a>
+                    <a @click=${() => this.filterByGenre("Dance")}>Dance</a>
+                    <a @click=${() => this.filterByGenre("Documentaries")}>Documentaries</a>
+                    <a @click=${() => this.filterByGenre("Drama")}>Drama</a>
+                    <a @click=${() => this.filterByGenre("Family")}>Family</a>
+                    <a @click=${() => this.filterByGenre("Fantasy")}>Fantasy</a>
+                    <a @click=${() => this.filterByGenre("Film, TV, Radio")}>Film, TV, Radio</a>
+                    <a @click=${() => this.filterByGenre("Foreign")}>Foreign</a>
+                    <a @click=${() => this.filterByGenre("Historical Film")}>Historical Film</a>
+                    <a @click=${() => this.filterByGenre("Horror")}>Horror</a>
+                    <a @click=${() => this.filterByGenre("IMAX")}>IMAX</a>
+                    <a @click=${() => this.filterByGenre("Indie")}>Indie</a>
+                    <a @click=${() => this.filterByGenre("Performance Arts")}>Peformance Arts</a>
+                    <a @click=${() => this.filterByGenre("Romance")}>Romance</a>
+                    <a @click=${() => this.filterByGenre("Sci-Fi")}>Sci-Fi</a>
+                    <a @click=${() => this.filterByGenre("Special Events")}>Special Events</a>
+                    <a @click=${() => this.filterByGenre("Sport")}>Sport</a>
+                    <a @click=${() => this.filterByGenre("Spy Films")}>Spy Film</a>
+                    <a @click=${() => this.filterByGenre("Suspense")}>Suspense</a>
+                    <a @click=${() => this.filterByGenre("Thriller")}>Thriller</a>
+                    <a @click=${() => this.filterByGenre("War")}>War</a>
+                    <a @click=${() => this.filterByGenre("Western")}>Western</a> 
                 </div>
             </div>
         </div>
 
-        <movie-library-grid src="/api/movie-library"></movie-library-grid>
+        <movie-library-grid id="movie-library-grid" src="/api/movie-library"></movie-library-grid>
     `;
   }
 
@@ -88,6 +102,7 @@ export class MovieLibraryViewElement extends LitElement {
         font-style: var(--main-font-type);
         border: var(--border-thickness-content) solid var(--color-sub-background);
         border-radius: var(--border-radius-content);
+        cursor: pointer;
       }
 
       .sub-nav-bar-links a:hover {

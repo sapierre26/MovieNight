@@ -5,7 +5,8 @@ const MovieLibraryGridItemSchema = new Schema<MovieLibraryGridItem>(
   {
     imgSrc: { type: String, required: true },
     movieName: { type: String, required: true },
-    squares: { type: Number, required: true },
+    squares: { type: Number, required: true }
+    // genres: { type: String[], required: true }
   },
   { collection: "movie-library-data" },
 );

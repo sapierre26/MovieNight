@@ -6,6 +6,7 @@ interface MovieLibraryGridItemData {
   imgSrc?: string;
   movieName: string;
   squares: number;
+  genres: string[];
 }
 
 export class MovieLibraryGridElement extends LitElement {
@@ -14,6 +15,12 @@ export class MovieLibraryGridElement extends LitElement {
 
   @state()
   movieLibraryGridItems: Array<MovieLibraryGridItemData> = [];
+
+  @state()
+  allMovies: MovieLibraryGridItemData[] = [];
+
+  @state()
+  currentGenre: string | null = null;
 
   connectedCallback() {
     super.connectedCallback();
@@ -24,6 +31,7 @@ export class MovieLibraryGridElement extends LitElement {
     fetch(src)
       .then((res) => res.json())
       .then((movies: MovieLibraryGridItemData[]) => {
+        this.allMovies = movies;
         this.movieLibraryGridItems = movies;
       })
       .catch(console.error);
@@ -38,6 +46,19 @@ export class MovieLibraryGridElement extends LitElement {
       >
       </movie-library-grid-item>
     `;
+  }
+
+  filterByGenre(genre: string | null) {
+    this.currentGenre = genre;
+
+    if (!genre) {
+      this.movieLibraryGridItems = this.allMovies;
+      return;
+    }
+
+    this.movieLibraryGridItems = this.allMovies.filter(movie =>
+      movie.genres?.includes(genre)
+    );
   }
 
   render() {
