@@ -75,7 +75,7 @@ export class MusicLibraryItemViewElement extends LitElement {
                                     <h3><slot name="song-length">${soundtrack.songLength}</slot></h3>
 
                                     <p><slot name="credits">Credits: ${soundtrack.credits}</slot></p>
-                                    <a href="${soundtrack.href}"><svg class="icon" id="play-button"><use href="icons/movie-night.svg#icon-play-button" /></svg></a>
+                                    <a href="${soundtrack.href}"><svg class="icon" id="play-button"><use href="/icons/movie-night.svg#icon-play-button" /></svg></a>
                                 </article>
                             </article>
                         `
