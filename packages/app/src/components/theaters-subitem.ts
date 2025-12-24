@@ -95,6 +95,7 @@ export class TheatersSubItemElement extends LitElement {
         border: var(--border-thickness-content) solid
           var(--color-sub-background);
         border-radius: var(--border-radius-content);
+        object-fit: cover;
         cursor: pointer;
         transition: transform 0.3s ease;
       }

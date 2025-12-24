@@ -135,7 +135,7 @@ export class MusicLibraryItemViewElement extends LitElement {
                 display: block;
                 width: 100%;
                 max-width: 500px;
-                height: 100%;
+                height: auto;
                 max-height: 500px;
                 object-fit: cover;
                 border-top-left-radius: var(--border-radius-content);
@@ -144,6 +144,12 @@ export class MusicLibraryItemViewElement extends LitElement {
             }
 
             .playlist-text {
+                display: block;
+                width: 100%;
+                max-width: 1000px;
+                height: auto;
+                max-height: 500px;
+                object-fit: cover;
                 flex: 1;
                 position: relative;
                 padding: var(--padding-insider);

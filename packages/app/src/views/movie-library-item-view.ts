@@ -125,8 +125,11 @@ export class MovieLibraryItemViewElement extends LitElement {
             }
 
             .movie-bio-background img {
-                width: 1000px;
+                display: block;
+                width: 100%;
+                max-width: 1000px;
                 height: auto;
+                object-fit: cover;
             }
 
             .movie-bio-text {
