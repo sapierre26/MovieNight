@@ -77,7 +77,7 @@ export class SoundtrackLibraryGridItemElement extends LitElement {
         font-style: var(--main-font-type);
         font-size: var(--p-font-size);
         border: var(--border-thickness-content) solid
-          var(--color-sub-background);
+        var(--color-sub-background);
         border-radius: var(--border-radius-content);
         cursor: pointer;
         transition: transform 0.3s ease;

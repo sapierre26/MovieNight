@@ -18,52 +18,58 @@
   </head>
   <body class="page">
     <mu-auth>
-      <div class="login-container">
-        <div class="login-card">
-          <h2 id="login-header">New User Signup</h2>
+      <div class="newuser-container">
+        <div class="newuser-card">
+          <h2 id="newuser-header">New User Signup</h2>
 
           <main class="card">
-            <newuser-form class="login-form" api="/auth/register">
-              <div class="form-group">
-                <label>
-                  <span>Username:</span>
-                  <input name="username" autocomplete="off" />
-                </label>
-              </div>
+            <newuser-form class="newuser-form" api="/auth/register">
+              <div class="form-groups">
+                <div class="left-form-group">
+                  <div class="form-group">
+                    <label>
+                      <span>Username:</span>
+                      <input name="username" autocomplete="off" />
+                    </label>
+                  </div>
 
-              <div class="form-group">
-                <label>
-                  <span>Password:</span>
-                  <input type="password" name="password" />
-                </label>
-              </div>
+                  <div class="form-group">
+                    <label>
+                      <span>Password:</span>
+                      <input type="password" name="password" />
+                    </label>
+                  </div>
 
-              <div class="form-group">
-                <label>
-                  <span>Profile Image Path:</span>
-                  <input type="text" name="image" />
-                </label>
-              </div>
+                  <div class="form-group">
+                    <label>
+                      <span>Profile Image Path:</span>
+                      <input type="text" name="image" />
+                    </label>
+                  </div>
+                </div>
 
-              <div class="form-group">
-                <label>
-                  <span>Name:</span>
-                  <input type="text" name="name" />
-                </label>
-              </div>
+                <div class="right-form-group">
+                  <div class="form-group">
+                    <label>
+                      <span>Name:</span>
+                      <input type="text" name="name" />
+                    </label>
+                  </div>
 
-              <div class="form-group">
-                <label>
-                  <span>Hometown:</span>
-                  <input type="text" name="hometown" />
-                </label>
-              </div>
+                  <div class="form-group">
+                    <label>
+                      <span>Hometown:</span>
+                      <input type="text" name="hometown" />
+                    </label>
+                  </div>
 
-              <div class="form-group">
-                <label>
-                  <span>Bio:</span>
-                  <textarea name="bio"></textarea>
-                </label>
+                  <div class="form-group">
+                    <label>
+                      <span>Bio:</span>
+                      <textarea name="bio"></textarea>
+                    </label>
+                  </div>
+                </div>
               </div>
             </newuser-form>
           </main>

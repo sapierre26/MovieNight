@@ -82,6 +82,16 @@ export class HeaderElement extends LitElement {
         align-items: center;
         gap: 1rem;
       }
+
+      #intro {
+        flex-wrap: nowrap;
+      }
+
+      #profile-icon {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
     `
   ];
 }

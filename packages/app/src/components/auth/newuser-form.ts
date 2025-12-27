@@ -42,10 +42,7 @@ export class NewUserFormElement extends LitElement {
         <slot></slot>
         <slot name="button">
           <button
-            class="login-button"
-            ?disabled=${!this.canSubmit}
-            type="submit"
-          >
+            class="signup-button" ?disabled=${!this.canSubmit} type="submit">
             Signup
           </button>
         </slot>
@@ -64,7 +61,7 @@ export class NewUserFormElement extends LitElement {
         padding: var(--size-spacing-medium);
       }
 
-      .login-button {
+      .signup-button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -87,13 +84,13 @@ export class NewUserFormElement extends LitElement {
         transition: transform 0.3s ease;
       }
 
-      .login-button:hover {
+      .signup-button:hover {
         background-color: var(--color-button-text);
         color: var(--color-sub-background);
         transform: scale(1.03);
       }
 
-      .login-button:active {
+      .signup-button:active {
         transform: scale(1.03);
       }
     `,

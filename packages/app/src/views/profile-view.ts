@@ -45,21 +45,22 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
     if (name === "mode" && newValue === "edit") {
       if (this.profile) {
-        this.editProfile = { ... (this.profile ?? {}) };
-      } 
+        this.editProfile = { ...(this.profile ?? {}) };
+      }
     }
   }
-  
+
   handleSubmit(event: Event) {
     event.preventDefault();
 
-    const { username, hashedPassword, image, name, hometown, bio } = this.editProfile;
-    const profileToSave: Partial<Credential> = { 
+    const { username, hashedPassword, image, name, hometown, bio } =
+      this.editProfile;
+    const profileToSave: Partial<Credential> = {
       username: username || this.username,
       image: image || "/images/user-placeholder.png",
-      name: name || "", 
-      hometown: hometown || "", 
-      bio: bio || "" 
+      name: name || "",
+      hometown: hometown || "",
+      bio: bio || "",
     };
     const newPassword = hashedPassword?.trim() ? hashedPassword : undefined;
 
@@ -70,7 +71,7 @@ export class MovieGoerViewElement extends View<Model, Msg> {
       {
         username: this.username,
         profile: profileToSave,
-        newPassword
+        newPassword,
       },
       {
         onSuccess: () =>
@@ -88,13 +89,16 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         <section class="profile-background">
           <div class="user-info">
             <div class="profile-img">
-              <img src="${this.profile?.image || '/images/user-placeholder.png'}" alt="Moviegoer" />
+              <img
+                src="${this.profile?.image || "/images/user-placeholder.png"}"
+                alt="Moviegoer"
+              />
             </div>
 
             <div class="profile-text">
               <h2>Username: ${this.profile?.username}</h2>
 
-              <br>
+              <br />
 
               <h2>Name: ${this.profile?.name}</h2>
               <h3>Hometown: ${this.profile?.hometown}</h3>
@@ -102,12 +106,14 @@ export class MovieGoerViewElement extends View<Model, Msg> {
             </div>
           </div>
 
-          
-
           <div class="edit">
-            <button class="edit-profile-button"
+            <button
+              class="edit-profile-button"
               @click=${() =>
-                History.dispatch(this, "history/navigate", { href: `/movie-night/user-profile/${this.username}/edit` })}>
+                History.dispatch(this, "history/navigate", {
+                  href: `/movie-night/user-profile/${this.username}/edit`,
+                })}
+            >
               Edit Profile
             </button>
           </div>
@@ -123,85 +129,114 @@ export class MovieGoerViewElement extends View<Model, Msg> {
           <div class="edit-form-group">
             <label>
               <span>Username: </span>
-              <input type="text" name="username" .value=${this.editProfile.username ?? ""}
-                      @input=${(inpt: any) =>
-                      (this.editProfile = {
-                        ...this.editProfile,
-                        username: inpt.target.value
-                      })
-                      } />
+              <input
+                type="text"
+                name="username"
+                .value=${this.editProfile.username ?? ""}
+                @input=${(inpt: any) =>
+                  (this.editProfile = {
+                    ...this.editProfile,
+                    username: inpt.target.value,
+                  })}
+              />
             </label>
 
             <label>
               <span>Password: </span>
-              <input name="password" 
-                      id="passwordInput" 
-                      .type=${this.togglePasswordVisibility ? "text" : "password"}
-                      .value=${this.editProfile.hashedPassword ?? ""}
-                      @input=${(inpt: any) =>
-                      (this.editProfile = {
-                        ...this.editProfile,
-                        hashedPassword: inpt.target.value
-                      })
-                      } />
+              <input
+                name="password"
+                id="passwordInput"
+                .type=${this.togglePasswordVisibility ? "text" : "password"}
+                .value=${this.editProfile.hashedPassword ?? ""}
+                @input=${(inpt: any) =>
+                  (this.editProfile = {
+                    ...this.editProfile,
+                    hashedPassword: inpt.target.value,
+                  })}
+              />
             </label>
 
             <label id="showPassword">
-                <input type="checkbox"
-                        @change=${(e : Event) =>
-                        (this.togglePasswordVisibility = (e.target as HTMLInputElement).checked)
-                        } /> Show Password
+              <input
+                type="checkbox"
+                @change=${(e: Event) =>
+                  (this.togglePasswordVisibility = (
+                    e.target as HTMLInputElement
+                  ).checked)}
+              />
+              Show Password
             </label>
 
             <label>
               <span>Profile Image Path: </span>
-              <input type="text" name="image" .value=${this.editProfile.image ?? ""}
-                      @input=${(inpt: any) =>
-                      (this.editProfile = {
-                        ...this.editProfile,
-                        image: inpt.target.value
-                      })
-                      } />
+              <input
+                type="text"
+                name="image"
+                .value=${this.editProfile.image ?? ""}
+                @input=${(inpt: any) =>
+                  (this.editProfile = {
+                    ...this.editProfile,
+                    image: inpt.target.value,
+                  })}
+              />
             </label>
 
             <label>
               <span>Name: </span>
-              <input type="text" name="name" .value=${this.editProfile.name ?? ""} 
-                      @input=${(inpt: any) => 
-                        (this.editProfile = {
-                          ...this.editProfile,
-                          name: inpt.target.value
-                        })
-                      } />
+              <input
+                type="text"
+                name="name"
+                .value=${this.editProfile.name ?? ""}
+                @input=${(inpt: any) =>
+                  (this.editProfile = {
+                    ...this.editProfile,
+                    name: inpt.target.value,
+                  })}
+              />
             </label>
 
             <label>
               <span>Hometown: </span>
-              <input type="text" name="hometown" .value=${this.editProfile.hometown ?? ""} 
-                      @input=${(inpt: any) => 
-                        (this.editProfile = {
-                          ...this.editProfile,
-                          hometown: inpt.target.value
-                        })
-                      } />
+              <input
+                type="text"
+                name="hometown"
+                .value=${this.editProfile.hometown ?? ""}
+                @input=${(inpt: any) =>
+                  (this.editProfile = {
+                    ...this.editProfile,
+                    hometown: inpt.target.value,
+                  })}
+              />
             </label>
 
             <label>
               <span>Bio: </span>
-              <textarea name="bio"
-                      @input=${(inpt: any) => 
-                        (this.editProfile = {
-                          ...this.editProfile,
-                          bio: inpt.target.value
-                        })
-                      }>${this.editProfile.bio ?? ""}</textarea>   
+              <textarea
+                name="bio"
+                @input=${(inpt: any) =>
+                  (this.editProfile = {
+                    ...this.editProfile,
+                    bio: inpt.target.value,
+                  })}
+              >
+${this.editProfile.bio ?? ""}</textarea
+              >
             </label>
           </div>
 
-          <button type="submit">Save Profile Changes</button>
-          <button type="button" 
-            @click=${() => History.dispatch(this, "history/navigate", 
-              { href: `/movie-night/user-profile/${this.username}`})}>Cancel</button>
+          <button class="save-profile-button" type="submit">
+            Save Profile Changes
+          </button>
+          <button
+            class="cancel-button"
+            type="button"
+            @click=${() =>
+              History.dispatch(this, "history/navigate", {
+                href: `/movie-night/user-profile/${this.username}`,
+              })}
+          >
+            Cancel
+          </button>
         </form>
 
         ${this._error ? html` <p class="error">${this._error}</p>` : ""}
@@ -215,7 +250,8 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 
   static styles = [
     css`
-      .profile-background, .page {
+      .profile-background,
+      .page {
         background-color: var(--color-main-background);
         margin: var(--margin-for-body);
         padding: var(--padding-insider);
@@ -224,21 +260,31 @@ export class MovieGoerViewElement extends View<Model, Msg> {
       }
 
       .user-info {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: stretch;
+      }
+
+      .profile-img {
+        width: 100%;
+        height: 100%;
       }
 
       .profile-img img {
-        width: 400px;
-        height: 400px;
-        border: 1px solid var(--color-sub-support);
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
         object-fit: cover;
+        border: 1px solid var(--color-sub-support);
       }
 
       .profile-text {
-        flex: 1;
-        position: relative;
+        display: flex;
+        flex-direction: column;
         padding: var(--padding-insider);
+        object-fit: cover;
+        position: relative;
       }
 
       .profile-background h2 {
@@ -255,28 +301,6 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         font-weight: var(--main-alternative-font-weight);
         font-style: var(--main-font-type);
         font-size: var(--h3-font-size);
-      }
-
-      .favorite-movies-gallery {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        width: var(--width-horizontal-slider-container);
-      }
-
-      .favorite-movies-gallery div {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .favorite-movies-gallery div span {
-        flex: 0 0 auto;
-      }
-
-      .favorite-movies-gallery div img {
-        width: var(--width-slider-imgs);
-        height: var(--height-slider-imgs);
-        object-fit: cover;
       }
 
       .page {
@@ -331,7 +355,8 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         font-size: var(--h3-font-size);
       }
 
-      .edit-form-group input, .edit-form-group textarea {
+      .edit-form-group input,
+      .edit-form-group textarea {
         padding: 8px 10px;
         width: 100%;
         max-width: 300px;
@@ -352,9 +377,36 @@ export class MovieGoerViewElement extends View<Model, Msg> {
         cursor: pointer;
       }
 
-      // #showPassword input[type="checkbox"] {
-      //   transform: scale(1.1);
-      // }
+      .save-profile-button,
+      .cancel-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        background-color: var(--color-sub-background);
+        color: var(--color-button-text);
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        max-width: 300px;
+        height: 30px;
+        font-family: var(--main-font-family);
+        font-weight: var(--main-font-weight);
+        font-style: var(--main-font-type);
+        font-size: var(--p-font-size);
+        border: var(--border-thickness-content) solid
+          var(--color-sub-background);
+        border-radius: var(--border-sub-radius-content);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .save-profile-button:hover,
+      .cancel-button:hover {
+        background-color: var(--color-button-text);
+        color: var(--color-sub-background);
+        transform: scale(1.03);
+      }
     `,
   ];
 }
@@ -362,3 +414,25 @@ export class MovieGoerViewElement extends View<Model, Msg> {
 // <div class="favorite-movies-gallery">
 //   <h2>My Favorite Movies:</h2>
 // </div>
+
+// .favorite-movies-gallery {
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: nowrap;
+//   width: var(--width-horizontal-slider-container);
+// }
+
+// .favorite-movies-gallery div {
+//   display: flex;
+//   gap: 1rem;
+// }
+
+// .favorite-movies-gallery div span {
+//   flex: 0 0 auto;
+// }
+
+// .favorite-movies-gallery div img {
+//   width: var(--width-slider-imgs);
+//   height: var(--height-slider-imgs);
+//   object-fit: cover;
+// }

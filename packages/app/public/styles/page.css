@@ -11,12 +11,14 @@ body {
 
 .main-nav-bar {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .nav {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
@@ -27,14 +29,15 @@ body {
 }
 
 #logo {
-  width: 100%;
-  max-width: 70px;
+  flex-shrink: 0;
+  width: 70px;
   height: 70px;
   object-fit: cover;
 }
 
 #login {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
@@ -47,6 +50,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 10px;
+  white-space: nowrap;
   line-height: 70px;
   color: var(--color-main-support);
   text-align: center;
@@ -166,15 +170,61 @@ input:checked + .toggle-switch-slider::before {
   font-style: var(--main-font-type);
 }
 
+@media (max-width: 700px) {
+  .main-nav-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    overflow: visible;
+    background-color: var(--color-main-background);
+  }
+
+  #logo {
+    max-width: 120px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #login {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .main-nav-bar a {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    line-height: 50px;
+    color: var(--color-main-support);
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--p-font-size);
+    width: 100%;
+    height: auto;
+    font-family: var(--main-font-family);
+    font-weight: var(--main-font-weight);
+    font-style: var(--main-font-type);
+  }
+}
+
 /* LOGIN & NEW USER */
 .page {
   display: flex;
   justify-content: center;
-  align-items: center;      
-  min-height: 100vh;        
+  align-items: center;
+  min-height: 100vh;
 }
 
-.login-container {
+.login-container, .newuser-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,7 +242,7 @@ input:checked + .toggle-switch-slider::before {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#login-header {
+#login-header, #newuser-header {
   color: var(--color-main-background);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
@@ -208,6 +258,8 @@ input:checked + .toggle-switch-slider::before {
 }
 
 .form-group label {
+  display: flex;
+  flex-direction: column;
   color: var(--color-main-background);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
@@ -228,10 +280,33 @@ input:checked + .toggle-switch-slider::before {
   transition: all 0.2s;
 }
 
-#new-user, #new-user-signup {
+#new-user,
+#new-user-signup {
   color: var(--color-main-background);
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
   font-style: var(--main-font-type);
   font-size: var(--p-font-size);
+}
+
+/* NEW USER */
+.newuser-card {
+  padding: 3rem 2.5rem;
+  width: 500px;
+  height: auto;
+  background-color: var(--color-main-support);
+  border-radius: var(--border-radius-content);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.form-groups {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-form-group, .right-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 2rem;
 }
