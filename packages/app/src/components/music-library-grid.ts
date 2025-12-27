@@ -54,9 +54,9 @@ export class SoundtrackLibraryGridElement extends LitElement {
     .soundtrack-library-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, 250px);
+      justify-content: center;
       gap: 2rem;
       padding: var(--padding-body);
-      justify-content: center;
     }
   `;
 }

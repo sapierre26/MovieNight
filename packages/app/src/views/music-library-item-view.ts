@@ -120,9 +120,9 @@ export class MusicLibraryItemViewElement extends LitElement {
             }
 
             .playlist-item {
-                display: flex;
+                display: grid;
+                grid-template-columns: 500px 1fr;
                 align-items: stretch;
-                justify-content: space-between;
                 margin-top: 25px;
                 transition: transform 0.3s ease;
             }
@@ -130,13 +130,15 @@ export class MusicLibraryItemViewElement extends LitElement {
             .playlist-item:hover {
                 transform: scale(1.03);
             }
-
-            .playlist-item img {
-                display: block;
+            
+            .playlist-item-img {
                 width: 100%;
-                max-width: 500px;
-                height: auto;
-                max-height: 500px;
+                height: 100%;
+            }
+
+            .playlist-item-img img {
+                width: 100%;
+                height: 100%;
                 object-fit: cover;
                 border-top-left-radius: var(--border-radius-content);
                 border-bottom-left-radius: var(--border-radius-content);
@@ -144,13 +146,9 @@ export class MusicLibraryItemViewElement extends LitElement {
             }
 
             .playlist-text {
-                display: block;
-                width: 100%;
-                max-width: 1000px;
-                height: auto;
-                max-height: 500px;
+                display: flex;
+                flex-direction: column;
                 object-fit: cover;
-                flex: 1;
                 position: relative;
                 padding: var(--padding-insider);
                 border-top-right-radius: var(--border-radius-content);
@@ -191,6 +189,28 @@ export class MusicLibraryItemViewElement extends LitElement {
                 position: absolute;
                 bottom: 10px;
                 right: 10px;
+            }
+
+            @media (max-width: 850px) {
+                .playlist-item {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto;
+                }
+
+                .playlist-item-img img {
+                    height: auto;
+                    border-top-left-radius: var(--border-radius-content);
+                    border-top-right-radius: var(--border-radius-content);
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+                .playlist-text {
+                    border-bottom-left-radius: var(--border-radius-content);
+                    border-bottom-right-radius: var(--border-radius-content);
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
             }
         `
     ]

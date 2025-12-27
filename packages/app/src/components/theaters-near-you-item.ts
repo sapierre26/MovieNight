@@ -31,6 +31,8 @@ export class TheatersNearYouItemElement extends LitElement {
     reset.styles,
     css`
         .theaters-near-you-list-item {
+            display: flex;
+            flex-direction: column;
             padding: var(--padding-insider);
             width: 450px;
             height: auto;

@@ -50,7 +50,7 @@ export class TheatersNearYouListElement extends LitElement {
     return html`
       <div class="theaters-near-you-list">
         ${this.theatersNearYouItems.map((item) =>
-          this.renderTheatersNearYouItem(item)
+          this.renderTheatersNearYouItem(item),
         )}
       </div>
     `;
@@ -58,13 +58,10 @@ export class TheatersNearYouListElement extends LitElement {
 
   static styles = css`
     .theaters-near-you-list {
-        display: flex;
-        flex: non-wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        max-width: 100%;
-        box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 450px);
+      justify-content: center;
+      gap: 1rem;
     }
   `;
 }
