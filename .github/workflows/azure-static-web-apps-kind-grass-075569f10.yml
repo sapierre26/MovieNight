@@ -19,6 +19,9 @@ jobs:
         with:
           submodules: false
           lfs: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '/packages/app/.nvmrc'
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
