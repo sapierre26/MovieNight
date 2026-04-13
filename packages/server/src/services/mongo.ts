@@ -26,3 +26,5 @@ export function connect(dbname: string) {
     .connect(getMongoURI(dbname))
     .catch((error) => console.log(error));
 }
+
+// use render.com

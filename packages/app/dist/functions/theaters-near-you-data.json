@@ -1,0 +1,19 @@
+{
+  "theatersNearYouItems": [
+    {
+        "theaterName": "Downtown Cinema Centre",
+        "theaterLocation": "888 Marsh Street, San Luis Obispo, CA 93401",
+        "theaterWebsite": "https://www.themovieexperience.com/printshowtimes"
+    },
+    {
+        "theaterName": "Regal Arroyo Grande",
+        "theaterLocation": "1160 W. Branch St., Arroyo Grande, CA 93420",
+        "theaterWebsite": "https://www.fandango.com/regal-arroyo-grande-aaacm/theater-page"
+    },
+    {
+        "theaterName": "Regal Edwards Santa Maria & RPX",
+        "theaterLocation": "100 Town Center East, Santa Maria, CA 93454",
+        "theaterWebsite": "https://www.regmovies.com/theatres/regal-edwards-santa-maria-rpx-1681"
+    }
+  ]
+}
