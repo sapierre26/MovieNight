@@ -11,3 +11,5 @@ Clone this repo and follow the following instructions:
 Frontend: cd into packages/app and run 'npm run dev'; go to http://localhost:5173
 
 Backend: cd into packages/server and run 'npm run start:app'; go to http://localhost:3000
+
+Deployment: https://movienight-2r9f.onrender.com/
